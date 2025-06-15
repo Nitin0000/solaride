@@ -259,7 +259,7 @@
           </h1>
           
           <p class="text-lg md:text-xl text-neutral-600 max-w-xl">
-            Join our journey advocating for sustainable energy solutions across India.
+            Join our journey in generating sustainable energy across India.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 pt-4">
@@ -1011,8 +1011,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-neutral-800 mb-2">25-Year Warranty</h3>
-          <p class="text-neutral-600">Our solar panels come with a 25-year performance warranty, ensuring long-term reliability and peace of mind.</p>
+          <h3 class="text-lg font-bold text-neutral-800 mb-2">30-year Warranty</h3>
+          <p class="text-neutral-600">Our solar panels come with a 30-year performance warranty, ensuring long-term reliability and peace of mind.</p>
         </div>
         
         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm">
@@ -1089,8 +1089,8 @@
                   <p class="font-semibold text-neutral-800">₹<span id="modal-annual-savings">30,000</span></p>
                 </div>
                 <div class="flex justify-between">
-                  <p class="text-neutral-600">Savings after 25 years</p>
-                  <p class="font-semibold text-neutral-800">₹<span id="modal-lifetime-savings">750,000</span></p>
+                  <p class="text-neutral-600">Savings after 30 years</p>
+                  <p class="font-semibold text-neutral-800">₹<span id="modal-lifetime-savings">900,000</span></p>
                 </div>
                 <div class="flex justify-between">
                   <p class="text-neutral-600">Payback Period</p>
@@ -1111,8 +1111,8 @@
                   <p class="text-lg font-semibold text-neutral-800"><span id="modal-co2-reduction">3.5</span> tonnes</p>
                 </div>
                 <div>
-                  <p class="text-sm text-neutral-500">25-Year CO2 Reduction</p>
-                  <p class="text-lg font-semibold text-neutral-800"><span id="modal-lifetime-co2">87.5</span> tonnes</p>
+                  <p class="text-sm text-neutral-500">30-Year CO2 Reduction</p>
+                  <p class="text-lg font-semibold text-neutral-800"><span id="modal-lifetime-co2">105</span> tonnes</p>
                 </div>
                 <div>
                   <p class="text-sm text-neutral-500">Equivalent Trees Planted</p>
@@ -1165,6 +1165,7 @@
           // Calculate results (simplified calculations for demonstration)
           // System size based on monthly bill (rough estimate)
           const systemSize = Math.min(Math.round(monthlyBill / 600), Math.floor(roofArea / 10));
+          console.log(systemSize)
           
           // Location factor
           let locationFactor = 1;
@@ -1173,7 +1174,10 @@
           
           // Financial calculations
           const investmentPerKw = 60000; // ₹60,000 per kW
+          console.log(investmentPerKw)
           const investment = systemSize * investmentPerKw;
+          console.log(systemSize)
+          console.log(investment)
           const monthlyGeneration = systemSize * 120 * locationFactor; // kWh per month
           const electricityRate = 8; // ₹8 per kWh
           const monthlySavings = monthlyGeneration * electricityRate;
@@ -1363,6 +1367,92 @@
         </div>
       </div>
       
+      <h3 class="text-2xl font-bold text-neutral-800 mb-8 text-center">Meet Our Founding Team</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Team Member 1 -->
+        <div class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2">
+          <div class="h-66 overflow-hidden relative">
+            <img 
+              src="images/People/vanshul.png"
+              alt="Technical team discussing solar solutions"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
+              width="5184"
+              height="3888"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            >
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold text-neutral-800">Vanshul Goyal</h4>
+            <p class="text-[#1E5631] mb-3">PEC Chandigarh | 2025</p>
+            <p class="text-neutral-600 mb-4">Vanshul brings a strong background in software, electronics, and manufacturing engineering. He is a member of NASA’ Space Apps Collective cohort and envisions a future powered by solar energy and is dedicated to leveraging technology to transform India’s energy landscape.</p>
+            <button class="team-detail-btn" data-member="vanshul">
+              <span class="text-[#065f46] hover:text-[#1E5631] transition-colors duration-300 flex items-center">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2">
+          <div class="h-66 overflow-hidden relative">
+            <img 
+              src="images/People/priyanka.png"
+              alt="Team working on solar projects"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
+              width="5000"
+              height="3000"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            >
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold text-neutral-800">Priyanka Singh</h4>
+            <p class="text-[#1E5631] mb-3">IIT Bombay | 2018</p>
+            <p class="text-neutral-600 mb-4">Engineer and Miss Maharashtra, Priyanka combines engineering excellence with leadership in healthcare, sustainability, and data-driven innovation. She has managed large-scale health projects and integrating technology for impactful, sustainable solutions.</p>
+            <button class="team-detail-btn" data-member="priyanka">
+              <span class="text-[#065f46] hover:text-[#1E5631] transition-colors duration-300 flex items-center">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2">
+          <div class="h-66 overflow-hidden relative">
+            <img 
+              src="images/People/praveen.png"
+              alt="Team analyzing solar data"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
+              width="5184"
+              height="3888"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            >
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold text-neutral-800">Praveen Poonia</h4>
+            <p class="text-[#1E5631] mb-3">IIT Bombay | 2015</p>
+            <p class="text-neutral-600 mb-4">Praveen is an accomplished mentor and project leader with a record of academic excellence. He has managed large-scale technical projects, and brings expertise in process optimization and community outreach to the solar sector.</p>
+            <button class="team-detail-btn" data-member="praveen">
+              <span class="text-[#065f46] hover:text-[#1E5631] transition-colors duration-300 flex items-center">
+                View Profile
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
       <!-- <div class="text-center mt-12">
         <a href="#contact" class="inline-block px-8 py-4 bg-[#065f46] text-white font-semibold rounded-lg shadow-md hover:bg-[#1E5631] transition-colors duration-300">
           Join Our Team
@@ -1383,19 +1473,19 @@
             </button>
           </div>
           
-          <div id="amit-profile" class="team-profile hidden">
+          <div id="vanshul-profile" class="team-profile hidden">
             <div class="flex flex-col md:flex-row gap-6">
               <div class="md:w-1/3">
                 <div class="rounded-lg overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8dGVhbSUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTY3OTk2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
-                    alt="Amit Patel - Technical Director"
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Amit+Patel'"
+                    src="images/People/vanshul.png"
+                    alt="Vanshul Goyal"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Vanshul+Goyal'"
                     class="w-full h-auto object-cover"
                   >
                 </div>
                 <div class="mt-4">
-                  <h4 class="text-xl font-bold text-neutral-800">Amit Patel</h4>
+                  <h4 class="text-xl font-bold text-neutral-800">Vanshul Goyal</h4>
                   <p class="text-[#1E5631]">Technical Director</p>
                   <div class="flex space-x-3 mt-3">
                     <a href="#" class="text-neutral-500 hover:text-[#065f46]">
@@ -1418,7 +1508,7 @@
               </div>
               
               <div class="md:w-2/3">
-                <h4 class="text-lg font-bold text-neutral-800 mb-3">About Amit</h4>
+                <h4 class="text-lg font-bold text-neutral-800 mb-3">About Vanshul</h4>
                 <p class="text-neutral-600 mb-4">
                   Amit brings over a decade of expertise in renewable energy systems to SOLARIDE. With a Master's degree in Electrical Engineering from IIT Delhi, he has worked on various large-scale solar projects across Asia.
                 </p>
@@ -1450,19 +1540,19 @@
             </div>
           </div>
           
-          <div id="priya-profile" class="team-profile hidden">
+          <div id="priyanka-profile" class="team-profile hidden">
             <div class="flex flex-col md:flex-row gap-6">
               <div class="md:w-1/3">
                 <div class="rounded-lg overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8dGVhbSUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTY3OTk2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
-                    alt="Priya Sharma - Marketing & Outreach"
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Priya+Sharma'"
+                    alt="Priyaka Singh"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Priyanka+Singh'"
                     class="w-full h-auto object-cover"
                   >
                 </div>
                 <div class="mt-4">
-                  <h4 class="text-xl font-bold text-neutral-800">Priya Sharma</h4>
+                  <h4 class="text-xl font-bold text-neutral-800">Priyanka Singh</h4>
                   <p class="text-[#1E5631]">Marketing & Outreach</p>
                   <div class="flex space-x-3 mt-3">
                     <a href="#" class="text-neutral-500 hover:text-[#065f46]">
@@ -1485,12 +1575,12 @@
               </div>
               
               <div class="md:w-2/3">
-                <h4 class="text-lg font-bold text-neutral-800 mb-3">About Priya</h4>
+                <h4 class="text-lg font-bold text-neutral-800 mb-3">About Priyanka/h4>
                 <p class="text-neutral-600 mb-4">
-                  With a background in Environmental Science and an MBA in Sustainable Business, Priya leads our marketing and community outreach efforts. She joined SOLARIDE after working with several environmental NGOs.
+                  With a background in Environmental Science and an MBA in Sustainable Business, Priyanka leads our marketing and community outreach efforts. She joined SOLARIDE after working with several environmental NGOs.
                 </p>
                 <p class="text-neutral-600 mb-4">
-                  Priya's passion lies in making solar energy accessible to all communities. She develops educational programs and builds partnerships with local organizations to expand solar awareness and adoption.
+                  Priyanka's passion lies in making solar energy accessible to all communities. She develops educational programs and builds partnerships with local organizations to expand solar awareness and adoption.
                 </p>
                 
                 <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Expertise</h4>
@@ -1517,7 +1607,7 @@
             </div>
           </div>
           
-          <div id="rajiv-profile" class="team-profile hidden">
+          <div id="praveen-profile" class="team-profile hidden">
             <div class="flex flex-col md:flex-row gap-6">
               <div class="md:w-1/3">
                 <div class="rounded-lg overflow-hidden">
@@ -1590,13 +1680,13 @@
                 <div class="rounded-lg overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1557804483-ef3ae78eca57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8dGVhbSUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTY3OTk2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
-                    alt="Pankaj Sharma - Founder & CEO"
+                    alt="Pankaj Mahla - Founder & CEO"
                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Pankaj+Sharma'"
                     class="w-full h-auto object-cover"
                   >
                 </div>
                 <div class="mt-4">
-                  <h4 class="text-xl font-bold text-neutral-800">Pankaj Sharma</h4>
+                  <h4 class="text-xl font-bold text-neutral-800">Pankaj Mahla</h4>
                   <p class="text-[#1E5631]">Founder & CEO</p>
                   <div class="flex space-x-3 mt-3">
                     <a href="#" class="text-neutral-500 hover:text-[#065f46]">
@@ -1820,7 +1910,7 @@
           </div>
           
           <!-- FAQ Item 2 -->
-          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+          <!-- <div class="border border-neutral-200 rounded-lg overflow-hidden">
             <button 
               class="faq-toggle w-full flex justify-between items-center p-4 bg-white hover:bg-neutral-50 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#065f46] text-left"
               aria-expanded="false"
@@ -1833,10 +1923,10 @@
             </button>
             <div id="faq-2-content" class="faq-content hidden bg-white px-4 pb-4 pt-0">
               <p class="text-neutral-600">
-                Solar system costs vary based on size, quality, and specific requirements. A typical residential 5kW system ranges from ₹3,00,000 to ₹4,50,000. Commercial systems are priced differently based on scale and needs. Government subsidies can reduce these costs by 20-40%. Our solar calculator tool can provide you with a customized estimate based on your energy consumption and location.
+                Solar system costs vary based on size, quality, and specific requirements. A typical residential 5kW system ranges from ₹2,00,000 to ₹3,00,000. Commercial systems are priced differently based on scale and needs. Government subsidies can reduce these costs by 20-40%. Our solar calculator tool can provide you with a customized estimate based on your energy consumption and location.
               </p>
             </div>
-          </div>
+          </div> -->
           
           <!-- FAQ Item 3 -->
           <div class="border border-neutral-200 rounded-lg overflow-hidden">
@@ -1852,7 +1942,7 @@
             </button>
             <div id="faq-3-content" class="faq-content hidden bg-white px-4 pb-4 pt-0">
               <p class="text-neutral-600">
-                Most residential and commercial solar systems pay for themselves within 4-7 years, depending on your electricity consumption, local sunshine hours, and applicable subsidies. After the payback period, you'll enjoy free electricity for the remaining 20+ years of the system's life. Our systems come with performance warranties of 25 years, ensuring long-term benefits.
+                Most residential and commercial solar systems pay for themselves within 4-7 years, depending on your electricity consumption, local sunshine hours, and applicable subsidies. After the payback period, you'll enjoy free electricity for the remaining 20+ years of the system's life. Our systems come with performance warranties of 30 years, ensuring long-term benefits.
               </p>
             </div>
           </div>
@@ -2115,7 +2205,7 @@
                 </button>
                 <div class="category-faq-content hidden bg-white px-4 pb-4 pt-0">
                   <p class="text-neutral-600">
-                    A 5kW solar system typically offsets about 3.5 tonnes of CO2 annually, equivalent to planting around 100 trees each year. Over a 25-year lifespan, that's equivalent to 2,500 trees! We provide a personalized environmental impact report with every installation that shows your specific carbon offset and tree equivalent based on your system size and local conditions.
+                    A 5kW solar system typically offsets about 3.5 tonnes of CO2 annually, equivalent to planting around 100 trees each year. Over a 30-year lifespan, that's equivalent to 2,500 trees! We provide a personalized environmental impact report with every installation that shows your specific carbon offset and tree equivalent based on your system size and local conditions.
                   </p>
                 </div>
               </div>
@@ -2795,8 +2885,9 @@
         <div>
           <h3 class="text-xl font-bold mb-6">SOLARIDE</h3>
           <p class="text-neutral-300 mb-6">Empowering India's sustainable future through innovative solar solutions and environmental advocacy.</p>
-          <div class="flex space-x-4">
-            <a href="#" class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
+          <div class="flex space-x-2">
+            <!-- Facebook, twitter -->
+            <!-- <a href="#" class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
               </svg>
@@ -2805,13 +2896,14 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
               </svg>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
+            </a> -->
+            <!-- Linkeding, instagram -->
+            <a target="_blank" href="https://www.instagram.com/pankajmahla_/" class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
+            <a target="_blank" href="https://www.linkedin.com/company/solaride1/ " class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
               </svg>
@@ -2876,7 +2968,7 @@
         <div>
           <h3 class="text-xl font-bold mb-6">Contact Us</h3>
           <div class="space-y-4">
-            <div class="flex items-start">
+            <!-- <div class="flex items-start">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#065f46] mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -2885,23 +2977,23 @@
                 123 Solar Way, Green City<br>
                 New Delhi, India 110001
               </p>
-            </div>
+            </div> -->
             <div class="flex items-start">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#065f46] mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <p class="text-neutral-300">info@solaride.com</p>
+              <p class="text-neutral-300">solarideenergy@gmail.com</p>
             </div>
             <div class="flex items-start">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#065f46] mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <p class="text-neutral-300">+91 98765 43210</p>
+              <p class="text-neutral-300">+91 73802 80874</p>
             </div>
           </div>
           
           <!-- Newsletter -->
-          <div class="mt-6">
+          <!-- <div class="mt-6">
             <h4 class="text-lg font-semibold mb-3">Subscribe to Our Newsletter</h4>
             <form id="newsletter-form" class="flex">
               <input 
@@ -2919,7 +3011,7 @@
                 </svg>
               </button>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
       
@@ -2935,8 +3027,8 @@
                 </svg>
               </div>
               <div>
-                <p class="text-neutral-300 text-sm">Trees Planted</p>
-                <p class="text-lg font-bold text-white">500+</p>
+                <p class="text-neutral-300 text-sm">Equivalant to Trees Planted</p>
+                <p class="text-lg font-bold text-white">15k+</p>
               </div>
             </div>
           </div>
@@ -2951,7 +3043,7 @@
               </div>
               <div>
                 <p class="text-neutral-300 text-sm">Solar Installations</p>
-                <p class="text-lg font-bold text-white">200+</p>
+                <p class="text-lg font-bold text-white">250KW+</p>
               </div>
             </div>
           </div>
@@ -2966,7 +3058,7 @@
               </div>
               <div>
                 <p class="text-neutral-300 text-sm">CO2 Offset (Annual)</p>
-                <p class="text-lg font-bold text-white">700+ Tonnes</p>
+                <p class="text-lg font-bold text-white">300+ Tonnes</p>
               </div>
             </div>
           </div>
@@ -2977,15 +3069,15 @@
       <div class="border-t border-neutral-700 pt-8 flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <p class="text-neutral-400 text-sm">
-            &copy; 2023 SOLARIDE. All rights reserved.
+            &copy; 2025 SOLARIDE. All rights reserved.
           </p>
         </div>
         
-        <div class="flex space-x-6">
+        <!-- <div class="flex space-x-6">
           <a href="#" class="text-neutral-400 text-sm hover:text-[#065f46] transition-colors duration-300">Privacy Policy</a>
           <a href="#" class="text-neutral-400 text-sm hover:text-[#065f46] transition-colors duration-300">Terms of Service</a>
           <a href="#" class="text-neutral-400 text-sm hover:text-[#065f46] transition-colors duration-300">Sitemap</a>
-        </div>
+        </div> -->
       </div>
       
       <!-- Back to Top Button -->
