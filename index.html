@@ -34,84 +34,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Project-specific styles -->
-  <style>
-    /* Base styles */
-    :root {
-      --primary-color: #065f46;
-      --secondary-color: #1E5631;
-      --accent-color: #FDB813;
-    }
-
-    /* Strict no-scrollbar rules */
-    * {
-      -ms-overflow-style: none !important;
-      /* IE and Edge */
-      scrollbar-width: none !important;
-      /* Firefox */
-    }
-
-    *::-webkit-scrollbar {
-      display: none !important;
-      /* Chrome, Safari and Opera */
-    }
-
-    /* Typography */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: Rubik, Inter, system-ui, sans-serif;
-    }
-
-    body {
-      font-family: Nunito, Inter, system-ui, sans-serif;
-    }
-
-    /* Interactive elements */
-    .interactive-element {
-      transition: all 0.3s ease;
-    }
-
-    .interactive-element:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    .fade-in {
-      animation: fadeIn 0.5s ease-in-out;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- Dynamic Meta Tags -->
   <!-- Consolidated meta tags (avoid duplicates / empty values) -->
@@ -119,13 +42,13 @@
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="SOLARIDE - Solar Energy Solutions by Pankaj | 4000KM Cycling Journey">
   <meta property="og:description" content="SOLARIDE offers premium solar energy solutions led by Pankaj, who cycled 4000KM promoting sustainable energy.">
-  <meta property="og:image" content="images/iconLogo.png">
+  <meta property="og:image" content="assets/images/iconLogo.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="SOLARIDE">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="images/iconLogo.png">
+  <link rel="icon" type="image/x-icon" href="assets/images/iconLogo.png">
 
   <!-- Header Scripts -->
   <script id="header-scripts">
@@ -153,15 +76,7 @@
       }
     };
   </script>
-  <style>
-    [data-section-id] {
-      display: none;
-    }
 
-    [data-section-id]:first-child {
-      display: block;
-    }
-  </style>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet">
   <link
@@ -186,7 +101,7 @@
               <nav class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <div class="flex items-center">
-                  <img src="images/iconLogo.png" width="200" alt="SOLARIDE logo" />
+                  <img src="assets/images/iconLogo.png" width="200" alt="SOLARIDE logo" />
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -196,7 +111,6 @@
                     class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">My Journey</a>
                   <a href="#solar-benefits"
                     class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">Solar Benefits</a>
-                  <!-- <a href="#solar-calculator" class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">Calculator</a> -->
                   <a href="#team" class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">Our
                     Team</a>
                   <a href="#faq" class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">FAQ</a>
@@ -225,7 +139,6 @@
                     class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">My Journey</a>
                   <a href="#solar-benefits"
                     class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">Solar Benefits</a>
-                  <!-- <a href="#solar-calculator" class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">Calculator</a> -->
                   <a href="#team" class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">Our
                     Team</a>
                   <a href="#faq" class="text-neutral-800 hover:text-[#065f46] transition-colors duration-300">FAQ</a>
@@ -235,54 +148,7 @@
               </div>
             </div>
 
-            <script>
-              // Mobile menu toggle functionality
-              document.addEventListener('DOMContentLoaded', function () {
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
 
-                mobileMenuButton.addEventListener('click', function () {
-                  const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-                  mobileMenuButton.setAttribute('aria-expanded', !expanded);
-                  mobileMenu.classList.toggle('hidden');
-
-                  // Change hamburger icon to X when menu is open
-                  if (!expanded) {
-                    mobileMenuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
-                  } else {
-                    mobileMenuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
-                  }
-                });
-
-                // Close mobile menu when clicking on a link
-                const mobileLinks = mobileMenu.querySelectorAll('a');
-                mobileLinks.forEach(link => {
-                  link.addEventListener('click', function () {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    mobileMenuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
-                  });
-                });
-
-                // Implement smooth scrolling for navigation links
-                const links = document.querySelectorAll('a[href^="#"]');
-                links.forEach(link => {
-                  link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                      const headerHeight = document.getElementById('header').offsetHeight;
-                      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                      window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                      });
-                    }
-                  });
-                });
-              });
-            </script>
           </header>
         </div>
 
@@ -318,7 +184,7 @@
                 <div class="lg:w-1/2 relative">
                   <div class="bg-[#4D9DE0] absolute -top-6 -left-6 w-full h-full rounded-2xl"></div>
                   <div class="relative z-10 rounded-2xl overflow-hidden border border-neutral-200 bg-white p-2">
-                    <img src="images/pankajCycle.jpeg" alt="Pankaj from SOLARIDE on his journey"
+                    <img src="assets/images/pankajCycle.jpeg" alt="Pankaj from SOLARIDE on his journey"
                       onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE'"
                       class="w-full h-full object-cover rounded-xl" width="5066" height="3377">
                     <!-- <p class="text-xs text-neutral-500 mt-2 text-right">Photo by Hunters Race</p> -->
@@ -449,7 +315,7 @@
                 <div class="order-1 lg:order-2 relative">
                   <div class="bg-[#1E5631] absolute top-6 right-6 w-full h-full rounded-2xl"></div>
                   <div class="relative z-10 rounded-2xl overflow-hidden border border-neutral-200 bg-white p-3">
-                    <img src="images/crowdWork.jpg" alt="Pankaj on his sustainability journey"
+                    <img src="assets/images/crowdWork.jpg" alt="Pankaj on his sustainability journey"
                       onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Journey'"
                       width="5066" height="3377" class="w-full h-full object-cover rounded-xl">
                   </div>
@@ -508,7 +374,7 @@
                       solution for a greener India.</p>
 
                     <div class="my-6">
-                      <img src="images/inspirationPic.jpg" alt="Planning the journey with maps and notes"
+                      <img src="assets/images/inspirationPic.jpg" alt="Planning the journey with maps and notes"
                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Planning+Journey'"
                         class="w-full h-64 object-cover rounded-lg">
                     </div>
@@ -530,7 +396,7 @@
                       turning my personal mission into a national movement of environmental consciousness.</p>
 
                     <div class="my-6">
-                      <img src="images/impactPic.jpg" alt="Impact of the journey"
+                      <img src="assets/images/impactPic.jpg" alt="Impact of the journey"
                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Impact+of+Journey'"
                         class="w-full h-80 object-cover rounded-lg">
                     </div>
@@ -545,79 +411,7 @@
               </div>
             </div>
 
-            <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                const modal = document.getElementById('story-modal');
-                const openButton = document.getElementById('read-more-btn');
-                const closeButton = document.getElementById('close-story-modal');
-                const modalDialog = modal.querySelector('[role="dialog"]');
-                let lastFocusedElement = null;
 
-                // Open modal
-                openButton.addEventListener('click', function () {
-                  lastFocusedElement = document.activeElement;
-                  modal.classList.remove('hidden');
-                  document.body.style.overflow = 'hidden';
-                  modal.setAttribute('aria-hidden', 'false');
-                  closeButton.focus();
-                  trapFocus();
-                });
-
-                // Close modal function
-                function closeModal() {
-                  modal.classList.add('hidden');
-                  document.body.style.overflow = '';
-                  modal.setAttribute('aria-hidden', 'true');
-                  if (lastFocusedElement) {
-                    lastFocusedElement.focus();
-                  }
-                }
-
-                // Close button click
-                closeButton.addEventListener('click', closeModal);
-
-                // Close on background click
-                modal.addEventListener('click', function (e) {
-                  if (e.target === modal) {
-                    closeModal();
-                  }
-                });
-
-                // Close on ESC key
-                document.addEventListener('keydown', function (e) {
-                  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                    closeModal();
-                  }
-                });
-
-                // Focus trap
-                function trapFocus() {
-                  // Avoid attaching multiple keydown handlers on repeated opens
-                  if (!modalDialog) return;
-                  if (modalDialog.dataset.trapAttached) return;
-
-                  const focusableElements = modalDialog.querySelectorAll(
-                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                  );
-                  const firstElement = focusableElements[0];
-                  const lastElement = focusableElements[focusableElements.length - 1];
-
-                  modalDialog.addEventListener('keydown', function (e) {
-                    if (e.key === 'Tab') {
-                      if (e.shiftKey && document.activeElement === firstElement) {
-                        e.preventDefault();
-                        lastElement.focus();
-                      } else if (!e.shiftKey && document.activeElement === lastElement) {
-                        e.preventDefault();
-                        firstElement.focus();
-                      }
-                    }
-                  });
-
-                  modalDialog.dataset.trapAttached = 'true';
-                }
-              });
-            </script>
           </section>
         </div>
 
@@ -632,7 +426,7 @@
 
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
                 <div>
-                  <img src="images/greenEnergy.png" alt="Professional discussing solar benefits"
+                  <img src="assets/images/greenEnergy.png" alt="Professional discussing solar benefits"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Benefits'"
                     width="5066" height="3377" class="w-full h-auto object-cover rounded-xl shadow-md">
                 </div>
@@ -844,75 +638,7 @@
               </div>
             </div>
 
-            <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                const systemSizeInput = document.getElementById('system-size');
-                const systemSizeDisplay = document.getElementById('system-size-display');
-                const sunlightHoursInput = document.getElementById('sunlight-hours');
-                const sunlightHoursDisplay = document.getElementById('sunlight-hours-display');
-                const calculateBtn = document.getElementById('calculate-btn');
-                const co2OffsetDisplay = document.getElementById('co2-offset');
-                const treeEquivalentDisplay = document.getElementById('tree-equivalent');
-                const energyProducedDisplay = document.getElementById('energy-produced');
 
-                // Update display values when sliders change
-                systemSizeInput.addEventListener('input', function () {
-                  systemSizeDisplay.textContent = this.value;
-                });
-
-                sunlightHoursInput.addEventListener('input', function () {
-                  sunlightHoursDisplay.textContent = this.value;
-                });
-
-                // Calculate impact when button is clicked
-                calculateBtn.addEventListener('click', function () {
-                  const systemSize = parseInt(systemSizeInput.value);
-                  const sunlightHours = parseInt(sunlightHoursInput.value);
-
-                  // Simple calculations based on inputs
-                  // CO2 offset: ~0.7 tons per kW per year with 5 sun hours as baseline
-                  const co2Offset = (systemSize * 0.7 * (sunlightHours / 5)).toFixed(1);
-
-                  // Tree equivalent: ~20 trees per kW per year with 5 sun hours as baseline
-                  const treeEquivalent = Math.round(systemSize * 20 * (sunlightHours / 5));
-
-                  // Energy produced: ~1400 kWh per kW per year with 5 sun hours as baseline
-                  const energyProduced = Math.round(systemSize * 1400 * (sunlightHours / 5));
-
-                  // Update result displays with animation
-                  animateNumberChange(co2OffsetDisplay, co2Offset);
-                  animateNumberChange(treeEquivalentDisplay, treeEquivalent);
-                  animateNumberChange(energyProducedDisplay, energyProduced);
-                });
-
-                // Function to animate number changes
-                function animateNumberChange(element, targetValue) {
-                  const startValue = parseFloat(element.textContent);
-                  const duration = 1000; // milliseconds
-                  const start = performance.now();
-
-                  function updateValue(timestamp) {
-                    const elapsed = timestamp - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const currentValue = startValue + (targetValue - startValue) * progress;
-
-                    if (targetValue % 1 === 0) {
-                      // For integers
-                      element.textContent = Math.round(currentValue).toLocaleString();
-                    } else {
-                      // For decimals
-                      element.textContent = currentValue.toFixed(1);
-                    }
-
-                    if (progress < 1) {
-                      requestAnimationFrame(updateValue);
-                    }
-                  }
-
-                  requestAnimationFrame(updateValue);
-                }
-              });
-            </script>
           </section>
         </div>
 
@@ -1245,168 +971,7 @@
         </div>
       </div>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const calculatorForm = document.getElementById('solar-calculator-form');
-          const calculateButton = document.getElementById('calculate-button');
-          const resultsContainer = document.getElementById('results-container');
-          const detailedReportButton = document.getElementById('detailed-report-button');
-          const reportModal = document.getElementById('report-modal');
-          const closeModalButton = document.getElementById('close-report-modal');
-          const contactFromModalButton = document.getElementById('contact-from-modal');
-          const downloadReportButton = document.getElementById('download-report');
-          const modalDialog = reportModal.querySelector('[role="dialog"]');
-          let lastFocusedElement = null;
 
-          // Calculate button click handler
-          calculateButton.addEventListener('click', function () {
-            // Get input values
-            const monthlyBill = parseFloat(document.getElementById('monthly-bill').value);
-            const roofArea = parseFloat(document.getElementById('roof-area').value);
-            const location = document.getElementById('location').value;
-
-            // Calculate results (simplified calculations for demonstration)
-            // System size based on monthly bill (rough estimate)
-            const systemSize = Math.min(Math.round(monthlyBill / 600), Math.floor(roofArea / 10));
-
-            // Location factor
-            let locationFactor = 1;
-            if (location === 'high') locationFactor = 1.2;
-            if (location === 'low') locationFactor = 0.8;
-
-            // Financial calculations
-            const investmentPerKw = 60000; // ₹60,000 per kW
-            const investment = systemSize * investmentPerKw;
-            // Intermediate values logged during development were removed to avoid noisy console output
-            const monthlyGeneration = systemSize * 120 * locationFactor; // kWh per month
-            const electricityRate = 8; // ₹8 per kWh
-            const monthlySavings = monthlyGeneration * electricityRate;
-            const annualSavings = monthlySavings * 12;
-            const paybackPeriod = Math.round((investment / annualSavings) * 10) / 10;
-
-            // Environmental impact
-            const co2ReductionPerKw = 0.7; // tonnes per kW per year
-            const co2Reduction = (systemSize * co2ReductionPerKw).toFixed(1);
-            const treesPerTonneCO2 = 28.5; // trees per tonne of CO2
-            const treeEquivalent = Math.round(co2Reduction * treesPerTonneCO2);
-
-            // Update results display
-            document.getElementById('system-size').textContent = systemSize;
-            document.getElementById('investment').textContent = investment.toLocaleString();
-            document.getElementById('monthly-savings').textContent = monthlySavings.toLocaleString();
-            document.getElementById('annual-savings').textContent = annualSavings.toLocaleString();
-            document.getElementById('payback-period').textContent = paybackPeriod;
-            document.getElementById('co2-reduction').textContent = co2Reduction;
-            document.getElementById('tree-equivalent').textContent = treeEquivalent;
-
-            // Update modal values
-            document.getElementById('modal-system-size').textContent = systemSize;
-            document.getElementById('modal-panel-count').textContent = systemSize * 3; // Approx 3 panels per kW
-            document.getElementById('modal-roof-area').textContent = systemSize * 6; // Approx 6 sq meters per kW
-            document.getElementById('modal-energy-production').textContent = (monthlyGeneration * 12).toLocaleString();
-            document.getElementById('modal-investment').textContent = investment.toLocaleString();
-            document.getElementById('modal-monthly-savings').textContent = monthlySavings.toLocaleString();
-            document.getElementById('modal-annual-savings').textContent = annualSavings.toLocaleString();
-            document.getElementById('modal-lifetime-savings').textContent = (annualSavings * 25).toLocaleString();
-            document.getElementById('modal-payback-period').textContent = paybackPeriod;
-            document.getElementById('modal-roi').textContent = Math.round((annualSavings * 25 / investment) * 100);
-            document.getElementById('modal-co2-reduction').textContent = co2Reduction;
-            document.getElementById('modal-lifetime-co2').textContent = (co2Reduction * 25).toLocaleString();
-            document.getElementById('modal-tree-equivalent').textContent = treeEquivalent;
-            document.getElementById('modal-footprint-reduction').textContent = Math.min(90, Math.round(systemSize * 6));
-
-            // Show results
-            resultsContainer.classList.remove('hidden');
-
-            // Smooth scroll to results
-            resultsContainer.scrollIntoView({ behavior: 'smooth' });
-          });
-
-          // Detailed report button click handler
-          detailedReportButton.addEventListener('click', function () {
-            lastFocusedElement = document.activeElement;
-            openModal();
-          });
-
-          // Open modal function
-          function openModal() {
-            reportModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            reportModal.setAttribute('aria-hidden', 'false');
-            closeModalButton.focus();
-            trapFocus();
-          }
-
-          // Close modal function
-          function closeModal() {
-            reportModal.classList.add('hidden');
-            document.body.style.overflow = '';
-            reportModal.setAttribute('aria-hidden', 'true');
-            if (lastFocusedElement) {
-              lastFocusedElement.focus();
-            }
-          }
-
-          // Close modal button click
-          closeModalButton.addEventListener('click', closeModal);
-
-          // Contact from modal button click
-          contactFromModalButton.addEventListener('click', function () {
-            closeModal();
-
-            // Smooth scroll to contact section
-            const contactSection = document.getElementById('contact');
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          });
-
-          // Download report button click (simulate download)
-          downloadReportButton.addEventListener('click', function () {
-            alert('Your detailed solar report will be downloaded shortly.');
-          });
-
-          // Close on background click
-          reportModal.addEventListener('click', function (e) {
-            if (e.target === reportModal) {
-              closeModal();
-            }
-          });
-
-          // Close on ESC key
-          document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && !reportModal.classList.contains('hidden')) {
-              closeModal();
-            }
-          });
-
-          // Focus trap
-          function trapFocus() {
-            if (!modalDialog) return;
-            if (modalDialog.dataset.trapAttached) return;
-
-            const focusableElements = modalDialog.querySelectorAll(
-              'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-            );
-            const firstElement = focusableElements[0];
-            const lastElement = focusableElements[focusableElements.length - 1];
-
-            modalDialog.addEventListener('keydown', function (e) {
-              if (e.key === 'Tab') {
-                if (e.shiftKey && document.activeElement === firstElement) {
-                  e.preventDefault();
-                  lastElement.focus();
-                } else if (!e.shiftKey && document.activeElement === lastElement) {
-                  e.preventDefault();
-                  firstElement.focus();
-                }
-              }
-            });
-
-            modalDialog.dataset.trapAttached = 'true';
-          }
-        });
-      </script>
       </section>
       </div> -->
 
@@ -1436,7 +1001,7 @@
                 </p>
 
                 <div class="flex space-x-4">
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/pankajmahla_/"
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/pankajmahla_/" aria-label="Instagram"
                     class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300 group">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-700 group-hover:text-white"
                       fill="currentColor" viewBox="0 0 24 24">
@@ -1444,7 +1009,7 @@
                         d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                     </svg>
                   </a>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/solaride1/"
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/solaride1/" aria-label="LinkedIn"
                     class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300 group">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-700 group-hover:text-white"
                       fill="currentColor" viewBox="0 0 24 24">
@@ -1465,7 +1030,7 @@
               <div class="order-1 lg:order-2">
                 <div
                   class="relative h-64 md:h-[500px] rounded-xl overflow-hidden border border-neutral-200 sm: h-68 h-[420px]">
-                  <img src="images/People/pankaj.jpeg" alt="Pankaj from SOLARIDE reading about renewable energy"
+                  <img src="assets/images/People/pankaj.jpeg" alt="Pankaj from SOLARIDE reading about renewable energy"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Founder'"
                     class="w-full h-[500px] object-cover sm: h-[300px]">
                 </div>
@@ -1479,7 +1044,7 @@
               <div
                 class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2">
                 <div class="h-66 overflow-hidden relative">
-                  <img src="images/People/vanshul.png" alt="Technical team discussing solar solutions"
+                  <img src="assets/images/People/vanshul.png" alt="Technical team discussing solar solutions"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
                     width="5184" height="3888"
                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
@@ -1492,7 +1057,7 @@
                     future powered by solar energy and is dedicated to leveraging technology to transform India’s energy
                     landscape.</p>
                   <p class="text-[#1E5631] mb-3">Know more at <a href="https://vanshul.com" target="_blank"
-                      rel="noopener"><u><b style="color:rgb(0, 0, 132)">vanshul.com</b></u></a></p>
+                      rel="noopener"><u><b class="text-blue-900">vanshul.com</b></u></a></p>
                   <!-- <button class="team-detail-btn" data-member="vanshul">
               <span class="text-[#065f46] hover:text-[#1E5631] transition-colors duration-300 flex items-center">
                 View Profile
@@ -1508,7 +1073,7 @@
               <div
                 class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2">
                 <div class="h-66 overflow-hidden relative">
-                  <img src="images/People/priyanka.png" alt="Team working on solar projects"
+                  <img src="assets/images/People/priyanka.png" alt="Team working on solar projects"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
                     width="5000" height="3000"
                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
@@ -1535,7 +1100,7 @@
               <div
                 class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2">
                 <div class="h-66 overflow-hidden relative">
-                  <img src="images/People/praveen.png" alt="Team analyzing solar data"
+                  <img src="assets/images/People/praveen.png" alt="Team analyzing solar data"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
                     width="5184" height="3888"
                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
@@ -1589,76 +1154,36 @@
                     <div class="flex flex-col md:flex-row gap-6">
                       <div class="md:w-1/3">
                         <div class="rounded-lg overflow-hidden">
-                          <img src="images/People/vanshul.png" alt="Vanshul Goyal"
+                          <img src="assets/images/People/vanshul.png" alt="Vanshul Goyal"
                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Vanshul+Goyal'"
                             class="w-full h-auto object-cover">
                         </div>
                         <div class="mt-4">
                           <h4 class="text-xl font-bold text-neutral-800">Vanshul Goyal</h4>
                           <p class="text-[#1E5631]">Technical Director</p>
-                          <div class="flex space-x-3 mt-3">
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                              </svg>
-                            </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                              </svg>
-                            </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                              </svg>
-                            </a>
-                          </div>
+                          <p class="text-sm text-neutral-500 mt-1">PEC Chandigarh | 2025</p>
                         </div>
                       </div>
 
                       <div class="md:w-2/3">
                         <h4 class="text-lg font-bold text-neutral-800 mb-3">About Vanshul</h4>
                         <p class="text-neutral-600 mb-4">
-                          Amit brings over a decade of expertise in renewable energy systems to SOLARIDE. With a
-                          Master's degree in Electrical Engineering from IIT Delhi, he has worked on various large-scale
-                          solar projects across Asia.
+                          Vanshul brings a strong background in software, electronics, and manufacturing engineering. He
+                          is a member of NASA’ Space Apps Collective cohort and envisions a future powered by solar
+                          energy.
                         </p>
                         <p class="text-neutral-600 mb-4">
-                          As Technical Director, Amit leads our R&D initiatives and oversees all technical aspects of
-                          our solar installations. His innovative approach has helped us develop custom solutions for
-                          diverse environments.
+                          He is dedicated to leveraging technology to transform India’s energy landscape, combining
+                          technical expertise with a passion for sustainable innovation.
                         </p>
 
                         <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Expertise</h4>
                         <ul class="list-disc list-inside text-neutral-600 mb-4 space-y-1">
-                          <li>Solar PV system design and optimization</li>
-                          <li>Energy storage solutions</li>
-                          <li>Grid integration and smart energy management</li>
-                          <li>Rural electrification projects</li>
-                          <li>Technical training and capacity building</li>
+                          <li>Software & Electronics Engineering</li>
+                          <li>Manufacturing Engineering</li>
+                          <li>Technical Innovation</li>
+                          <li>Sustainable Energy Systems</li>
                         </ul>
-
-                        <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Notable Projects</h4>
-                        <div class="space-y-3">
-                          <div class="p-3 bg-neutral-50 rounded-lg">
-                            <p class="font-medium text-neutral-800">100kW Solar Installation for Gujarat School Network
-                            </p>
-                            <p class="text-sm text-neutral-600">Provided sustainable energy to 15 rural schools,
-                              reducing their electricity costs by 70%</p>
-                          </div>
-                          <div class="p-3 bg-neutral-50 rounded-lg">
-                            <p class="font-medium text-neutral-800">Off-grid Solar Solutions for Remote Himalayan
-                              Villages</p>
-                            <p class="text-sm text-neutral-600">Designed and implemented solar microgrids for
-                              communities with no prior access to electricity</p>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -1667,76 +1192,37 @@
                     <div class="flex flex-col md:flex-row gap-6">
                       <div class="md:w-1/3">
                         <div class="rounded-lg overflow-hidden">
-                          <img
-                            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8dGVhbSUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTY3OTk2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
-                            alt="Priyaka Singh"
+                          <img src="assets/images/People/priyanka.png" alt="Priyanka Singh"
                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Priyanka+Singh'"
                             class="w-full h-auto object-cover">
                         </div>
                         <div class="mt-4">
                           <h4 class="text-xl font-bold text-neutral-800">Priyanka Singh</h4>
                           <p class="text-[#1E5631]">Marketing & Outreach</p>
-                          <div class="flex space-x-3 mt-3">
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                              </svg>
-                            </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                              </svg>
-                            </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                              </svg>
-                            </a>
-                          </div>
+                          <p class="text-sm text-neutral-500 mt-1">IIT Bombay | 2018</p>
                         </div>
                       </div>
 
                       <div class="md:w-2/3">
-                        <h4 class="text-lg font-bold text-neutral-800 mb-3">About Priyanka/h4>
-                          <p class="text-neutral-600 mb-4">
-                            With a background in Environmental Science and an MBA in Sustainable Business, Priyanka
-                            leads our marketing and community outreach efforts. She joined SOLARIDE after working with
-                            several environmental NGOs.
-                          </p>
-                          <p class="text-neutral-600 mb-4">
-                            Priyanka's passion lies in making solar energy accessible to all communities. She develops
-                            educational programs and builds partnerships with local organizations to expand solar
-                            awareness and adoption.
-                          </p>
+                        <h4 class="text-lg font-bold text-neutral-800 mb-3">About Priyanka</h4>
+                        <p class="text-neutral-600 mb-4">
+                          Engineer and Miss Maharashtra, Priyanka combines engineering excellence with leadership in
+                          healthcare, sustainability, and data-driven innovation.
+                        </p>
+                        <p class="text-neutral-600 mb-4">
+                          She has managed large-scale health projects and integrating technology for impactful,
+                          sustainable solutions. Priyanka's passion lies in making solar energy accessible to all
+                          communities.
+                        </p>
 
-                          <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Expertise</h4>
-                          <ul class="list-disc list-inside text-neutral-600 mb-4 space-y-1">
-                            <li>Community engagement and education</li>
-                            <li>Sustainability communications</li>
-                            <li>Government and NGO partnerships</li>
-                            <li>Corporate social responsibility</li>
-                            <li>Green marketing strategies</li>
-                          </ul>
-
-                          <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Key Initiatives</h4>
-                          <div class="space-y-3">
-                            <div class="p-3 bg-neutral-50 rounded-lg">
-                              <p class="font-medium text-neutral-800">"Solar for Schools" Education Program</p>
-                              <p class="text-sm text-neutral-600">Reached over 10,000 students with interactive
-                                workshops on renewable energy</p>
-                            </div>
-                            <div class="p-3 bg-neutral-50 rounded-lg">
-                              <p class="font-medium text-neutral-800">Women in Solar Training Initiative</p>
-                              <p class="text-sm text-neutral-600">Empowered 200+ women from rural communities with
-                                technical skills in solar installation and maintenance</p>
-                            </div>
-                          </div>
+                        <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Expertise</h4>
+                        <ul class="list-disc list-inside text-neutral-600 mb-4 space-y-1">
+                          <li>Community engagement and education</li>
+                          <li>Sustainability communications</li>
+                          <li>Data-driven innovation</li>
+                          <li>Healthcare leadership</li>
+                          <li>Green marketing strategies</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -1745,76 +1231,37 @@
                     <div class="flex flex-col md:flex-row gap-6">
                       <div class="md:w-1/3">
                         <div class="rounded-lg overflow-hidden">
-                          <img
-                            src="https://images.unsplash.com/photo-1557804483-ef3ae78eca57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8dGVhbSUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTY3OTk2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
-                            alt="Rajiv Kumar - Installation Expert"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Rajiv+Kumar'"
+                          <img src="assets/images/People/praveen.png" alt="Praveen Poonia"
+                            onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Praveen+Poonia'"
                             class="w-full h-auto object-cover">
                         </div>
                         <div class="mt-4">
-                          <h4 class="text-xl font-bold text-neutral-800">Rajiv Kumar</h4>
-                          <p class="text-[#1E5631]">Installation Expert</p>
-                          <div class="flex space-x-3 mt-3">
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                              </svg>
-                            </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                              </svg>
-                            </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                              </svg>
-                            </a>
-                          </div>
+                          <h4 class="text-xl font-bold text-neutral-800">Praveen Poonia</h4>
+                          <p class="text-[#1E5631]">Project Leader</p>
+                          <p class="text-sm text-neutral-500 mt-1">IIT Bombay | 2015</p>
                         </div>
                       </div>
 
                       <div class="md:w-2/3">
-                        <h4 class="text-lg font-bold text-neutral-800 mb-3">About Rajiv</h4>
+                        <h4 class="text-lg font-bold text-neutral-800 mb-3">About Praveen</h4>
                         <p class="text-neutral-600 mb-4">
-                          Rajiv is a certified solar installation specialist with 8 years of hands-on experience. His
-                          technical expertise and attention to detail ensure that every SOLARIDE installation meets the
-                          highest standards of quality and efficiency.
+                          Praveen is an accomplished mentor and project leader with a record of academic excellence. He
+                          has managed large-scale technical projects, and brings expertise in process optimization and
+                          community outreach to the solar sector.
                         </p>
                         <p class="text-neutral-600 mb-4">
-                          Having started as an electrician, Rajiv developed a passion for renewable energy and
-                          specialized in solar PV systems. He leads our installation teams and provides training to new
-                          technicians.
+                          His focus is on ensuring efficient project delivery while maintaining strong community
+                          relationships and sustainable practices.
                         </p>
 
                         <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Expertise</h4>
                         <ul class="list-disc list-inside text-neutral-600 mb-4 space-y-1">
-                          <li>Solar PV system installation and commissioning</li>
-                          <li>Battery storage integration</li>
-                          <li>System troubleshooting and maintenance</li>
-                          <li>Quality control and testing</li>
-                          <li>Technical training for installers</li>
+                          <li>Project Management</li>
+                          <li>Process Optimization</li>
+                          <li>Community Outreach</li>
+                          <li>Technical Leadership</li>
+                          <li>Mentorship</li>
                         </ul>
-
-                        <h4 class="text-lg font-bold text-neutral-800 mb-3 mt-6">Achievements</h4>
-                        <div class="space-y-3">
-                          <div class="p-3 bg-neutral-50 rounded-lg">
-                            <p class="font-medium text-neutral-800">500+ Successful Installations</p>
-                            <p class="text-sm text-neutral-600">Completed installations ranging from residential systems
-                              to large commercial projects</p>
-                          </div>
-                          <div class="p-3 bg-neutral-50 rounded-lg">
-                            <p class="font-medium text-neutral-800">Zero-Defect Record</p>
-                            <p class="text-sm text-neutral-600">Maintained exceptional quality standards with a perfect
-                              safety record across all projects</p>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -1833,21 +1280,14 @@
                           <h4 class="text-xl font-bold text-neutral-800">Pankaj Mahla</h4>
                           <p class="text-[#1E5631]">Founder & CEO</p>
                           <div class="flex space-x-3 mt-3">
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
+                            <a href="https://www.instagram.com/pankajmahla_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-neutral-500 hover:text-[#065f46]">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
-                                  d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                               </svg>
                             </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                              </svg>
-                            </a>
-                            <a href="#" class="text-neutral-500 hover:text-[#065f46]">
+                            <a href="https://www.linkedin.com/company/solaride1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-neutral-500 hover:text-[#065f46]">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
@@ -1911,106 +1351,7 @@
               </div>
             </div>
 
-            <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                const readMoreButton = document.getElementById('read-more-pankaj');
-                const teamDetailButtons = document.querySelectorAll('.team-detail-btn');
-                const teamModal = document.getElementById('team-modal');
-                const closeTeamModalButton = document.getElementById('close-team-modal');
-                const teamProfiles = document.querySelectorAll('.team-profile');
-                let lastFocusedElement = null;
 
-                // Read more about Pankaj button (may be commented out in some builds)
-                if (readMoreButton) {
-                  readMoreButton.addEventListener('click', function () {
-                    lastFocusedElement = document.activeElement;
-                    openModal('pankaj');
-                  });
-                }
-
-                // Team detail buttons
-                teamDetailButtons.forEach(button => {
-                  button.addEventListener('click', function () {
-                    lastFocusedElement = document.activeElement;
-                    const member = this.getAttribute('data-member');
-                    openModal(member);
-                  });
-                });
-
-                // Open modal function
-                function openModal(member) {
-                  // Hide all profiles
-                  teamProfiles.forEach(profile => {
-                    profile.classList.add('hidden');
-                  });
-
-                  // Show selected profile
-                  document.getElementById(`${member}-profile`).classList.remove('hidden');
-
-                  // Update modal title
-                  document.getElementById('team-modal-title').textContent =
-                    member === 'pankaj' ? 'Pankaj\'s Journey' : 'Team Member Profile';
-
-                  // Show modal
-                  teamModal.classList.remove('hidden');
-                  document.body.style.overflow = 'hidden';
-                  teamModal.setAttribute('aria-hidden', 'false');
-                  closeTeamModalButton.focus();
-                  trapFocus();
-                }
-
-                // Close modal function
-                function closeModal() {
-                  teamModal.classList.add('hidden');
-                  document.body.style.overflow = '';
-                  teamModal.setAttribute('aria-hidden', 'true');
-                  if (lastFocusedElement) {
-                    lastFocusedElement.focus();
-                  }
-                }
-
-                // Close button click
-                closeTeamModalButton.addEventListener('click', closeModal);
-
-                // Close on background click
-                teamModal.addEventListener('click', function (e) {
-                  if (e.target === teamModal) {
-                    closeModal();
-                  }
-                });
-
-                // Close on ESC key
-                document.addEventListener('keydown', function (e) {
-                  if (e.key === 'Escape' && !teamModal.classList.contains('hidden')) {
-                    closeModal();
-                  }
-                });
-
-                // Focus trap
-                function trapFocus() {
-                  const modalDialog = teamModal.querySelector('[role="dialog"]');
-                  if (!modalDialog) return;
-                  if (modalDialog.dataset.trapAttached) return;
-                  const focusableElements = modalDialog.querySelectorAll(
-                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                  );
-                  const firstElement = focusableElements[0];
-                  const lastElement = focusableElements[focusableElements.length - 1];
-
-                  modalDialog.addEventListener('keydown', function (e) {
-                    if (e.key === 'Tab') {
-                      if (e.shiftKey && document.activeElement === firstElement) {
-                        e.preventDefault();
-                        lastElement.focus();
-                      } else if (!e.shiftKey && document.activeElement === lastElement) {
-                        e.preventDefault();
-                        firstElement.focus();
-                      }
-                    }
-                  });
-                }
-              });
-            </script>
         </section>
       </div>
 
@@ -2026,7 +1367,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
               <div>
                 <div class="relative rounded-xl overflow-hidden">
-                  <img src="images/inspirationPic.jpg" alt="Professional discussing solar energy solutions"
+                  <img src="assets/images/inspirationPic.jpg" alt="Professional discussing solar energy solutions"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+FAQ'"
                     width="5760" height="3840" class="w-full h-auto object-cover">
                   <!-- <p class="text-xs text-neutral-500 absolute bottom-2 right-3">Photo by Brooke Lark</p> -->
@@ -2639,202 +1980,7 @@
             </div>
           </div>
 
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              // FAQ Accordion functionality
-              const faqToggles = document.querySelectorAll('.faq-toggle');
-              faqToggles.forEach(toggle => {
-                toggle.addEventListener('click', function () {
-                  const expanded = this.getAttribute('aria-expanded') === 'true';
-                  const content = document.getElementById(this.getAttribute('aria-controls'));
-                  const icon = this.querySelector('.faq-icon');
 
-                  this.setAttribute('aria-expanded', !expanded);
-
-                  if (expanded) {
-                    content.classList.add('hidden');
-                    icon.classList.remove('rotate-180');
-                  } else {
-                    content.classList.remove('hidden');
-                    icon.classList.add('rotate-180');
-                  }
-                });
-              });
-
-              // Category Modal functionality
-              const categoryButtons = document.querySelectorAll('.faq-category-btn');
-              const categoryModal = document.getElementById('faq-category-modal');
-              const closeCategoryModalButton = document.getElementById('close-category-modal');
-              const categoryContents = document.querySelectorAll('.category-content');
-              const categoryModalTitle = document.getElementById('category-modal-title');
-              let lastFocusedCategoryButton = null;
-
-              categoryButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                  lastFocusedCategoryButton = this;
-                  const category = this.getAttribute('data-category');
-                  openCategoryModal(category);
-                });
-              });
-
-              function openCategoryModal(category) {
-                // Hide all category contents
-                categoryContents.forEach(content => {
-                  content.classList.add('hidden');
-                });
-
-                // Show selected category content
-                const selectedContent = document.getElementById(`${category}-faqs`);
-                selectedContent.classList.remove('hidden');
-
-                // Update modal title
-                let categoryTitle = '';
-                if (category === 'technical') categoryTitle = 'Technical Questions';
-                if (category === 'financial') categoryTitle = 'Financial Questions';
-                if (category === 'environmental') categoryTitle = 'Environmental Impact';
-                categoryModalTitle.textContent = categoryTitle;
-
-                // Show modal
-                categoryModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                categoryModal.setAttribute('aria-hidden', 'false');
-                closeCategoryModalButton.focus();
-                trapFocus(categoryModal);
-              }
-
-              // Category FAQ Toggle functionality
-              const categoryFaqToggles = document.querySelectorAll('.category-faq-toggle');
-              categoryFaqToggles.forEach(toggle => {
-                toggle.addEventListener('click', function () {
-                  const expanded = this.getAttribute('aria-expanded') === 'true';
-                  const content = this.nextElementSibling;
-                  const icon = this.querySelector('.category-faq-icon');
-
-                  this.setAttribute('aria-expanded', !expanded);
-
-                  if (expanded) {
-                    content.classList.add('hidden');
-                    icon.classList.remove('rotate-180');
-                  } else {
-                    content.classList.remove('hidden');
-                    icon.classList.add('rotate-180');
-                  }
-                });
-              });
-
-              // Close Category Modal
-              function closeCategoryModal() {
-                categoryModal.classList.add('hidden');
-                document.body.style.overflow = '';
-                categoryModal.setAttribute('aria-hidden', 'true');
-                if (lastFocusedCategoryButton) {
-                  lastFocusedCategoryButton.focus();
-                }
-              }
-
-              closeCategoryModalButton.addEventListener('click', closeCategoryModal);
-
-              categoryModal.addEventListener('click', function (e) {
-                if (e.target === categoryModal) {
-                  closeCategoryModal();
-                }
-              });
-
-              // Ask a Question Modal
-              const askQuestionButton = document.getElementById('open-custom-question');
-              const questionModal = document.getElementById('question-modal');
-              const closeQuestionModalButton = document.getElementById('close-question-modal');
-              const questionForm = document.getElementById('question-form');
-              const questionSuccess = document.getElementById('question-success');
-              const questionCloseSuccess = document.getElementById('question-close-success');
-              let lastFocusedQuestionButton = null;
-
-              if (askQuestionButton) {
-                askQuestionButton.addEventListener('click', function () {
-                  lastFocusedQuestionButton = this;
-                  openQuestionModal();
-                });
-              }
-
-              function openQuestionModal() {
-                questionForm.reset();
-                questionForm.classList.remove('hidden');
-                questionSuccess.classList.add('hidden');
-                questionModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                questionModal.setAttribute('aria-hidden', 'false');
-                closeQuestionModalButton.focus();
-                trapFocus(questionModal);
-              }
-
-              function closeQuestionModal() {
-                questionModal.classList.add('hidden');
-                document.body.style.overflow = '';
-                questionModal.setAttribute('aria-hidden', 'true');
-                if (lastFocusedQuestionButton) {
-                  lastFocusedQuestionButton.focus();
-                }
-              }
-
-              closeQuestionModalButton.addEventListener('click', closeQuestionModal);
-
-              questionModal.addEventListener('click', function (e) {
-                if (e.target === questionModal) {
-                  closeQuestionModal();
-                }
-              });
-
-              // Form submission
-              questionForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // Simulate form submission (would be replaced with actual API call)
-                setTimeout(function () {
-                  questionForm.classList.add('hidden');
-                  questionSuccess.classList.remove('hidden');
-                }, 500);
-              });
-
-              questionCloseSuccess.addEventListener('click', closeQuestionModal);
-
-              // ESC key handler for both modals
-              document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
-                  if (!categoryModal.classList.contains('hidden')) {
-                    closeCategoryModal();
-                  }
-                  if (!questionModal.classList.contains('hidden')) {
-                    closeQuestionModal();
-                  }
-                }
-              });
-
-              // Focus trap function
-              function trapFocus(modalElement) {
-                if (!modalElement) return;
-                const modalDialog = modalElement.querySelector('[role="dialog"]');
-                if (!modalDialog) return;
-                if (modalDialog.dataset.trapAttached) return;
-                const focusableElements = modalDialog.querySelectorAll(
-                  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                );
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
-
-                modalDialog.addEventListener('keydown', function (e) {
-                  if (e.key === 'Tab') {
-                    if (e.shiftKey && document.activeElement === firstElement) {
-                      e.preventDefault();
-                      lastElement.focus();
-                    } else if (!e.shiftKey && document.activeElement === lastElement) {
-                      e.preventDefault();
-                      firstElement.focus();
-                    }
-                  }
-                });
-              }
-            });
-          </script>
         </section>
       </div>
 
@@ -2919,7 +2065,7 @@
 
               <div class="order-1 lg:order-2">
                 <div class="relative rounded-xl overflow-hidden shadow-sm border border-neutral-200 mb-8">
-                  <img src="images/solarInstall.png" alt="Professional SOLARIDE team member ready to assist you"
+                  <img src="assets/images/solarInstall.png" alt="Professional SOLARIDE team member ready to assist you"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Contact'"
                     width="5066" height="3377" class="w-full h-64 md:h-80 object-cover">
                 </div>
@@ -2989,7 +2135,7 @@
                   <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
                 </svg>
               </a> -->
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/pankajmahla_/"
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/pankajmahla_/" aria-label="Instagram"
                       class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300 group">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-700 group-hover:text-white"
                         fill="currentColor" viewBox="0 0 24 24">
@@ -2997,7 +2143,7 @@
                           d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                       </svg>
                     </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/solaride1/"
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/solaride1/" aria-label="LinkedIn"
                       class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300 group">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neutral-700 group-hover:text-white"
                         fill="currentColor" viewBox="0 0 24 24">
@@ -3015,23 +2161,7 @@
               </div>
             </div>
 
-            <!-- Map section -->
-            <!-- <div class="mt-16">
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-neutral-200">
-          <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.231612578414!2d77.20775491507984!3d28.56066448244251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce269e948337d%3A0xa9d57a6a3dee2390!2sIndia%20Gate%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1646391756461!5m2!1sen!2sin" 
-              width="100%" 
-              height="450" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy"
-              class="w-full h-80 md:h-96"
-              title="SOLARIDE Office Location Map"
-            ></iframe>
-          </div>
-        </div>
-      </div> -->
+
           </div>
 
           <!-- Success Modal -->
@@ -3059,130 +2189,7 @@
             </div>
           </div>
 
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              const contactForm = document.getElementById('contact-form');
-              const successModal = document.getElementById('success-modal');
-              const closeSuccessButton = document.getElementById('close-success-modal');
-              const sendMessageBtn = document.getElementById('send-message-btn');
-              let lastFocusedElement = null;
 
-              // Form submission
-              if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
-                  e.preventDefault();
-
-                  // Store the focused element
-                  lastFocusedElement = document.activeElement;
-
-                  emailjs.init({ publicKey: "vq6UY47u87bfIjpHD" });
-
-                  const serviceID = "service_6t10hrb";
-                  const templateID = "template_7couqri";
-
-                  const templateParams = {
-                    name: contactForm.name.value,
-                    email: contactForm.email.value,
-                    phone: contactForm.phone.value,
-                    subject: contactForm.subject.value,
-                    message: contactForm.message.value,
-                  };
-
-                  // Disable submit to prevent duplicates
-                  if (sendMessageBtn) sendMessageBtn.disabled = true;
-
-                  emailjs.send(serviceID, templateID, templateParams)
-                    .then(() => {
-                      contactForm.reset();
-                      openSuccessModal();
-                    })
-                    .catch((error) => {
-                      console.error('Failed to send message:', error);
-                    })
-                    .finally(() => {
-                      if (sendMessageBtn) sendMessageBtn.disabled = false;
-                    });
-                });
-              }
-                //   // Reset form after successful submission
-                //   contactForm.reset();
-                // }, 500);
-              });
-
-              // Open success modal
-              function openSuccessModal() {
-                successModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                successModal.setAttribute('aria-hidden', 'false');
-                closeSuccessButton.focus();
-                trapFocus();
-              }
-
-              // Close success modal
-              function closeSuccessModal() {
-                successModal.classList.add('hidden');
-                document.body.style.overflow = '';
-                successModal.setAttribute('aria-hidden', 'true');
-                if (lastFocusedElement) {
-                  lastFocusedElement.focus();
-                }
-              }
-
-              // Close button click
-              closeSuccessButton.addEventListener('click', closeSuccessModal);
-
-              // Close on background click
-              successModal.addEventListener('click', function (e) {
-                if (e.target === successModal) {
-                  closeSuccessModal();
-                }
-              });
-
-              // Close on ESC key
-              document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && !successModal.classList.contains('hidden')) {
-                  closeSuccessModal();
-                }
-              });
-
-              // Focus trap
-              function trapFocus() {
-                if (!successModal) return;
-                if (successModal.dataset.trapAttached) return;
-                const focusableElements = successModal.querySelectorAll(
-                  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                );
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
-
-                successModal.addEventListener('keydown', function (e) {
-                  if (e.key === 'Tab') {
-                    if (e.shiftKey && document.activeElement === firstElement) {
-                      e.preventDefault();
-                      lastElement.focus();
-                    } else if (!e.shiftKey && document.activeElement === lastElement) {
-                      e.preventDefault();
-                      firstElement.focus();
-                    }
-                  }
-                });
-
-                successModal.dataset.trapAttached = 'true';
-
-                successModal.addEventListener('keydown', function (e) {
-                  if (e.key === 'Tab') {
-                    if (e.shiftKey && document.activeElement === firstElement) {
-                      e.preventDefault();
-                      lastElement.focus();
-                    } else if (!e.shiftKey && document.activeElement === lastElement) {
-                      e.preventDefault();
-                      firstElement.focus();
-                    }
-                  }
-                });
-              }
-            });
-          </script>
         </section>
       </div>
 
@@ -3208,14 +2215,14 @@
               </svg>
             </a> -->
                   <!-- Linkeding, instagram -->
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/pankajmahla_/"
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/pankajmahla_/" aria-label="Instagram"
                     class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                       <path
                         d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                     </svg>
                   </a>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/solaride1/ "
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/solaride1/ " aria-label="LinkedIn"
                     class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-[#065f46] transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                       <path
@@ -3263,27 +2270,27 @@
                 <h3 class="text-xl font-bold mb-6">Our Services</h3>
                 <ul class="space-y-3">
                   <li>
-                    <a href="#" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300">Residential
+                    <a href="javascript:void(0)" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300 cursor-default">Residential
                       Solar</a>
                   </li>
                   <li>
-                    <a href="#" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300">Commercial
+                    <a href="javascript:void(0)" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300 cursor-default">Commercial
                       Solar</a>
                   </li>
                   <li>
-                    <a href="#" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300">Solar For
+                    <a href="javascript:void(0)" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300 cursor-default">Solar For
                       Agriculture</a>
                   </li>
                   <li>
-                    <a href="#" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300">Energy
+                    <a href="javascript:void(0)" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300 cursor-default">Energy
                       Storage</a>
                   </li>
                   <li>
-                    <a href="#" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300">Solar
+                    <a href="javascript:void(0)" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300 cursor-default">Solar
                       Maintenance</a>
                   </li>
                   <li>
-                    <a href="#" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300">Solar
+                    <a href="javascript:void(0)" class="text-neutral-300 hover:text-[#065f46] transition-colors duration-300 cursor-default">Solar
                       Consultation</a>
                   </li>
                 </ul>
@@ -3408,16 +2415,12 @@
                 </p>
               </div>
 
-              <!-- <div class="flex space-x-6">
-          <a href="#" class="text-neutral-400 text-sm hover:text-[#065f46] transition-colors duration-300">Privacy Policy</a>
-          <a href="#" class="text-neutral-400 text-sm hover:text-[#065f46] transition-colors duration-300">Terms of Service</a>
-          <a href="#" class="text-neutral-400 text-sm hover:text-[#065f46] transition-colors duration-300">Sitemap</a>
-        </div> -->
+
             </div>
 
             <!-- Back to Top Button -->
             <div class="flex justify-center mt-8">
-              <button id="back-to-top" type="button"
+              <button id="back-to-top" type="button" aria-label="Back to top"
                 class="bg-neutral-700 hover:bg-[#065f46] transition-colors duration-300 w-10 h-10 rounded-full flex items-center justify-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
@@ -3452,174 +2455,21 @@
             </div>
           </div>
 
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              // Back to top functionality
-              const backToTopButton = document.getElementById('back-to-top');
 
-              backToTopButton.addEventListener('click', function () {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                });
-              });
-
-              // Newsletter subscription functionality
-              const newsletterForm = document.getElementById('newsletter-form');
-              const newsletterModal = document.getElementById('newsletter-success-modal');
-              const closeNewsletterButton = document.getElementById('close-newsletter-success');
-              let lastFocusedElement = null;
-
-              if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function (e) {
-                  e.preventDefault();
-
-                  // Store the focused element
-                  lastFocusedElement = document.activeElement;
-
-                  // Get the email input value
-                  const emailInput = this.querySelector('input[type="email"]');
-                  const email = emailInput ? emailInput.value.trim() : '';
-
-                  // Simple validation
-                  if (email && email.includes('@')) {
-                    // Here you would typically send the email to your server
-                    // For now, we'll just show the success modal
-                    openNewsletterModal();
-
-                    // Reset the form
-                    this.reset();
-                  }
-                });
-              }
-
-              // Open newsletter modal
-              function openNewsletterModal() {
-                newsletterModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                newsletterModal.setAttribute('aria-hidden', 'false');
-                closeNewsletterButton.focus();
-                trapFocus();
-              }
-
-              // Close newsletter modal
-              function closeNewsletterModal() {
-                newsletterModal.classList.add('hidden');
-                document.body.style.overflow = '';
-                newsletterModal.setAttribute('aria-hidden', 'true');
-                if (lastFocusedElement) {
-                  lastFocusedElement.focus();
-                }
-              }
-
-              // Close button click
-              closeNewsletterButton.addEventListener('click', closeNewsletterModal);
-
-              // Close on background click
-              newsletterModal.addEventListener('click', function (e) {
-                if (e.target === newsletterModal) {
-                  closeNewsletterModal();
-                }
-              });
-
-              // Close on ESC key
-              document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && !newsletterModal.classList.contains('hidden')) {
-                  closeNewsletterModal();
-                }
-              });
-
-              // Focus trap
-              function trapFocus() {
-                if (!newsletterModal) return;
-                if (newsletterModal.dataset.trapAttached) return;
-                const focusableElements = newsletterModal.querySelectorAll(
-                  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                );
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
-
-                newsletterModal.addEventListener('keydown', function (e) {
-                  if (e.key === 'Tab') {
-                    if (e.shiftKey && document.activeElement === firstElement) {
-                      e.preventDefault();
-                      lastElement.focus();
-                    } else if (!e.shiftKey && document.activeElement === lastElement) {
-                      e.preventDefault();
-                      firstElement.focus();
-                    }
-                  }
-                });
-
-                newsletterModal.dataset.trapAttached = 'true';
-              }
-
-              // Show/hide back to top button based on scroll position
-              window.addEventListener('scroll', function () {
-                if (window.pageYOffset > 300) {
-                  backToTopButton.classList.remove('opacity-0');
-                  backToTopButton.classList.add('opacity-100');
-                } else {
-                  backToTopButton.classList.remove('opacity-100');
-                  backToTopButton.classList.add('opacity-0');
-                }
-              });
-            });
-          </script>
         </footer>
       </div>
       </div>
     </mountpoint>
   </main>
 
-  <!-- Core functionality scripts -->
-  <script>
-    // Initialize interactive elements
-    document.addEventListener('DOMContentLoaded', function () {
-      // Add interactive behaviors
-      const interactiveElements = document.querySelectorAll('.interactive-element');
-      interactiveElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-          element.classList.add('hover');
-        });
-        element.addEventListener('mouseleave', () => {
-          element.classList.remove('hover');
-        });
-      });
 
-      // Initialize any dynamic content
-      const dynamicContent = document.querySelectorAll('[data-dynamic]');
-      dynamicContent.forEach(content => {
-        // Add fade-in animation
-        content.classList.add('fade-in');
-      });
-    });
-
-    // Handle navigation
-    function handleNavigation(event) {
-      const link = event.currentTarget;
-      if (link.hasAttribute('data-nav')) {
-        event.preventDefault();
-        const target = link.getAttribute('data-nav');
-        document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // Initialize navigation
-    document.querySelectorAll('[data-nav]').forEach(link => {
-      link.addEventListener('click', handleNavigation);
-    });
-
-
-  </script>
-
-  <!-- Body Scripts -->
-  <script id="body-scripts">
-    // This script tag will be replaced with actual scripts.body content
-    if (window.scripts && window.scripts.body) {
-      document.getElementById('body-scripts').outerHTML = window.scripts.body;
-    }
-  </script>
+  <!-- Custom Scripts -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/modals.js"></script>
+  <script src="assets/js/calculator.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/faq.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

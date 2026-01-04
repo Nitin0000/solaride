@@ -1,0 +1,85 @@
+/* Base styles */
+:root {
+  --primary-color: #065f46;
+  --secondary-color: #1E5631;
+  --accent-color: #FDB813;
+}
+
+/* Strict no-scrollbar rules */
+* {
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+  scrollbar-width: none !important;
+  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  /* Chrome, Safari and Opera */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Rubik, Inter, system-ui, sans-serif;
+}
+
+body {
+  font-family: Nunito, Inter, system-ui, sans-serif;
+}
+
+/* Interactive elements */
+.interactive-element {
+  transition: all 0.3s ease;
+}
+
+.interactive-element:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar - Note: This might be overridden by the strict rules above */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Section visibility */
+[data-section-id] {
+  display: none;
+}
+
+[data-section-id]:first-child {
+  display: block;
+}
