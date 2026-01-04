@@ -3,13 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
     content="SOLARIDE offers premium solar energy solutions led by Pankaj, who cycled 4000KM promoting sustainable energy. Calculate your solar savings, learn about our team, and discover the environmental benefits of solar power.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#222222" media="(prefers-color-scheme: dark)">
+  <meta name="msapplication-TileColor" content="#ffffff">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="">
-
+  <meta name="facebook-domain-verification" content="ttlrqfcskt33gefvgfbzu0gnt6zn81" />
   <!-- Alpine.js - Load first -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
 
@@ -114,18 +116,18 @@
   </style>
 
   <!-- Dynamic Meta Tags -->
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="robots" content="">
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
+  <!-- Consolidated meta tags (avoid duplicates / empty values) -->
+  <meta name="keywords" content="solar, renewable energy, solar panels, sustainability">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="SOLARIDE - Solar Energy Solutions by Pankaj | 4000KM Cycling Journey">
+  <meta property="og:description" content="SOLARIDE offers premium solar energy solutions led by Pankaj, who cycled 4000KM promoting sustainable energy.">
+  <meta property="og:image" content="images/iconLogo.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="SOLARIDE">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="">
+  <link rel="icon" type="image/x-icon" href="images/iconLogo.png">
 
   <!-- Header Scripts -->
   <script id="header-scripts">
@@ -180,13 +182,13 @@
   <main id="main-content" class="flex-1 relative h-full">
     <mountpoint>
       <div id="RolloutPageContent">
-        <div id="root">
+        <div class="root-section">
           <header id="header" class="bg-white shadow-sm fixed w-full z-50">
             <div class="container mx-auto px-4">
               <nav class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <div class="flex items-center">
-                  <img src="images/iconLogo.png" width="200"></img>
+                  <img src="images/iconLogo.png" width="200" alt="SOLARIDE logo" />
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -206,7 +208,7 @@
 
                 <!-- Mobile Navigation Button -->
                 <div class="md:hidden">
-                  <button id="mobile-menu-button" class="text-neutral-800 focus:outline-none"
+                  <button id="mobile-menu-button" type="button" class="text-neutral-800 focus:outline-none"
                     aria-label="Toggle navigation menu" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
@@ -287,7 +289,7 @@
         </div>
 
 
-        <div id="root">
+        <div class="root-section">
           <section id="hero"
             class="pt-24 lg:pt-28 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-r from-blue-50 to-green-50">
             <div class="container mx-auto px-4">
@@ -367,7 +369,7 @@
         </div>
 
 
-        <div id="root">
+        <div class="root-section">
           <section id="about-journey" class="py-20 bg-gradient-to-r from-blue-50 to-green-50">
             <div class="container mx-auto px-4">
               <div class="text-center mb-12">
@@ -433,7 +435,7 @@
                       </div>
                     </div>
 
-                    <button id="read-more-btn"
+                    <button id="read-more-btn" type="button"
                       class="mt-6 inline-flex items-center px-6 py-3 border border-[#1E5631] text-[#1E5631] bg-white rounded-lg hover:bg-[#1E5631] hover:text-white transition-colors duration-300">
                       Read the full story
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
@@ -482,12 +484,12 @@
               class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden"
               aria-modal="true" aria-hidden="true">
               <div class="bg-white rounded-lg max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto" role="dialog"
-                aria-labelledby="modal-title">
+                aria-labelledby="story-modal-title">
                 <div class="p-6">
                   <div class="flex justify-between items-center mb-4">
-                    <h3 id="modal-title" class="text-2xl font-bold text-neutral-800">The Complete Journey - 4000KM for
+                    <h3 id="story-modal-title" class="text-2xl font-bold text-neutral-800">The Complete Journey - 4000KM for
                       Solar Energy</h3>
-                    <button id="close-modal" class="text-neutral-500 hover:text-neutral-800" aria-label="Close modal">
+                    <button id="close-story-modal" type="button" class="text-neutral-500 hover:text-neutral-800" aria-label="Close modal">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -530,7 +532,7 @@
                       turning my personal mission into a national movement of environmental consciousness.</p>
 
                     <div class="my-6">
-                      <img src="images/impactPic.jpg"
+                      <img src="images/impactPic.jpg" alt="Impact of the journey"
                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Impact+of+Journey'"
                         class="w-full h-80 object-cover rounded-lg">
                     </div>
@@ -549,7 +551,7 @@
               document.addEventListener('DOMContentLoaded', function () {
                 const modal = document.getElementById('story-modal');
                 const openButton = document.getElementById('read-more-btn');
-                const closeButton = document.getElementById('close-modal');
+                const closeButton = document.getElementById('close-story-modal');
                 const modalDialog = modal.querySelector('[role="dialog"]');
                 let lastFocusedElement = null;
 
@@ -615,7 +617,7 @@
           </section>
         </div>
 
-        <div id="root">
+        <div class="root-section">
           <section id="solar-benefits" class="py-20 bg-white">
             <div class="container mx-auto px-4">
               <div class="text-center mb-16">
@@ -757,7 +759,7 @@
                             id="sunlight-hours-display">5</span> hours</p>
                       </div>
 
-                      <button id="calculate-btn"
+                      <button id="calculate-btn" type="button"
                         class="w-full py-3 px-4 bg-[#065f46] text-white font-semibold rounded-lg shadow hover:bg-[#1E5631] transition-colors duration-300">
                         Calculate Impact
                       </button>
@@ -1070,7 +1072,7 @@
           </div>
 
           <div class="mt-6">
-            <button id="detailed-report-button"
+            <button id="detailed-report-button" type="button"
               class="w-full py-3 px-6 bg-white border border-[#1E5631] text-[#1E5631] font-bold rounded-lg hover:bg-[#1E5631] hover:text-white transition-colors duration-300">
               Get Detailed Report
             </button>
@@ -1126,11 +1128,11 @@
       <div id="report-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden"
         aria-modal="true" aria-hidden="true">
         <div class="bg-white rounded-xl max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto" role="dialog"
-          aria-labelledby="modal-title">
+          aria-labelledby="report-modal-title">
           <div class="p-6">
             <div class="flex justify-between items-center mb-6">
-              <h3 id="modal-title" class="text-2xl font-bold text-neutral-800">Your Detailed Solar Report</h3>
-              <button id="close-modal" class="text-neutral-500 hover:text-neutral-800" aria-label="Close modal">
+              <h3 id="report-modal-title" class="text-2xl font-bold text-neutral-800">Your Detailed Solar Report</h3>
+              <button id="close-report-modal" type="button" class="text-neutral-500 hover:text-neutral-800" aria-label="Close modal">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -1228,7 +1230,7 @@
                     class="py-2 px-4 bg-[#065f46] text-white font-semibold rounded-lg hover:bg-[#1E5631] transition-colors duration-300 text-center">
                     Contact Us
                   </a>
-                  <button id="download-report"
+                  <button id="download-report" type="button"
                     class="py-2 px-4 bg-white border border-[#1E5631] text-[#1E5631] font-semibold rounded-lg hover:bg-[#1E5631] hover:text-white transition-colors duration-300">
                     Download Report
                   </button>
@@ -1246,7 +1248,7 @@
           const resultsContainer = document.getElementById('results-container');
           const detailedReportButton = document.getElementById('detailed-report-button');
           const reportModal = document.getElementById('report-modal');
-          const closeModalButton = document.getElementById('close-modal');
+          const closeModalButton = document.getElementById('close-report-modal');
           const contactFromModalButton = document.getElementById('contact-from-modal');
           const downloadReportButton = document.getElementById('download-report');
           const modalDialog = reportModal.querySelector('[role="dialog"]');
@@ -1262,7 +1264,6 @@
             // Calculate results (simplified calculations for demonstration)
             // System size based on monthly bill (rough estimate)
             const systemSize = Math.min(Math.round(monthlyBill / 600), Math.floor(roofArea / 10));
-            console.log(systemSize)
 
             // Location factor
             let locationFactor = 1;
@@ -1271,10 +1272,8 @@
 
             // Financial calculations
             const investmentPerKw = 60000; // ₹60,000 per kW
-            console.log(investmentPerKw)
             const investment = systemSize * investmentPerKw;
-            console.log(systemSize)
-            console.log(investment)
+            // Intermediate values logged during development were removed to avoid noisy console output
             const monthlyGeneration = systemSize * 120 * locationFactor; // kWh per month
             const electricityRate = 8; // ₹8 per kWh
             const monthlySavings = monthlyGeneration * electricityRate;
@@ -1402,7 +1401,7 @@
       </section>
       </div> -->
 
-      <div id="root">
+      <div class="root-section">
         <section id="team" class="py-20 bg-white">
           <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -1567,7 +1566,7 @@
                 <div class="p-6">
                   <div class="flex justify-between items-center mb-6">
                     <h3 id="team-modal-title" class="text-2xl font-bold text-neutral-800">Team Member Profile</h3>
-                    <button id="close-team-modal" class="text-neutral-500 hover:text-neutral-800"
+                    <button id="close-team-modal" type="button" class="text-neutral-500 hover:text-neutral-800"
                       aria-label="Close modal">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -1912,11 +1911,13 @@
                 const teamProfiles = document.querySelectorAll('.team-profile');
                 let lastFocusedElement = null;
 
-                // Read more about Pankaj button
-                readMoreButton.addEventListener('click', function () {
-                  lastFocusedElement = document.activeElement;
-                  openModal('pankaj');
-                });
+                // Read more about Pankaj button (may be commented out in some builds)
+                if (readMoreButton) {
+                  readMoreButton.addEventListener('click', function () {
+                    lastFocusedElement = document.activeElement;
+                    openModal('pankaj');
+                  });
+                }
 
                 // Team detail buttons
                 teamDetailButtons.forEach(button => {
@@ -2002,7 +2003,7 @@
         </section>
       </div>
 
-      <div id="root">
+      <div class="root-section">
         <section id="faq" class="py-20 bg-white">
           <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -2255,7 +2256,7 @@
               <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
                   <h3 id="category-modal-title" class="text-2xl font-bold text-neutral-800">Category FAQs</h3>
-                  <button id="close-category-modal" class="text-neutral-500 hover:text-neutral-800"
+                  <button id="close-category-modal" type="button" class="text-neutral-500 hover:text-neutral-800"
                     aria-label="Close modal">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
@@ -2544,7 +2545,7 @@
               <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
                   <h3 id="question-modal-title" class="text-2xl font-bold text-neutral-800">Ask a Question</h3>
-                  <button id="close-question-modal" class="text-neutral-500 hover:text-neutral-800"
+                  <button id="close-question-modal" type="button" class="text-neutral-500 hover:text-neutral-800"
                     aria-label="Close modal">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
@@ -2618,7 +2619,7 @@
                   <h4 class="text-xl font-bold text-neutral-800 mb-2">Thank You!</h4>
                   <p class="text-neutral-600 mb-6">Your question has been submitted successfully. We'll respond to you
                     within 24 hours.</p>
-                  <button id="question-close-success"
+                  <button id="question-close-success" type="button"
                     class="px-6 py-3 bg-[#1E5631] text-white font-semibold rounded-lg shadow hover:bg-[#065f46] transition-colors duration-300">
                     Close
                   </button>
@@ -2821,7 +2822,7 @@
         </section>
       </div>
 
-      <div id="root">
+      <div class="root-section">
         <section id="contact" class="py-20 bg-gradient-to-r from-blue-50 to-green-50">
           <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -3033,7 +3034,7 @@
                   <h3 class="text-xl font-bold text-neutral-800 mb-2">Message Sent Successfully!</h3>
                   <p class="text-neutral-600 mb-6">Thank you for contacting SOLARIDE. We'll get back to you as soon as
                     possible.</p>
-                  <button id="close-success-modal"
+                  <button id="close-success-modal" type="button"
                     class="px-6 py-3 bg-[#1E5631] text-white font-semibold rounded-lg shadow hover:bg-[#065f46] transition-colors duration-300">
                     Close
                   </button>
@@ -3051,18 +3052,14 @@
               let lastFocusedElement = null;
 
               // Form submission
-              contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
+              if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                  e.preventDefault();
 
-                // Store the focused element
-                lastFocusedElement = document.activeElement;
+                  // Store the focused element
+                  lastFocusedElement = document.activeElement;
 
-                emailjs.init({ publicKey: "vq6UY47u87bfIjpHD" });
-
-                // Form submission handler
-
-                contactForm.addEventListener("submit", function (event) {
-                  event.preventDefault();
+                  emailjs.init({ publicKey: "vq6UY47u87bfIjpHD" });
 
                   const serviceID = "service_6t10hrb";
                   const templateID = "template_7couqri";
@@ -3075,24 +3072,22 @@
                     message: contactForm.message.value,
                   };
 
-                  console.log(templateParams);
-                  sendMessageBtn.disabled = true; // Disable button to prevent multiple submissions
-                  emailjs.send(serviceID, templateID, templateParams).then(
-                    () => {
+                  // Disable submit to prevent duplicates
+                  sendMessageBtn.disabled = true;
+
+                  emailjs.send(serviceID, templateID, templateParams)
+                    .then(() => {
                       contactForm.reset();
                       openSuccessModal();
-                    },
-                    (error) => {
-                      console.log("Failed to send message:", error);
-                    }
-                  ).finally(() => {
-                    // Reset the form after submission
-                    sendMessageBtn.disabled = false; // Re-enable button
-                  });
+                    })
+                    .catch((error) => {
+                      console.error('Failed to send message:', error);
+                    })
+                    .finally(() => {
+                      sendMessageBtn.disabled = false;
+                    });
                 });
-
-                // Simulate form submission (would be replaced with actual form processing)
-                // setTimeout(function () {
+              }
                 //   // Reset form after successful submission
                 //   contactForm.reset();
                 // }, 500);
@@ -3159,7 +3154,7 @@
         </section>
       </div>
 
-      <div id="root">
+      <div class="root-section">
         <footer id="footer" class="bg-neutral-800 text-white pt-16 pb-8">
           <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -3390,7 +3385,7 @@
 
             <!-- Back to Top Button -->
             <div class="flex justify-center mt-8">
-              <button id="back-to-top"
+              <button id="back-to-top" type="button"
                 class="bg-neutral-700 hover:bg-[#065f46] transition-colors duration-300 w-10 h-10 rounded-full flex items-center justify-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
@@ -3416,7 +3411,7 @@
                   <h3 class="text-xl font-bold text-neutral-800 mb-2">Thank You for Subscribing!</h3>
                   <p class="text-neutral-600 mb-6">You've been added to our newsletter list. Stay tuned for updates on
                     solar energy and our initiatives.</p>
-                  <button id="close-newsletter-success"
+                  <button id="close-newsletter-success" type="button"
                     class="px-6 py-3 bg-[#1E5631] text-white font-semibold rounded-lg shadow hover:bg-[#065f46] transition-colors duration-300">
                     Close
                   </button>
