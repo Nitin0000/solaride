@@ -99,11 +99,11 @@ function initSolarSavingsCalculator() {
     updateText('modal-investment', investment.toLocaleString());
     updateText('modal-monthly-savings', monthlySavings.toLocaleString());
     updateText('modal-annual-savings', annualSavings.toLocaleString());
-    updateText('modal-lifetime-savings', (annualSavings * 25).toLocaleString());
+    updateText('modal-lifetime-savings', (annualSavings * 30).toLocaleString());
     updateText('modal-payback-period', paybackPeriod);
-    updateText('modal-roi', Math.round((annualSavings * 25 / investment) * 100));
+    updateText('modal-roi', Math.round((annualSavings * 30 / investment) * 100));
     updateText('modal-co2-reduction', co2Reduction);
-    updateText('modal-lifetime-co2', (co2Reduction * 25).toLocaleString());
+    updateText('modal-lifetime-co2', (co2Reduction * 30).toLocaleString());
     updateText('modal-tree-equivalent', treeEquivalent);
     updateText('modal-footprint-reduction', Math.min(90, Math.round(systemSize * 6)));
 
