@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block noise
+Disallow: /*?*fbclid=
+
+Sitemap: https://solaride.in/sitemap.xml
