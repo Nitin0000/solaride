@@ -24,12 +24,15 @@ function initContactForm() {
     const serviceID = "service_6t10hrb";
     const templateID = "template_7couqri";
 
+    // Use FormData so field access is by name (avoids form.name resolving to the
+    // form's own `name` attribute instead of the "name" input).
+    const data = new FormData(contactForm);
     const templateParams = {
-      name: contactForm.name.value,
-      email: contactForm.email.value,
-      phone: contactForm.phone.value,
-      subject: contactForm.subject.value,
-      message: contactForm.message.value,
+      name: data.get('name'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      subject: data.get('subject'),
+      message: data.get('message'),
     };
 
     if (sendMessageBtn) sendMessageBtn.disabled = true;
