@@ -1,0 +1,16 @@
+{
+  "name": "solaride",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SOLARIDE — rooftop solar panel installation across North India. Static marketing website.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.3",
+    "vitest": "^2.1.9"
+  }
+}

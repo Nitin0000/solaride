@@ -56,7 +56,7 @@ window.SolarideUtils = {
   animateValue: function(element, start, end, duration, formatter) {
     let startTimestamp = null;
     const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
+      if (startTimestamp === null) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       const value = Math.floor(progress * (end - start) + start);
       element.textContent = formatter ? formatter(value) : value;
