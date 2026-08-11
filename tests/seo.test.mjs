@@ -81,6 +81,17 @@ describe.each(CONTENT_PAGES)('SEO essentials — $file', ({ file, canonical }) =
     expect(meta(doc, 'meta[name="twitter:card"]')).toBe('summary_large_image');
   });
 
+  it('declares self-referential hreflang for India + x-default', () => {
+    const alts = [...doc.querySelectorAll('link[rel="alternate"]')].map((l) => ({
+      lang: l.getAttribute('hreflang'),
+      href: l.getAttribute('href')
+    }));
+    const enIn = alts.find((a) => a.lang === 'en-in');
+    const xDefault = alts.find((a) => a.lang === 'x-default');
+    expect(enIn?.href).toBe(canonical);
+    expect(xDefault?.href).toBe(canonical);
+  });
+
   it('references an og:image that exists on disk', () => {
     const img = meta(doc, 'meta[property="og:image"]').replace(`${DOMAIN}/`, '');
     expect(existsSync(resolve(repoRoot, img))).toBe(true);
@@ -108,6 +119,37 @@ describe('Structured data (index.html)', () => {
     const areas = JSON.stringify(org.areaServed ?? []);
     expect(areas).toMatch(/North India/);
     expect(org.sameAs?.length ?? 0).toBeGreaterThan(0);
+  });
+
+  it('advertises the rooftop solar service catalog', () => {
+    const graph = blocks.flatMap((b) => {
+      const json = JSON.parse(b.textContent);
+      return json['@graph'] ?? [json];
+    });
+    const org = graph.find((n) => n['@type'] === 'Organization');
+    const offers = org.hasOfferCatalog?.itemListElement ?? [];
+    expect(offers.length).toBeGreaterThanOrEqual(3);
+  });
+});
+
+const SUBPAGES = [
+  { file: 'solutions.html', crumb: 'Solar Solutions' },
+  { file: 'benefits.html', crumb: 'Solar Savings Calculator' },
+  { file: 'faq.html', crumb: 'About Us' },
+  { file: 'team.html', crumb: 'Our Team' }
+];
+
+describe.each(SUBPAGES)('Breadcrumbs — $file', ({ file, crumb }) => {
+  it('exposes a valid BreadcrumbList ending on this page', () => {
+    const doc = parse(readRepoFile(file));
+    const crumbs = [...doc.querySelectorAll('script[type="application/ld+json"]')]
+      .map((b) => JSON.parse(b.textContent))
+      .find((j) => j['@type'] === 'BreadcrumbList');
+    expect(crumbs).toBeTruthy();
+    const items = crumbs.itemListElement;
+    expect(items[0].name).toBe('Home');
+    expect(items[items.length - 1].name).toBe(crumb);
+    expect(items[items.length - 1].item).toBe(`${DOMAIN}/${file}`);
   });
 });
 
