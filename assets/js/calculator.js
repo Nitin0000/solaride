@@ -30,15 +30,12 @@ function initTreeToEnergyCalculator() {
     const systemSize = parseInt(systemSizeInput.value);
     const sunlightHours = parseInt(sunlightHoursInput.value);
 
-    // Simple calculations based on inputs
-    const co2Offset = (systemSize * 0.7 * (sunlightHours / 5)).toFixed(1);
-    const treeEquivalent = Math.round(systemSize * 20 * (sunlightHours / 5));
-    const energyProduced = Math.round(systemSize * 1400 * (sunlightHours / 5));
+    const impact = window.SolarideCalc.treeToEnergy(systemSize, sunlightHours);
 
     // Update result displays with animation
-    animateNumberChange(co2OffsetDisplay, parseFloat(co2Offset));
-    animateNumberChange(treeEquivalentDisplay, treeEquivalent);
-    animateNumberChange(energyProducedDisplay, energyProduced);
+    animateNumberChange(co2OffsetDisplay, impact.co2Offset);
+    animateNumberChange(treeEquivalentDisplay, impact.treeEquivalent);
+    animateNumberChange(energyProducedDisplay, impact.energyProduced);
   });
 }
 
@@ -63,24 +60,11 @@ function initSolarSavingsCalculator() {
     const location = locationInput ? locationInput.value : 'medium';
 
     // Calculate results
-    const systemSize = Math.min(Math.round(monthlyBill / 600), Math.floor(roofArea / 10));
-
-    let locationFactor = 1;
-    if (location === 'high') locationFactor = 1.2;
-    if (location === 'low') locationFactor = 0.8;
-
-    const investmentPerKw = 60000;
-    const investment = systemSize * investmentPerKw;
-    const monthlyGeneration = systemSize * 120 * locationFactor;
-    const electricityRate = 8;
-    const monthlySavings = monthlyGeneration * electricityRate;
-    const annualSavings = monthlySavings * 12;
-    const paybackPeriod = Math.round((investment / annualSavings) * 10) / 10;
-
-    const co2ReductionPerKw = 0.7;
-    const co2Reduction = (systemSize * co2ReductionPerKw).toFixed(1);
-    const treesPerTonneCO2 = 28.5;
-    const treeEquivalent = Math.round(co2Reduction * treesPerTonneCO2);
+    const r = window.SolarideCalc.solarSavings({ monthlyBill, roofArea, location });
+    const {
+      systemSize, investment, monthlyGeneration, monthlySavings,
+      annualSavings, paybackPeriod, co2Reduction, treeEquivalent
+    } = r;
 
     // Update results display
     updateText('system-size', systemSize);
@@ -93,19 +77,19 @@ function initSolarSavingsCalculator() {
 
     // Update modal values
     updateText('modal-system-size', systemSize);
-    updateText('modal-panel-count', systemSize * 3);
-    updateText('modal-roof-area', systemSize * 6);
-    updateText('modal-energy-production', (monthlyGeneration * 12).toLocaleString());
+    updateText('modal-panel-count', r.panelCount);
+    updateText('modal-roof-area', r.roofAreaUsed);
+    updateText('modal-energy-production', r.energyProductionAnnual.toLocaleString());
     updateText('modal-investment', investment.toLocaleString());
     updateText('modal-monthly-savings', monthlySavings.toLocaleString());
     updateText('modal-annual-savings', annualSavings.toLocaleString());
-    updateText('modal-lifetime-savings', (annualSavings * 30).toLocaleString());
+    updateText('modal-lifetime-savings', r.lifetimeSavings.toLocaleString());
     updateText('modal-payback-period', paybackPeriod);
-    updateText('modal-roi', Math.round((annualSavings * 30 / investment) * 100));
+    updateText('modal-roi', r.roi);
     updateText('modal-co2-reduction', co2Reduction);
-    updateText('modal-lifetime-co2', (co2Reduction * 30).toLocaleString());
+    updateText('modal-lifetime-co2', r.lifetimeCo2.toLocaleString());
     updateText('modal-tree-equivalent', treeEquivalent);
-    updateText('modal-footprint-reduction', Math.min(90, Math.round(systemSize * 6)));
+    updateText('modal-footprint-reduction', r.footprintReduction);
 
     if (resultsContainer) {
       resultsContainer.classList.remove('hidden');
