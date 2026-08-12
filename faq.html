@@ -109,6 +109,26 @@
     ]
   }
   </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does a rooftop solar system cost in North India?", "acceptedAnswer": { "@type": "Answer", "text": "A residential system costs roughly ₹55,000–₹65,000 per kW before subsidy. A 3 kW home system is about ₹1.8–2 lakh; after the PM Surya Ghar subsidy your net cost is significantly lower. We give an exact quote after a free site survey." } },
+      { "@type": "Question", "name": "What government subsidy can I get?", "acceptedAnswer": { "@type": "Answer", "text": "Under PM Surya Ghar: Muft Bijli Yojana, residential rooftop systems receive a central subsidy of ₹30,000/kW for the first 2 kW and ₹18,000/kW for the 3rd kW, capped at ₹78,000 for systems of 3 kW and above. We handle the entire subsidy application for you." } },
+      { "@type": "Question", "name": "How does net metering work in Punjab, Haryana and Rajasthan?", "acceptedAnswer": { "@type": "Answer", "text": "Net metering lets you export surplus solar power to the grid and offset it against what you draw at night. We manage the approvals with your DISCOM — PSPCL (Punjab), DHBVN/UHBVN (Haryana) or JVVNL/JdVVNL (Rajasthan)." } },
+      { "@type": "Question", "name": "How much can I save on my electricity bill?", "acceptedAnswer": { "@type": "Answer", "text": "Most customers cut 90–98% of their electricity bill. A well-sized system typically pays for itself in 4–6 years and then generates nearly free power for the remaining 20+ years." } },
+      { "@type": "Question", "name": "How much roof area do I need?", "acceptedAnswer": { "@type": "Answer", "text": "About 100 sq ft of shadow-free roof per 1 kW. A 3 kW system needs roughly 300 sq ft." } },
+      { "@type": "Question", "name": "What warranty and lifespan do the panels have?", "acceptedAnswer": { "@type": "Answer", "text": "Solar panels carry a 25-year performance warranty; inverters typically 5–10 years (extendable). A well-installed system commonly lasts 25–30 years." } },
+      { "@type": "Question", "name": "How long does installation take?", "acceptedAnswer": { "@type": "Answer", "text": "After the site survey and paperwork, physical installation usually takes 3–7 days depending on system size. Net-metering approval timelines vary by DISCOM." } },
+      { "@type": "Question", "name": "How much maintenance is required?", "acceptedAnswer": { "@type": "Answer", "text": "Very little — occasional cleaning of the panels and a periodic check of connections. We offer maintenance support and remote generation monitoring." } },
+      { "@type": "Question", "name": "Do you serve commercial and agricultural customers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design residential rooftop, commercial/industrial, and agricultural solar systems including solar pumps across North India." } },
+      { "@type": "Question", "name": "Which areas do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "We serve North India from offices in Mohali (Punjab) and Hisar (Haryana), covering Punjab, Haryana, Chandigarh and Rajasthan." } }
+    ]
+  }
+  </script>
 </head>
 
 <body class="antialiased text-gray-800 min-h-screen flex flex-col">
@@ -370,6 +390,125 @@
               <p class="text-neutral-600">My journey touched thousands of lives, sparking discussions about climate change and the role of sustainable energy. People realized that solar energy isn’t just environmentally responsible but also a smart financial decision. This momentum led to the launch of Solaride, where we now help homes and industries switch to solar.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faqs" class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-neutral-800 mb-4">Frequently Asked Questions</h2>
+          <p class="text-lg text-neutral-600">Everything you need to know about going solar in North India.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-1">
+              <span>How much does a rooftop solar system cost in North India?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-1" class="hidden px-5 pb-5 text-neutral-600">
+              <p>A residential system costs roughly ₹55,000–₹65,000 per kW before subsidy. A 3 kW home system is about ₹1.8–2 lakh; after the PM Surya Ghar subsidy your net cost is significantly lower. We give an exact quote after a free site survey.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-2">
+              <span>What government subsidy can I get?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-2" class="hidden px-5 pb-5 text-neutral-600">
+              <p>Under PM Surya Ghar: Muft Bijli Yojana, residential rooftop systems receive a central subsidy of ₹30,000/kW for the first 2 kW and ₹18,000/kW for the 3rd kW — capped at ₹78,000 for systems of 3 kW and above. We handle the entire subsidy application for you.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-3">
+              <span>How does net metering work in Punjab, Haryana and Rajasthan?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-3" class="hidden px-5 pb-5 text-neutral-600">
+              <p>Net metering lets you export surplus solar power to the grid and offset it against what you draw at night. We manage the approvals with your DISCOM — PSPCL (Punjab), DHBVN/UHBVN (Haryana) or JVVNL/JdVVNL (Rajasthan).</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-4">
+              <span>How much can I save on my electricity bill?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-4" class="hidden px-5 pb-5 text-neutral-600">
+              <p>Most customers cut 90–98% of their electricity bill. A well-sized system typically pays for itself in 4–6 years and then generates nearly free power for the remaining 20+ years. Try our <a href="benefits.html#savings-calculator" class="text-[#065f46] font-semibold hover:underline">Solar Savings Calculator</a> for an estimate.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-5">
+              <span>How much roof area do I need?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-5" class="hidden px-5 pb-5 text-neutral-600">
+              <p>About 100 sq ft of shadow-free roof per 1 kW. A 3 kW system needs roughly 300 sq ft. Our calculator sizes the system from your bill and available roof area.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-6">
+              <span>What warranty and lifespan do the panels have?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-6" class="hidden px-5 pb-5 text-neutral-600">
+              <p>Solar panels carry a 25-year performance warranty; inverters typically 5–10 years (extendable). A well-installed system commonly lasts 25–30 years.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-7">
+              <span>How long does installation take?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-7" class="hidden px-5 pb-5 text-neutral-600">
+              <p>After the site survey and paperwork, physical installation usually takes 3–7 days depending on system size. Net-metering approval timelines vary by DISCOM.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-8">
+              <span>How much maintenance is required?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-8" class="hidden px-5 pb-5 text-neutral-600">
+              <p>Very little — occasional cleaning of the panels and a periodic check of connections. We offer maintenance support and remote generation monitoring.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-9">
+              <span>Do you serve commercial and agricultural customers?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-9" class="hidden px-5 pb-5 text-neutral-600">
+              <p>Yes. We design residential rooftop, commercial/industrial (C&amp;I), and agricultural solar systems — including solar pumps — across North India.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-lg overflow-hidden">
+            <button class="faq-toggle w-full flex justify-between items-center text-left p-5 font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors" aria-expanded="false" aria-controls="faq-10">
+              <span>Which areas do you cover?</span>
+              <svg class="faq-icon h-5 w-5 text-[#065f46] transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div id="faq-10" class="hidden px-5 pb-5 text-neutral-600">
+              <p>We serve North India from offices in Mohali (Punjab) and Hisar (Haryana), covering Punjab, Haryana, Chandigarh and Rajasthan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <p class="text-neutral-600 mb-4">Didn't find your answer?</p>
+          <a target="_blank" rel="noopener noreferrer" href="https://wa.me/916284459603?text=Hi%20Solaride%2C%20I%20have%20a%20question%20about%20solar." class="inline-flex items-center gap-2 px-6 py-3 bg-[#25d366] text-white font-semibold rounded-lg shadow hover:bg-[#20ba5a] transition-colors duration-300">
+            <i class="fab fa-whatsapp text-xl"></i> Ask us on WhatsApp
+          </a>
         </div>
       </div>
     </section>

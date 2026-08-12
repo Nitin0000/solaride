@@ -153,6 +153,28 @@ describe.each(SUBPAGES)('Breadcrumbs — $file', ({ file, crumb }) => {
   });
 });
 
+describe('FAQ structured data (faq.html)', () => {
+  const doc = parse(readRepoFile('faq.html'));
+  const faqBlock = [...doc.querySelectorAll('script[type="application/ld+json"]')]
+    .map((b) => JSON.parse(b.textContent))
+    .find((j) => j['@type'] === 'FAQPage');
+
+  it('exposes a FAQPage with well-formed questions', () => {
+    expect(faqBlock).toBeTruthy();
+    expect(faqBlock.mainEntity.length).toBeGreaterThanOrEqual(5);
+    for (const q of faqBlock.mainEntity) {
+      expect(q['@type']).toBe('Question');
+      expect(q.name.length).toBeGreaterThan(5);
+      expect(q.acceptedAnswer?.text?.length ?? 0).toBeGreaterThan(10);
+    }
+  });
+
+  it('matches the number of on-page accordion questions', () => {
+    const visible = doc.querySelectorAll('.faq-toggle').length;
+    expect(visible).toBe(faqBlock.mainEntity.length);
+  });
+});
+
 describe('robots.txt', () => {
   const txt = readRepoFile('robots.txt');
   it('allows crawling and references the sitemap', () => {
