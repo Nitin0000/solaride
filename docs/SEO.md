@@ -36,6 +36,8 @@ Every indexable page includes:
   - Two `LocalBusiness` nodes (Mohali, Hisar) with address + geo-coordinates.
   - `WebSite`.
 - **Subpages** — a `BreadcrumbList` (`Home` → current page).
+- **FAQ (`faq.html`)** — a `FAQPage` whose questions mirror the on-page
+  accordion (a test enforces the counts stay in sync) for FAQ rich results.
 
 Validate changes with Google's
 [Rich Results Test](https://search.google.com/test/rich-results) and keep the
@@ -47,6 +49,14 @@ JSON parseable (covered by tests).
 - `sitemap.xml` lists every URL on the canonical HTTPS domain; update it when
   adding/removing pages.
 - `CNAME` pins `solaride.in` so Pages redeploys don't drop the custom domain.
+- `404.html` is `noindex` and links back into the site.
+
+## Performance (Core Web Vitals)
+
+- The hero/LCP image stays eager; below-the-fold images use
+  `loading="lazy" decoding="async"`.
+- Potential wins (see `FEATURES.md` roadmap): self-host + purge Tailwind,
+  convert imagery to WebP/AVIF, add Lighthouse CI.
 
 ## Keyword themes
 
@@ -67,6 +77,9 @@ JSON parseable (covered by tests).
 
 ## Off-page / operational (not in this repo)
 
+- **Service-area landing pages** (roadmap) — dedicated, localized pages per city
+  (Mohali, Hisar, Chandigarh, Jaipur, …) are the strongest next local-ranking
+  lever; see `FEATURES.md`.
 - Create and verify **Google Business Profiles** for the Mohali and Hisar
   offices (maps + local pack).
 - Keep NAP (name, address, phone) consistent with the `LocalBusiness` schema.

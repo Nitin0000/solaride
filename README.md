@@ -25,9 +25,11 @@ Marketing website for **SOLARIDE** — premium **rooftop solar panel installatio
 
 - **Responsive marketing pages** — Home, Solutions, Benefits, Team, About (`faq.html`), plus Privacy and Data Deletion legal pages.
 - **Tree-to-Energy calculator** (`benefits.html`) — estimates annual CO₂ offset, tree equivalent, and energy produced from system size and sunlight hours.
-- **Solar savings projection** — financial + environmental breakdown (system size, investment, payback, ROI, lifetime savings).
-- **Lead capture** — contact form wired to [EmailJS](https://www.emailjs.com/); WhatsApp/call CTAs.
+- **Solar Savings Calculator** (`benefits.html`) — sizes a system from the user's bill and roof area, shows investment, monthly/annual/lifetime savings, payback, ROI and CO₂; opens a detailed report modal and generates a downloadable `.txt` estimate.
+- **FAQ** (`faq.html`) — a 10-question accordion with `FAQPage` structured data for rich results.
+- **Lead capture** — contact form wired to [EmailJS](https://www.emailjs.com/); WhatsApp/call CTAs throughout.
 - **Accessible UI** — skip link, focus-trapped modals, `aria-expanded` mobile menu, keyboard (Escape) modal dismissal.
+- **Branded 404** (`404.html`) — friendly, `noindex` error page with navigation back into the site.
 - **Analytics** — Google Ads tag (gtag.js) and a first-party usage beacon.
 
 ## Tech stack
@@ -129,8 +131,10 @@ What is covered:
 | `tests/calculator.dom.test.mjs`| Calculator wiring: sliders, Calculate button, DOM output         |
 | `tests/modals.dom.test.mjs`    | Open/close, Escape, backdrop, scroll lock                        |
 | `tests/main.dom.test.mjs`      | Mobile menu `aria-expanded`, back-to-top visibility              |
-| `tests/forms.dom.test.mjs`     | Contact form (EmailJS) + newsletter validation                   |
-| `tests/seo.test.mjs`           | Titles, descriptions, canonical, hreflang, OG/Twitter, JSON-LD, breadcrumbs, sitemap, robots, CNAME |
+| `tests/savings.dom.test.mjs`   | Savings calculator: results, report modal, downloadable estimate |
+| `tests/faq.dom.test.mjs`       | FAQ accordion open/close/independent toggling                    |
+| `tests/forms.dom.test.mjs`     | Contact form via EmailJS                                         |
+| `tests/seo.test.mjs`           | Titles, descriptions, canonical, hreflang, OG/Twitter, JSON-LD (Org/LocalBusiness/Breadcrumb/FAQPage), sitemap, robots, CNAME |
 
 CI runs `npm test` on every push to `devVanz`/`main` and on pull requests
 (`.github/workflows/test.yml`).
@@ -144,11 +148,18 @@ The site targets rooftop-solar intent across North India. Highlights:
 - Open Graph + Twitter summary cards with an absolute image.
 - Geo meta tags (`geo.region`, `geo.position`, ICBM).
 - Structured data: `Organization` + two `LocalBusiness` locations + `WebSite`
-  on the home page, `BreadcrumbList` on subpages, and a service `OfferCatalog`.
-- `robots.txt`, `sitemap.xml`, and a pinned `CNAME`.
+  on the home page, `BreadcrumbList` on subpages, and a `FAQPage` on the FAQ.
+- Service `OfferCatalog` (residential / commercial / agricultural).
+- `robots.txt`, `sitemap.xml`, and a pinned `CNAME`; lazy-loaded below-the-fold images.
 
 These are enforced by `tests/seo.test.mjs`, so regressions fail CI. See
 [`docs/SEO.md`](docs/SEO.md) for the full strategy.
+
+## Documentation
+
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — architecture, module map, data flows, deployment.
+- [`docs/FEATURES.md`](docs/FEATURES.md) — every implemented feature and the roadmap of proposed ones.
+- [`docs/SEO.md`](docs/SEO.md) — the full SEO strategy and checklist.
 
 ## Deployment
 
