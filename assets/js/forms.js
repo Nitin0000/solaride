@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
-  initNewsletterForm();
-  initQuestionForm();
 });
 
 function initContactForm() {
@@ -50,58 +48,4 @@ function initContactForm() {
         if (sendMessageBtn) sendMessageBtn.disabled = false;
       });
   });
-}
-
-function initNewsletterForm() {
-  const newsletterForm = document.getElementById('newsletter-form');
-  
-  if (!newsletterForm) return;
-
-  newsletterForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const emailInput = this.querySelector('input[type="email"]');
-    const email = emailInput ? emailInput.value.trim() : '';
-
-    if (email && email.includes('@')) {
-      if (window.openModal) window.openModal('newsletter-success-modal');
-      this.reset();
-    }
-  });
-}
-
-function initQuestionForm() {
-  const questionForm = document.getElementById('question-form');
-  const questionSuccess = document.getElementById('question-success');
-  const askQuestionButton = document.getElementById('open-custom-question');
-  
-  if (askQuestionButton) {
-    askQuestionButton.addEventListener('click', () => {
-      if (questionForm) {
-        questionForm.reset();
-        questionForm.classList.remove('hidden');
-      }
-      if (questionSuccess) questionSuccess.classList.add('hidden');
-      if (window.openModal) window.openModal('question-modal');
-    });
-  }
-
-  if (!questionForm) return;
-
-  questionForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Simulate submission
-    setTimeout(function () {
-      questionForm.classList.add('hidden');
-      if (questionSuccess) questionSuccess.classList.remove('hidden');
-    }, 500);
-  });
-  
-  const questionCloseSuccess = document.getElementById('question-close-success');
-  if (questionCloseSuccess) {
-    questionCloseSuccess.addEventListener('click', () => {
-      if (window.closeModal) window.closeModal('question-modal');
-    });
-  }
 }

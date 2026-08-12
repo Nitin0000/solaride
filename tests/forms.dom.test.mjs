@@ -43,32 +43,3 @@ describe('Contact form (DOM)', () => {
     expect(window.openModal).toHaveBeenCalledWith('success-modal');
   });
 });
-
-describe('Newsletter form (DOM)', () => {
-  beforeEach(() => {
-    window.openModal = vi.fn();
-    document.body.innerHTML = `
-      <form id="newsletter-form">
-        <input type="email" value="reader@example.com" />
-        <button type="submit">Join</button>
-      </form>`;
-    loadScript('assets/js/forms.js');
-    fireDomReady();
-  });
-
-  it('accepts a valid email and shows the success modal', () => {
-    document.getElementById('newsletter-form').dispatchEvent(
-      new window.Event('submit', { bubbles: true, cancelable: true })
-    );
-    expect(window.openModal).toHaveBeenCalledWith('newsletter-success-modal');
-  });
-
-  it('ignores an invalid email', () => {
-    const input = document.querySelector('#newsletter-form input');
-    input.value = 'not-an-email';
-    document.getElementById('newsletter-form').dispatchEvent(
-      new window.Event('submit', { bubbles: true, cancelable: true })
-    );
-    expect(window.openModal).not.toHaveBeenCalled();
-  });
-});
