@@ -273,6 +273,82 @@
           </div>
         </div>
 
+        <!-- Solar Savings Calculator -->
+        <div id="savings-calculator" class="bg-neutral-50 p-8 rounded-xl border border-neutral-200 mb-16">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-neutral-800 mb-2">Solar Savings Calculator</h3>
+            <p class="text-neutral-600">Estimate your ideal system size, savings and payback from your electricity bill and rooftop area.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Inputs -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-neutral-200">
+              <div class="mb-5">
+                <label for="monthly-bill" class="block mb-2 text-sm font-medium text-neutral-700">Average Monthly Electricity Bill (₹)</label>
+                <input type="number" id="monthly-bill" min="0" step="100" value="3000" inputmode="numeric"
+                  class="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#065f46] focus:border-[#065f46] outline-none">
+              </div>
+              <div class="mb-5">
+                <label for="roof-area" class="block mb-2 text-sm font-medium text-neutral-700">Available Rooftop Area (sq ft)</label>
+                <input type="number" id="roof-area" min="0" step="10" value="500" inputmode="numeric"
+                  class="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#065f46] focus:border-[#065f46] outline-none">
+              </div>
+              <div class="mb-6">
+                <label for="location" class="block mb-2 text-sm font-medium text-neutral-700">Sunlight in Your Area</label>
+                <select id="location"
+                  class="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#065f46] focus:border-[#065f46] outline-none bg-white">
+                  <option value="low">Low — hilly / frequently cloudy</option>
+                  <option value="medium" selected>Medium — typical North India</option>
+                  <option value="high">High — arid / desert (e.g. Rajasthan)</option>
+                </select>
+              </div>
+              <button id="calculate-button" type="button"
+                class="w-full py-3 px-4 bg-[#065f46] text-white font-semibold rounded-lg shadow hover:bg-[#1E5631] transition-colors duration-300">
+                Calculate My Savings
+              </button>
+            </div>
+
+            <!-- Results -->
+            <div id="results-container" class="hidden">
+              <div class="bg-white p-6 rounded-lg shadow-sm border border-neutral-200 h-full">
+                <h4 class="text-xl font-bold text-neutral-800 mb-4">Your Estimate</h4>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="p-4 bg-emerald-50 rounded-lg">
+                    <p class="text-sm text-neutral-600">Recommended System</p>
+                    <p class="text-2xl font-bold text-[#1E5631]"><span id="savings-system-size">0</span> kW</p>
+                  </div>
+                  <div class="p-4 bg-blue-50 rounded-lg">
+                    <p class="text-sm text-neutral-600">Estimated Investment</p>
+                    <p class="text-2xl font-bold text-[#1E5631]">₹<span id="investment">0</span></p>
+                  </div>
+                  <div class="p-4 bg-green-50 rounded-lg">
+                    <p class="text-sm text-neutral-600">Monthly Savings</p>
+                    <p class="text-2xl font-bold text-[#1E5631]">₹<span id="monthly-savings">0</span></p>
+                  </div>
+                  <div class="p-4 bg-green-50 rounded-lg">
+                    <p class="text-sm text-neutral-600">Annual Savings</p>
+                    <p class="text-2xl font-bold text-[#1E5631]">₹<span id="annual-savings">0</span></p>
+                  </div>
+                  <div class="p-4 bg-yellow-50 rounded-lg">
+                    <p class="text-sm text-neutral-600">Payback Period</p>
+                    <p class="text-2xl font-bold text-[#1E5631]"><span id="payback-period">0</span> yrs</p>
+                  </div>
+                  <div class="p-4 bg-emerald-50 rounded-lg">
+                    <p class="text-sm text-neutral-600">CO<sub>2</sub> Cut / yr</p>
+                    <p class="text-2xl font-bold text-[#1E5631]"><span id="co2-reduction">0</span> t</p>
+                  </div>
+                </div>
+                <p class="text-sm text-neutral-600 mt-4">Equivalent to planting <span id="savings-tree-equivalent" class="font-semibold">0</span> trees.</p>
+                <button id="detailed-report-button" type="button"
+                  class="mt-5 w-full py-3 px-4 border border-[#065f46] text-[#065f46] font-semibold rounded-lg hover:bg-[#065f46] hover:text-white transition-colors duration-300">
+                  View Detailed Report
+                </button>
+                <p class="text-xs text-neutral-500 mt-4">*Estimates based on average North India conditions; actual results vary by location, weather, tariffs and system design.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Tree-to-Energy Calculator -->
         <div class="bg-neutral-50 p-8 rounded-xl border border-neutral-200 mb-16">
           <div class="text-center mb-8">
@@ -553,6 +629,69 @@
         </div>
       </div>
     </section>
+
+    <!-- Detailed Solar Report Modal -->
+    <div id="report-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden"
+      aria-modal="true" aria-hidden="true">
+      <div class="bg-white rounded-lg max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto" role="dialog"
+        aria-labelledby="report-modal-title">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-6">
+            <h3 id="report-modal-title" class="text-2xl font-bold text-neutral-800">Your Detailed Solar Report</h3>
+            <button id="close-report-modal" type="button" class="text-neutral-500 hover:text-neutral-800" aria-label="Close report">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
+              <h4 class="font-semibold text-neutral-800 mb-3">Recommended System</h4>
+              <ul class="space-y-2 text-sm text-neutral-700">
+                <li>System size: <strong><span id="modal-system-size">0</span> kW</strong></li>
+                <li>Solar panels: <strong><span id="modal-panel-count">0</span></strong></li>
+                <li>Roof area used: <strong><span id="modal-roof-area">0</span> sq ft</strong></li>
+                <li>Annual generation: <strong><span id="modal-energy-production">0</span> kWh</strong></li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-lg bg-green-50 border border-green-100">
+              <h4 class="font-semibold text-neutral-800 mb-3">Financials</h4>
+              <ul class="space-y-2 text-sm text-neutral-700">
+                <li>Investment: <strong>₹<span id="modal-investment">0</span></strong></li>
+                <li>Monthly savings: <strong>₹<span id="modal-monthly-savings">0</span></strong></li>
+                <li>Annual savings: <strong>₹<span id="modal-annual-savings">0</span></strong></li>
+                <li>Lifetime savings (30 yrs): <strong>₹<span id="modal-lifetime-savings">0</span></strong></li>
+                <li>Payback period: <strong><span id="modal-payback-period">0</span> yrs</strong></li>
+                <li>Return on investment: <strong><span id="modal-roi">0</span>%</strong></li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-lg bg-emerald-50 border border-emerald-100 sm:col-span-2">
+              <h4 class="font-semibold text-neutral-800 mb-3">Environmental Impact</h4>
+              <ul class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm text-neutral-700">
+                <li>CO<sub>2</sub>/yr: <strong><span id="modal-co2-reduction">0</span> t</strong></li>
+                <li>Lifetime CO<sub>2</sub>: <strong><span id="modal-lifetime-co2">0</span> t</strong></li>
+                <li>Trees: <strong><span id="modal-tree-equivalent">0</span></strong></li>
+                <li>Footprint cut: <strong><span id="modal-footprint-reduction">0</span>%</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button id="download-report" type="button"
+              class="flex-1 py-3 px-4 border border-neutral-300 text-neutral-700 font-semibold rounded-lg hover:bg-neutral-100 transition-colors duration-300">
+              Download Estimate (.txt)
+            </button>
+            <button id="contact-from-modal" type="button"
+              class="flex-1 py-3 px-4 bg-[#065f46] text-white font-semibold rounded-lg shadow hover:bg-[#1E5631] transition-colors duration-300">
+              Get a Free Site Survey
+            </button>
+          </div>
+          <p class="text-xs text-neutral-500 mt-4">Estimates only; a free on-site survey gives you an exact quote and subsidy eligibility.</p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Footer Section -->

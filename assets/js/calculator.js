@@ -48,6 +48,8 @@ function initSolarSavingsCalculator() {
   
   if (!calculateButton) return;
 
+  let lastReport = null;
+
   calculateButton.addEventListener('click', function () {
     const monthlyBillInput = document.getElementById('monthly-bill');
     const roofAreaInput = document.getElementById('roof-area');
@@ -61,33 +63,34 @@ function initSolarSavingsCalculator() {
 
     // Calculate results
     const r = window.SolarideCalc.solarSavings({ monthlyBill, roofArea, location });
+    lastReport = { input: { monthlyBill, roofArea, location }, result: r };
     const {
-      systemSize, investment, monthlyGeneration, monthlySavings,
+      systemSize, investment, monthlySavings,
       annualSavings, paybackPeriod, co2Reduction, treeEquivalent
     } = r;
 
-    // Update results display
-    updateText('system-size', systemSize);
-    updateText('investment', investment.toLocaleString());
-    updateText('monthly-savings', monthlySavings.toLocaleString());
-    updateText('annual-savings', annualSavings.toLocaleString());
+    // Results display (IDs prefixed to avoid clashing with the Tree-to-Energy calculator)
+    updateText('savings-system-size', systemSize);
+    updateText('investment', investment.toLocaleString('en-IN'));
+    updateText('monthly-savings', monthlySavings.toLocaleString('en-IN'));
+    updateText('annual-savings', annualSavings.toLocaleString('en-IN'));
     updateText('payback-period', paybackPeriod);
     updateText('co2-reduction', co2Reduction);
-    updateText('tree-equivalent', treeEquivalent);
+    updateText('savings-tree-equivalent', treeEquivalent);
 
     // Update modal values
     updateText('modal-system-size', systemSize);
     updateText('modal-panel-count', r.panelCount);
     updateText('modal-roof-area', r.roofAreaUsed);
-    updateText('modal-energy-production', r.energyProductionAnnual.toLocaleString());
-    updateText('modal-investment', investment.toLocaleString());
-    updateText('modal-monthly-savings', monthlySavings.toLocaleString());
-    updateText('modal-annual-savings', annualSavings.toLocaleString());
-    updateText('modal-lifetime-savings', r.lifetimeSavings.toLocaleString());
+    updateText('modal-energy-production', r.energyProductionAnnual.toLocaleString('en-IN'));
+    updateText('modal-investment', investment.toLocaleString('en-IN'));
+    updateText('modal-monthly-savings', monthlySavings.toLocaleString('en-IN'));
+    updateText('modal-annual-savings', annualSavings.toLocaleString('en-IN'));
+    updateText('modal-lifetime-savings', r.lifetimeSavings.toLocaleString('en-IN'));
     updateText('modal-payback-period', paybackPeriod);
     updateText('modal-roi', r.roi);
     updateText('modal-co2-reduction', co2Reduction);
-    updateText('modal-lifetime-co2', r.lifetimeCo2.toLocaleString());
+    updateText('modal-lifetime-co2', r.lifetimeCo2.toLocaleString('en-IN'));
     updateText('modal-tree-equivalent', treeEquivalent);
     updateText('modal-footprint-reduction', r.footprintReduction);
 
@@ -105,7 +108,7 @@ function initSolarSavingsCalculator() {
 
   if (downloadReportButton) {
     downloadReportButton.addEventListener('click', function () {
-      alert('Your detailed solar report will be downloaded shortly.');
+      if (lastReport) downloadSavingsReport(lastReport);
     });
   }
 
@@ -115,9 +118,55 @@ function initSolarSavingsCalculator() {
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = 'index.html#contact';
       }
     });
   }
+}
+
+/** Builds a plain-text savings estimate and triggers a client-side download. */
+function downloadSavingsReport(report) {
+  const { input, result } = report;
+  const money = (n) => `₹${Number(n).toLocaleString('en-IN')}`;
+  const num = (n) => Number(n).toLocaleString('en-IN');
+  const lines = [
+    'SOLARIDE — Solar Savings Estimate',
+    'https://solaride.in',
+    '',
+    'Your inputs',
+    `  Monthly electricity bill: ${money(input.monthlyBill)}`,
+    `  Rooftop area: ${num(input.roofArea)} sq ft`,
+    `  Sunlight level: ${input.location}`,
+    '',
+    'Recommended system',
+    `  System size: ${result.systemSize} kW (~${result.panelCount} panels, ~${result.roofAreaUsed} sq ft)`,
+    `  Estimated investment: ${money(result.investment)}`,
+    `  Annual generation: ${num(result.energyProductionAnnual)} kWh`,
+    '',
+    'Savings',
+    `  Monthly savings: ${money(result.monthlySavings)}`,
+    `  Annual savings: ${money(result.annualSavings)}`,
+    `  Lifetime savings (30 yrs): ${money(result.lifetimeSavings)}`,
+    `  Payback period: ${result.paybackPeriod} years`,
+    `  Return on investment: ${result.roi}%`,
+    '',
+    'Environmental impact',
+    `  CO2 reduction: ${result.co2Reduction} tonnes/year`,
+    `  Equivalent trees planted: ${num(result.treeEquivalent)}`,
+    '',
+    'Estimates only; actual figures vary with location, weather, tariffs and system design.',
+    'Free site survey: +91 62844 59603 · solarideenergy@gmail.com'
+  ];
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'solaride-savings-estimate.txt';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
 }
 
 function updateText(id, value) {
