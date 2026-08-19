@@ -11,7 +11,9 @@ const CONTENT_PAGES = [
   { file: 'solutions.html', canonical: `${DOMAIN}/solutions.html` },
   { file: 'benefits.html', canonical: `${DOMAIN}/benefits.html` },
   { file: 'faq.html', canonical: `${DOMAIN}/faq.html` },
-  { file: 'team.html', canonical: `${DOMAIN}/team.html` }
+  { file: 'team.html', canonical: `${DOMAIN}/team.html` },
+  { file: 'solar-panel-installation-mohali.html', canonical: `${DOMAIN}/solar-panel-installation-mohali.html` },
+  { file: 'solar-panel-installation-hisar.html', canonical: `${DOMAIN}/solar-panel-installation-hisar.html` }
 ];
 
 const ALL_PAGES = [
