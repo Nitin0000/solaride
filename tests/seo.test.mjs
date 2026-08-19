@@ -66,6 +66,10 @@ describe.each(CONTENT_PAGES)('SEO essentials — $file', ({ file, canonical }) =
     expect(meta(doc, 'meta[name="robots"]') ?? 'index').not.toMatch(/noindex/i);
   });
 
+  it('allows large image previews in SERPs', () => {
+    expect(meta(doc, 'meta[name="robots"]') ?? '').toMatch(/max-image-preview:large/);
+  });
+
   it('has exactly one <h1>', () => {
     expect(doc.querySelectorAll('h1').length).toBe(1);
   });
