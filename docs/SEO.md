@@ -27,6 +27,8 @@ Every indexable page includes:
 7. Open Graph (`og:title/description/url/image` — image is absolute) and a
    Twitter `summary_large_image` card.
 8. Geo meta tags (`geo.region`, `geo.placename`, `geo.position`, `ICBM`).
+9. `robots` = `index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1`
+   so SERPs can show large image previews and full snippets.
 
 ## Structured data (JSON-LD)
 
@@ -38,6 +40,18 @@ Every indexable page includes:
 - **Subpages** — a `BreadcrumbList` (`Home` → current page).
 - **FAQ (`faq.html`)** — a `FAQPage` whose questions mirror the on-page
   accordion (a test enforces the counts stay in sync) for FAQ rich results.
+- **Service-area pages (`solar-panel-installation-*.html`)** — each has a
+  `LocalBusiness` (real office address + geo), a `BreadcrumbList`, and a local
+  `FAQPage`.
+
+## Local SEO (service-area pages)
+
+Dedicated pages for the two real offices target "solar panel installation in
+<city>" intent with unique local copy (DISCOM, subsidy, areas, process, FAQ).
+They are linked from the homepage "Areas We Serve" section, the footer, and each
+other, and listed in `sitemap.xml`. **Only add a new city page when there is a
+real local presence and genuinely unique content** — thin/duplicated city pages
+are treated as doorway pages and can hurt rankings.
 
 Validate changes with Google's
 [Rich Results Test](https://search.google.com/test/rich-results) and keep the

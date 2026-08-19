@@ -34,11 +34,19 @@ Browser ──> GitHub Pages (static files, https://solaride.in)
 | `benefits.html`      | Savings calculator + Tree-to-Energy calculator       | ✅      |
 | `faq.html`           | About/origin story **and** the FAQ accordion         | ✅      |
 | `team.html`          | Team profiles + modals                               | ✅      |
+| `solar-panel-installation-mohali.html` | Mohali service-area landing page   | ✅      |
+| `solar-panel-installation-hisar.html`  | Hisar service-area landing page    | ✅      |
 | `privacy.html`       | Privacy policy (legal)                               | ✅      |
 | `data-deletion.html` | Data deletion instructions (legal)                   | ✅      |
 | `404.html`           | Branded not-found page                               | ❌ noindex |
 
 ## JavaScript modules (`assets/js/`)
+
+Service-area landing pages (`solar-panel-installation-*.html`) reuse the shared
+header/footer/scripts chrome but ship their own unique local content and
+`LocalBusiness` + `BreadcrumbList` + `FAQPage` JSON-LD. Add new ones only for
+locations with a real presence, and register them in `sitemap.xml` and the
+`CONTENT_PAGES` list in `tests/seo.test.mjs`.
 
 All modules are plain browser scripts. Testable logic is exposed on `window`
 (and `module.exports` where useful) so it can be unit-tested without a bundler.

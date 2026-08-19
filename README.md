@@ -27,6 +27,7 @@ Marketing website for **SOLARIDE** — premium **rooftop solar panel installatio
 - **Tree-to-Energy calculator** (`benefits.html`) — estimates annual CO₂ offset, tree equivalent, and energy produced from system size and sunlight hours.
 - **Solar Savings Calculator** (`benefits.html`) — sizes a system from the user's bill and roof area, shows investment, monthly/annual/lifetime savings, payback, ROI and CO₂; opens a detailed report modal and generates a downloadable `.txt` estimate.
 - **FAQ** (`faq.html`) — a 10-question accordion with `FAQPage` structured data for rich results.
+- **Service-area pages** (`solar-panel-installation-mohali.html`, `-hisar.html`) — locally-written landing pages for the two offices with `LocalBusiness` + `FAQPage` schema.
 - **Lead capture** — contact form wired to [EmailJS](https://www.emailjs.com/); WhatsApp/call CTAs throughout.
 - **Accessible UI** — skip link, focus-trapped modals, `aria-expanded` mobile menu, keyboard (Escape) modal dismissal.
 - **Branded 404** (`404.html`) — friendly, `noindex` error page with navigation back into the site.

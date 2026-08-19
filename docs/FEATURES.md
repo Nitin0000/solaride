@@ -43,10 +43,20 @@ proposed/potential features so future work has a single reference.
 - **Code:** `assets/js/main.js`
 - **What:** Mobile menu (`aria-expanded`), smooth in-page scroll, back-to-top.
 
+### Service-area landing pages
+- **Where:** `solar-panel-installation-mohali.html`, `solar-panel-installation-hisar.html`
+- **What:** Dedicated, uniquely-written local pages for the two real offices —
+  local DISCOM (PSPCL / DHBVN), subsidy, areas covered, process, and a local FAQ
+  accordion. Each carries `LocalBusiness` + `BreadcrumbList` + `FAQPage` schema
+  and is linked from the homepage "Areas We Serve" section, the footer, and each
+  other. Listed in `sitemap.xml`; validated by `tests/seo.test.mjs`.
+
 ### SEO infrastructure
 - Per-page titles/descriptions, canonical, hreflang, OG/Twitter, geo meta.
+- `robots` with `max-image-preview:large` (larger SERP thumbnails); CDN
+  `preconnect`/`dns-prefetch` for faster first render.
 - Structured data: Organization + LocalBusiness ×2 + WebSite + OfferCatalog
-  (home), BreadcrumbList (subpages), FAQPage (FAQ).
+  (home), BreadcrumbList (subpages), FAQPage (FAQ + city pages).
 - `robots.txt`, `sitemap.xml`, `CNAME`, lazy-loaded imagery.
 - See [`SEO.md`](SEO.md).
 
@@ -61,9 +71,10 @@ proposed/potential features so future work has a single reference.
 Prioritized ideas. None are implemented yet; each notes the main considerations.
 
 ### SEO / content
-1. **Service-area landing pages** — dedicated pages (e.g. `solar-in-mohali`,
-   `solar-in-hisar`, `solar-in-chandigarh`, `solar-in-jaipur`) with localized
-   copy and `LocalBusiness`/`Service` schema. Strongest lever for local ranking.
+1. **More service-area pages** — Mohali and Hisar are live
+   (`solar-panel-installation-*.html`). Expand only to areas with real presence
+   (e.g. Chandigarh, Zirakpur, Panchkula, Hansi, Fatehabad) with genuinely unique
+   local copy — avoid thin/doorway duplicates.
 2. **Blog / resources** — subsidy guides, net-metering how-tos, case studies.
    Adds fresh, long-tail content. Needs an index page + `Article` schema.
 3. **Customer reviews / testimonials** — with `Review`/`AggregateRating` schema
