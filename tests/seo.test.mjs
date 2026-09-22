@@ -140,6 +140,56 @@ describe.each(CONTENT_PAGES)('SEO essentials — $file', ({ file, canonical }) =
 });
 
 describe('Search quality and deployment', () => {
+  it.each([...CONTENT_PAGES.map(({ file }) => file), '404.html', 'privacy.html', 'data-deletion.html'])('declares the light-only design before rendering %s', (file) => {
+    const doc = parse(readRepoFile(file));
+    expect(doc.querySelector('meta[name="color-scheme"]').content).toBe('only light');
+    expect(doc.querySelector('meta[name="theme-color"][media*="dark"]')).toBeNull();
+  });
+
+  it.each(CONTENT_PAGES)('states North India coverage in the header of $file', ({ file }) => {
+    const doc = parse(readRepoFile(file));
+    expect(doc.querySelector('header').textContent).toContain('Serving all of North India');
+  });
+
+  it('distinguishes office locations from regional service coverage', () => {
+    const doc = parse(readRepoFile('index.html'));
+    const coverage = doc.querySelector('#areas');
+    expect(coverage.querySelector('h2').textContent).toBe('Serving All of North India');
+    expect([...coverage.querySelectorAll('h3')].map((heading) => heading.textContent)).toEqual(['Mohali Office', 'Hisar Office']);
+    expect(coverage.textContent).toContain('not the limits of our service area');
+    expect(doc.querySelector('#hero').textContent).not.toContain('From Mohali to Hisar');
+  });
+
+  it.each(['mohali', 'hisar'])('retains North India coverage on the %s office page', (city) => {
+    const doc = parse(readRepoFile(`solar-panel-installation-${city}.html`));
+    const graph = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent)['@graph'];
+    const office = graph.find((node) => node['@type'] === 'LocalBusiness');
+    expect(office.areaServed).toContainEqual({ '@type': 'Place', name: 'North India' });
+    expect(doc.body.textContent).toContain('our coverage is not limited to this list');
+  });
+
+  it('matches the regional coverage FAQ to its structured answer', () => {
+    const doc = parse(readRepoFile('faq.html'));
+    const schema = [...doc.querySelectorAll('script[type="application/ld+json"]')]
+      .map((script) => JSON.parse(script.textContent))
+      .find((node) => node['@type'] === 'FAQPage');
+    const answer = schema.mainEntity.find((entry) => entry.name === 'Which areas do you cover?');
+    expect(answer.acceptedAnswer.text).toBe(doc.querySelector('#faq-10').textContent.trim());
+    expect(answer.acceptedAnswer.text).toContain('We serve all of North India.');
+  });
+
+  it('does not reuse rooftop imagery for the agricultural solar offering', () => {
+    const doc = parse(readRepoFile('solutions.html'));
+    const heading = [...doc.querySelectorAll('h3')].find((node) => node.textContent.trim() === 'Agricultural Solar');
+    expect(heading).toBeTruthy();
+    const offering = heading.parentElement;
+    expect(offering.querySelector('.fa-seedling')).not.toBeNull();
+    for (const image of offering.querySelectorAll('img')) {
+      expect(image.getAttribute('src')).not.toMatch(/solar-horizon|rooftop-life|installation-canopy|installation-frame/);
+      expect(image.alt).toMatch(/irrigation|agricultur|farm|crop/i);
+    }
+  });
+
   it.each(CONTENT_PAGES)('uses disclosed AI concepts or existing photography in $file', ({ file }) => {
     const html = readRepoFile(file);
     const doc = parse(html);

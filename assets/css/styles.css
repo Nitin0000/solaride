@@ -1,5 +1,6 @@
 /* Base styles */
 :root {
+  color-scheme: only light;
   --primary-color: #065f46;
   --secondary-color: #1E5631;
   --accent-color: #FDB813;

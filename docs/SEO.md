@@ -7,9 +7,10 @@ setup stays consistent as pages are added. Automated checks in
 ## Goals & audience
 
 - **Primary intent:** "rooftop solar installation" and related buyer queries.
-- **Geography:** North India — states of **Punjab, Haryana, Rajasthan** and the
-  UT of **Chandigarh**; strongest local presence in **Mohali** and **Hisar**
-  (physical offices).
+- **Geography:** All of **North India**. **Mohali** and **Hisar** are physical
+  office locations, not service-area boundaries. State and city lists are examples,
+  never an exhaustive coverage list. Preserve local pages for location-specific
+  utility information without implying service is limited to those locations.
 - **Segments:** residential, commercial/industrial, and agricultural (solar
   pumps).
 
