@@ -136,16 +136,18 @@
   <!-- Header Section with Global Top Bar -->
   <header id="header" class="bg-white shadow-sm fixed w-full z-50">
     <!-- Top Bar -->
-    <div class="bg-[#065f46] text-white text-xs py-2">
-      <div class="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
-        <div class="flex items-center space-x-4">
-          <span><i class="fas fa-map-marker-alt mr-1"></i> Serving all of North India</span>
-          <span class="hidden sm:inline">|</span>
-          <a href="mailto:solarideenergy@gmail.com" class="hover:underline"><i class="fas fa-envelope mr-1"></i> solarideenergy@gmail.com</a>
-        </div>
-        <div>
-          <a href="https://wa.me/917380280874" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center font-bold">
-            <i class="fab fa-whatsapp mr-1 text-green-300 text-sm"></i> Call / WhatsApp: +91 73802 80874
+    <div class="contact-strip">
+      <div class="container mx-auto px-4 contact-strip__inner">
+        <span class="contact-strip__coverage">Serving all of North India</span>
+        <div class="contact-strip__actions">
+          <a href="mailto:solarideenergy@gmail.com" aria-label="Email Solaride" title="Email Solaride">
+            <i class="fas fa-envelope" aria-hidden="true"></i><span>solarideenergy@gmail.com</span>
+          </a>
+          <a href="tel:+917380280874" aria-label="Call Solaride at +91 73802 80874" title="Call +91 73802 80874">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i><span>+91 73802 80874</span>
+          </a>
+          <a href="https://wa.me/917380280874" target="_blank" rel="noopener noreferrer" aria-label="Chat with Solaride on WhatsApp" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>
           </a>
         </div>
       </div>
@@ -254,8 +256,8 @@
           <div class="bg-white p-8 rounded-xl border border-neutral-200 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
             <div>
               <figure class="editorial-media">
-                <img class="solar-art solar-art--service" src="assets/images/optimized/licensed/agricultural-solar-irrigation-960.webp" srcset="assets/images/optimized/licensed/agricultural-solar-irrigation-480.webp 480w, assets/images/optimized/licensed/agricultural-solar-irrigation-960.webp 960w, assets/images/optimized/licensed/agricultural-solar-irrigation-1440.webp 1440w" sizes="(max-width: 767px) 100vw, 33vw" width="1440" height="960" alt="Ground-mounted solar panels beside irrigation channels and flooded rice fields" loading="lazy" decoding="async">
-                <figcaption>Solar irrigation example. Photo: <a class="underline" href="https://commons.wikimedia.org/wiki/File:SOLAR_POWER_IRRIGATION_RICE_FARMING.jpg">SMMIMAGES</a>, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> (cropped).</figcaption>
+                <img class="solar-art solar-art--service" src="assets/images/optimized/licensed/agrivoltaic-canopy-960.webp" srcset="assets/images/optimized/licensed/agrivoltaic-canopy-480.webp 480w, assets/images/optimized/licensed/agrivoltaic-canopy-960.webp 960w, assets/images/optimized/licensed/agrivoltaic-canopy-1440.webp 1440w" sizes="(max-width: 767px) 100vw, 33vw" width="1440" height="960" alt="Aerial view of evenly spaced solar canopies above cultivated crop rows at an agrivoltaic farm" loading="lazy" decoding="async">
+                <figcaption>Agrivoltaic example, Germany. <a class="underline" href="https://commons.wikimedia.org/wiki/File:Agrivoltaics_pilot_plant_at_Heggelbach_Farm_in_Germany_1.jpg">Tobi Kellner</a> / <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> (cropped).</figcaption>
               </figure>
               <h3 class="text-2xl font-bold text-neutral-800 mb-3">Agricultural Solar</h3>
               <p class="text-neutral-600 text-sm leading-relaxed mb-6">

@@ -131,14 +131,19 @@ for archival purposes, not used for current website imagery.
 
 ### Agricultural photograph credit
 
-The Agricultural Solar card uses **SOLAR POWER IRRIGATION RICE FARMING** by
-**SMMIMAGES**, sourced from
-[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:SOLAR_POWER_IRRIGATION_RICE_FARMING.jpg)
+The Agricultural Solar card uses **Agrivoltaics pilot plant at Heggelbach Farm
+in Germany 1** by **Tobi Kellner**, sourced from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Agrivoltaics_pilot_plant_at_Heggelbach_Farm_in_Germany_1.jpg)
 under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
-The photo was resized, slightly cropped to 3:2 and converted to WebP; the adapted
+The aerial photo was centre-cropped to 3:2, resized and converted to WebP; the adapted
 source and responsive variants remain under CC BY-SA 4.0. Attribution and the
 licence link are visible on the card. This is an illustrative real installation,
 not a photograph of a Solaride project or an AI-generated image.
+
+The former `assets/images/licensed/agricultural-solar-irrigation.webp` is archived,
+not displayed: **SOLAR POWER IRRIGATION RICE FARMING**, **SMMIMAGES**, sourced from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:SOLAR_POWER_IRRIGATION_RICE_FARMING.jpg),
+CC BY-SA 4.0; cropped, resized and converted to WebP under the same licence.
 
 ## Testing
 

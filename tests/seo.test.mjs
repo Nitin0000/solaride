@@ -151,6 +151,24 @@ describe('Search quality and deployment', () => {
     expect(doc.querySelector('header').textContent).toContain('Serving all of North India');
   });
 
+  it.each(CONTENT_PAGES.filter(({ file }) => file !== 'rooftop-solar-guide.html'))('provides separate accessible header contact actions in $file', ({ file }) => {
+    const doc = parse(readRepoFile(file));
+    const strip = doc.querySelector('#header .contact-strip');
+    expect(strip).not.toBeNull();
+    const links = [...strip.querySelectorAll('a')];
+    expect(links.map((link) => link.getAttribute('href'))).toEqual([
+      'mailto:solarideenergy@gmail.com',
+      'tel:+917380280874',
+      'https://wa.me/917380280874'
+    ]);
+    for (const link of links) {
+      expect(link.getAttribute('aria-label')).toBeTruthy();
+      expect(link.getAttribute('title')).toBeTruthy();
+      expect(link.querySelector('i').getAttribute('aria-hidden')).toBe('true');
+    }
+    expect(strip.textContent).not.toContain('Call / WhatsApp:');
+  });
+
   it('distinguishes office locations from regional service coverage', () => {
     const doc = parse(readRepoFile('index.html'));
     const coverage = doc.querySelector('#areas');
@@ -197,8 +215,10 @@ describe('Search quality and deployment', () => {
     const offering = heading.parentElement;
     expect(offering.querySelector('.fa-seedling')).toBeNull();
     expect(offering.querySelectorAll('img')).toHaveLength(1);
-    expect(offering.querySelector('img').getAttribute('src')).toBe('assets/images/optimized/licensed/agricultural-solar-irrigation-960.webp');
-    expect(offering.querySelector('figcaption').textContent).toContain('SMMIMAGES');
+    expect(offering.querySelector('img').getAttribute('src')).toBe('assets/images/optimized/licensed/agrivoltaic-canopy-960.webp');
+    expect(offering.querySelector('figcaption').textContent).toContain('Tobi Kellner');
+    expect(offering.querySelector('figcaption').textContent).toContain('Germany');
+    expect(offering.querySelector('img').alt).toContain('crop rows');
     expect(offering.querySelector('a[href="https://creativecommons.org/licenses/by-sa/4.0/"]')).not.toBeNull();
     expect(statSync(resolve(repoRoot, offering.querySelector('img').getAttribute('src'))).size).toBeLessThan(250000);
     for (const image of offering.querySelectorAll('img')) {

@@ -8,7 +8,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const output = resolve(root, '_site');
 const images = [
   'iconLogo.png', 'editorial/solar-horizon.webp', 'editorial/rooftop-life.webp', 'crowdWork.jpg',
-  'licensed/agricultural-solar-irrigation.webp',
+  'licensed/agrivoltaic-canopy.webp',
   'installations/commercial-rooftop.png',
   'inspirationPic.jpg', 'impactPic.jpg', 'People/pankaj.jpeg',
   'People/vanshul.png', 'People/priyanka.png', 'People/praveen.png',
