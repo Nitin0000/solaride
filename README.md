@@ -113,8 +113,9 @@ serve `_site/` when testing network-dependent features. Rebuild after edits.
 Two AI-generated rooftop concepts in `assets/images/editorial/` were generated
 with FLUX.1-schnell through Black Forest Labs' public Hugging Face demo. Prompts,
 seeds, source links and the Apache-2.0 model licence are recorded in
-`scripts/media-prompts.json`. Visible captions distinguish concepts from completed
-installations. Real team and journey photos retain their original placements;
+`scripts/media-prompts.json`. Concept images have no visible disclosure captions;
+their provenance remains recorded here and in the manifest. They are not photographs
+of completed installations. Real team and journey photos retain their original placements;
 additional existing installation photos now support the other content pages.
 
 `npm run generate:media -- solar-horizon` generates a missing named source image.
@@ -127,6 +128,17 @@ Run `npm run build` to create responsive WebP variants. Original photographs are
 never modified. Former stock images and procedural renders remain archived and
 are not referenced by content pages. The legacy `render:media` workflow is retained
 for archival purposes, not used for current website imagery.
+
+### Agricultural photograph credit
+
+The Agricultural Solar card uses **SOLAR POWER IRRIGATION RICE FARMING** by
+**SMMIMAGES**, sourced from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:SOLAR_POWER_IRRIGATION_RICE_FARMING.jpg)
+under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+The photo was resized, slightly cropped to 3:2 and converted to WebP; the adapted
+source and responsive variants remain under CC BY-SA 4.0. Attribution and the
+licence link are visible on the card. This is an illustrative real installation,
+not a photograph of a Solaride project or an AI-generated image.
 
 ## Testing
 

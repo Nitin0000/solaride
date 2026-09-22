@@ -183,23 +183,28 @@ describe('Search quality and deployment', () => {
     const heading = [...doc.querySelectorAll('h3')].find((node) => node.textContent.trim() === 'Agricultural Solar');
     expect(heading).toBeTruthy();
     const offering = heading.parentElement;
-    expect(offering.querySelector('.fa-seedling')).not.toBeNull();
+    expect(offering.querySelector('.fa-seedling')).toBeNull();
+    expect(offering.querySelectorAll('img')).toHaveLength(1);
+    expect(offering.querySelector('img').getAttribute('src')).toBe('assets/images/optimized/licensed/agricultural-solar-irrigation-960.webp');
+    expect(offering.querySelector('figcaption').textContent).toContain('SMMIMAGES');
+    expect(offering.querySelector('a[href="https://creativecommons.org/licenses/by-sa/4.0/"]')).not.toBeNull();
+    expect(statSync(resolve(repoRoot, offering.querySelector('img').getAttribute('src'))).size).toBeLessThan(250000);
     for (const image of offering.querySelectorAll('img')) {
       expect(image.getAttribute('src')).not.toMatch(/solar-horizon|rooftop-life|installation-canopy|installation-frame/);
       expect(image.alt).toMatch(/irrigation|agricultur|farm|crop/i);
     }
   });
 
-  it.each(CONTENT_PAGES)('uses disclosed AI concepts or existing photography in $file', ({ file }) => {
+  it.each(CONTENT_PAGES)('uses editorial concepts or existing photography in $file', ({ file }) => {
     const html = readRepoFile(file);
     const doc = parse(html);
     expect(html).not.toMatch(/solarInstall|greenEnergy|\/renders\//);
-    const art = [...doc.querySelectorAll('img[src*="/editorial/"], img[src*="/installations/"]')];
+    const art = [...doc.querySelectorAll('img[src*="/editorial/"], img[src*="/installations/"], img[src*="/licensed/"]')];
     expect(art.length).toBeGreaterThan(0);
     for (const image of art) {
       if (image.getAttribute('src').includes('/editorial/')) {
         expect(image.alt).toMatch(/AI-generated/i);
-        expect(image.closest('figure').querySelector('figcaption').textContent).toContain('Not a completed Solaride installation');
+        expect(image.closest('figure').querySelector('figcaption')).toBeNull();
       } else {
         expect(image.alt).not.toMatch(/AI-generated|illustration/i);
       }
