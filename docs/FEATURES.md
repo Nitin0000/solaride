@@ -25,7 +25,8 @@ proposed/potential features so future work has a single reference.
 - **Code:** `assets/js/faq.js`
 - **What:** 10-question accordion (subsidy, net metering, cost, savings, roof
   area, warranty, timeline, maintenance, segments, coverage) with `FAQPage`
-  JSON-LD for rich results. Includes an "Ask us on WhatsApp" CTA.
+  JSON-LD matching the content. Google FAQ rich results are not expected for
+  this business. Includes an "Ask us on WhatsApp" CTA.
 - **Tests:** `tests/faq.dom.test.mjs`, `tests/seo.test.mjs`
 
 ### Lead capture (contact form)
@@ -63,6 +64,32 @@ proposed/potential features so future work has a single reference.
 ### Branded 404
 - **Where:** `404.html` — `noindex`, links back into the site.
 
+### Solar buying guide
+- **Where:** `rooftop-solar-guide.html`
+- **What:** Quote comparison, published residential subsidy bands with official
+  sources, illustrative 3 kW/5 kW sizing, net metering and battery limitations.
+  Static text, visible authorship/date, Article and BreadcrumbList schema;
+  linked from the homepage, FAQ and office pages.
+
+### Production asset build
+- **Code:** `scripts/build.mjs`, `tailwind.config.cjs`
+- **What:** Static minified Tailwind replaces the browser compiler; responsive
+  WebP images have dimensions and loading priorities. Unused chart libraries
+  removed. Deployment builds/tests and publishes only `_site/`.
+- **Tests:** SEO suite checks generated assets, dimensions, internal links,
+  entity consistency, unique metadata and public-only deployment contents.
+
+### Editorial solar imagery
+- **Where:** `assets/images/editorial/`; generation briefs in `scripts/media-prompts.json`.
+- **What:** Two FLUX.1-schnell rooftop concepts, an image-led homepage, and existing
+  installation photography across all eight content pages. Generated scenes carry
+  visible AI disclosures and are not presented as completed installations.
+- **Preservation:** Existing team and journey photos keep their placements; all
+  real source photographs remain untouched. Stock and procedural art is archived.
+- **Performance:** Responsive WebP built locally, no runtime generation or 3D engine.
+- **Authoring:** `npm run generate:media -- <name>` uses a public, quota-limited demo.
+  Five additional image briefs are pending, not generated or published.
+
 ### Analytics
 - Google Ads `gtag.js` and a first-party usage beacon (`vanshul.com/a.js`).
 
@@ -75,10 +102,10 @@ Prioritized ideas. None are implemented yet; each notes the main considerations.
    (`solar-panel-installation-*.html`). Expand only to areas with real presence
    (e.g. Chandigarh, Zirakpur, Panchkula, Hansi, Fatehabad) with genuinely unique
    local copy — avoid thin/doorway duplicates.
-2. **Blog / resources** — subsidy guides, net-metering how-tos, case studies.
-   Adds fresh, long-tail content. Needs an index page + `Article` schema.
-3. **Customer reviews / testimonials** — with `Review`/`AggregateRating` schema
-   (only with genuine, verifiable reviews).
+2. **More resources** — buying guide is implemented; add original, consented
+  project case studies with measured generation and clear assumptions.
+3. **Customer reviews / testimonials** — genuine, verifiable customer feedback.
+  Do not add self-serving LocalBusiness rating markup to chase review stars.
 4. **Project gallery** — real installation photos with `ImageObject` schema.
 5. **Hindi localization** — `hreflang` `hi-in` variants for regional reach.
 
@@ -92,10 +119,10 @@ Prioritized ideas. None are implemented yet; each notes the main considerations.
 9. **PDF report** — upgrade the `.txt` download to a styled PDF.
 
 ### Quality / performance
-10. **Self-host Tailwind + purge** — replace the CDN with a built, purged
-    stylesheet to cut CSS weight and remove a render-blocking request.
-11. **Optimize images** — convert large JP/PNG to WebP/AVIF with proper
-    `width`/`height`; finish lazy-loading remaining below-the-fold images.
+10. **Performance monitoring** — static Tailwind and responsive WebP are
+  implemented; measure actual Core Web Vitals after deployment.
+11. **Image workflow** — add new photos to the image build list and include
+  responsive sources, dimensions and accurate alternative text in markup.
 12. **Accessibility audit** — automated (axe) checks in CI.
 13. **Lighthouse CI** — track Core Web Vitals over time.
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { readRepoFile } from './helpers/dom.mjs';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { repoRoot } from './helpers/dom.mjs';
 
@@ -12,6 +12,7 @@ const CONTENT_PAGES = [
   { file: 'benefits.html', canonical: `${DOMAIN}/benefits.html` },
   { file: 'faq.html', canonical: `${DOMAIN}/faq.html` },
   { file: 'team.html', canonical: `${DOMAIN}/team.html` },
+  { file: 'rooftop-solar-guide.html', canonical: `${DOMAIN}/rooftop-solar-guide.html` },
   { file: 'solar-panel-installation-mohali.html', canonical: `${DOMAIN}/solar-panel-installation-mohali.html` },
   { file: 'solar-panel-installation-hisar.html', canonical: `${DOMAIN}/solar-panel-installation-hisar.html` }
 ];
@@ -102,11 +103,183 @@ describe.each(CONTENT_PAGES)('SEO essentials — $file', ({ file, canonical }) =
     const img = meta(doc, 'meta[property="og:image"]').replace(`${DOMAIN}/`, '');
     expect(existsSync(resolve(repoRoot, img))).toBe(true);
   });
+
+  it('ships static CSS instead of runtime styling or unused chart libraries', () => {
+    expect(doc.querySelector('link[href="assets/css/utilities.css"]')).not.toBeNull();
+    expect(readRepoFile(file)).not.toMatch(/cdn\.tailwindcss\.com|apexcharts|npm\/chart\.js/);
+    expect(statSync(resolve(repoRoot, 'assets/css/utilities.css')).size).toBeLessThan(50000);
+  });
+
+  it('ships local assets and responsive, dimensioned images', () => {
+    for (const node of doc.querySelectorAll('script[src], link[rel="stylesheet"][href], img[src]')) {
+      const url = new URL(node.getAttribute('src') ?? node.getAttribute('href'), canonical);
+      if (url.origin === DOMAIN) {
+        expect(existsSync(resolve(repoRoot, '_site', decodeURIComponent(url.pathname.slice(1)))), url.href).toBe(true);
+      }
+    }
+    for (const image of doc.querySelectorAll('img')) {
+      expect(Number(image.getAttribute('width'))).toBeGreaterThan(0);
+      expect(Number(image.getAttribute('height'))).toBeGreaterThan(0);
+      expect(image.getAttribute('alt')).toBeTruthy();
+      expect(image.getAttribute('srcset')).toBeTruthy();
+      for (const candidate of image.getAttribute('srcset').split(',')) {
+        const [source] = candidate.trim().split(/\s+/);
+        expect(existsSync(resolve(repoRoot, '_site', source)), source).toBe(true);
+      }
+    }
+  });
+
+  it('links to existing local pages', () => {
+    for (const link of doc.querySelectorAll('a[href]')) {
+      const url = new URL(link.getAttribute('href'), canonical);
+      if (url.origin !== DOMAIN) continue;
+      const target = decodeURIComponent(url.pathname.slice(1)) || 'index.html';
+      expect(existsSync(resolve(repoRoot, '_site', target)), `${file}: ${url.href}`).toBe(true);
+    }
+  });
+});
+
+describe('Search quality and deployment', () => {
+  it.each(CONTENT_PAGES)('uses disclosed AI concepts or existing photography in $file', ({ file }) => {
+    const html = readRepoFile(file);
+    const doc = parse(html);
+    expect(html).not.toMatch(/solarInstall|greenEnergy|\/renders\//);
+    const art = [...doc.querySelectorAll('img[src*="/editorial/"], img[src*="/installations/"]')];
+    expect(art.length).toBeGreaterThan(0);
+    for (const image of art) {
+      if (image.getAttribute('src').includes('/editorial/')) {
+        expect(image.alt).toMatch(/AI-generated/i);
+        expect(image.closest('figure').querySelector('figcaption').textContent).toContain('Not a completed Solaride installation');
+      } else {
+        expect(image.alt).not.toMatch(/AI-generated|illustration/i);
+      }
+      expect(image.hasAttribute('onerror')).toBe(false);
+      expect(statSync(resolve(repoRoot, image.getAttribute('src'))).size).toBeLessThan(250000);
+    }
+    expect([...doc.querySelectorAll('script[src]')].some((script) => /three|solar-scene/.test(script.src))).toBe(false);
+  });
+
+  it('records provenance for each published AI image', () => {
+    const specification = JSON.parse(readRepoFile('scripts/media-prompts.json'));
+    expect(specification.model).toBe('black-forest-labs/FLUX.1-schnell');
+    expect(specification.license).toBe('Apache-2.0');
+    for (const file of CONTENT_PAGES) {
+      const doc = parse(readRepoFile(file.file));
+      for (const image of doc.querySelectorAll('img[src*="/editorial/"]')) {
+        const name = image.getAttribute('src').split('/').pop().replace(/-\d+\.webp$/, '');
+        const entry = specification.images.find((item) => item.name === name);
+        expect(entry?.prompt).toBeTruthy();
+        expect(existsSync(resolve(repoRoot, `assets/images/editorial/${name}.webp`))).toBe(true);
+      }
+    }
+  });
+
+  it('preserves the real journey and team photographs in their existing pages', () => {
+    for (const file of ['index.html', 'faq.html']) {
+      const doc = parse(readRepoFile(file));
+      for (const photo of ['crowdWork', 'inspirationPic', 'impactPic']) {
+        expect(doc.querySelector(`img[src="assets/images/optimized/${photo}-960.webp"]`)).not.toBeNull();
+        expect(existsSync(resolve(repoRoot, `assets/images/${photo}.jpg`))).toBe(true);
+      }
+    }
+    const team = parse(readRepoFile('team.html'));
+    for (const person of ['pankaj', 'vanshul', 'priyanka', 'praveen']) {
+      expect(team.querySelector(`img[src="assets/images/optimized/People/${person}-960.webp"]`)).not.toBeNull();
+      expect(existsSync(resolve(repoRoot, `assets/images/People/${person}.${person === 'pankaj' ? 'jpeg' : 'png'}`))).toBe(true);
+    }
+  });
+
+  it.each(CONTENT_PAGES)('avoids unsupported price and savings promises in $file', ({ file }) => {
+    expect(parse(readRepoFile(file)).body.textContent).not.toMatch(/98%|55,000|65,000|3-4 Year Payback|Zero-Carbon Business ESG/);
+  });
+
+  it.each(['mohali', 'hisar'])('keeps the %s price answer consistent with structured data', (city) => {
+    const doc = parse(readRepoFile(`solar-panel-installation-${city}.html`));
+    const graph = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent)['@graph'];
+    const priceAnswer = graph.find((node) => node['@type'] === 'FAQPage').mainEntity[0];
+    const question = doc.querySelector('.faq-toggle');
+    expect(priceAnswer.name).toBe(question.textContent.trim());
+    expect(priceAnswer.acceptedAnswer.text).toBe(doc.getElementById(question.getAttribute('aria-controls')).textContent.trim());
+    expect(priceAnswer.acceptedAnswer.text).toContain('subject to approval');
+  });
+
+  it('describes the savings tool accurately without unsupported financial promises', () => {
+    const doc = parse(readRepoFile('benefits.html'));
+    expect(doc.querySelector('h1').textContent).toContain('Solar Savings Calculator');
+    expect(doc.querySelector('#savings-calculator').textContent).toContain('not a quotation or savings guarantee');
+    expect(doc.querySelector('#savings-calculator a[href="rooftop-solar-guide.html"]')).not.toBeNull();
+    expect(doc.body.textContent).not.toMatch(/98%|Increases home value by/);
+  });
+
+  it('has unique titles and descriptions across content pages', () => {
+    const docs = CONTENT_PAGES.map(({ file }) => parse(readRepoFile(file)));
+    expect(new Set(docs.map((doc) => doc.title)).size).toBe(docs.length);
+    expect(new Set(docs.map((doc) => meta(doc, 'meta[name="description"]'))).size).toBe(docs.length);
+  });
+
+  it('keeps search and AI search crawlers unblocked', () => {
+    const rules = readRepoFile('robots.txt').split('\n').map((line) => line.split('#')[0].trim()).filter(Boolean);
+    expect(rules).toContain('User-agent: *');
+    expect(rules).toContain('Allow: /');
+    expect(rules.some((line) => /^Disallow:\s*\S/i.test(line))).toBe(false);
+  });
+
+  it('does not publish build tools, dependencies or internal documentation', () => {
+    for (const privatePath of ['node_modules', 'tests', 'docs', 'scripts', 'package.json', '.git', '.github']) {
+      expect(existsSync(resolve(repoRoot, '_site', privatePath))).toBe(false);
+    }
+    expect(readRepoFile('_site/robots.txt')).toBe(readRepoFile('robots.txt'));
+    expect(readRepoFile('_site/sitemap.xml')).toBe(readRepoFile('sitemap.xml'));
+  });
+
+  it('connects the sourced guide to visible authorship, dates and internal links', () => {
+    const doc = parse(readRepoFile('rooftop-solar-guide.html'));
+    const graph = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent)['@graph'];
+    const article = graph.find((node) => node['@type'] === 'Article');
+    expect(article.headline).toBe(doc.querySelector('h1').textContent);
+    expect(article.dateModified).toBe(doc.querySelector('time').getAttribute('datetime'));
+    expect(doc.querySelector('article').textContent).toContain(article.author.name);
+    expect(doc.querySelector('a[href="https://pmsuryaghar.gov.in/"]')).not.toBeNull();
+    expect(doc.querySelector('a[href*="PRID=2010130"]')).not.toBeNull();
+    for (const link of doc.querySelectorAll('a[href^="#"]')) {
+      expect(doc.getElementById(link.getAttribute('href').slice(1))).not.toBeNull();
+    }
+    for (const file of ['index.html', 'faq.html', 'solutions.html', 'benefits.html', 'solar-panel-installation-mohali.html', 'solar-panel-installation-hisar.html']) {
+      expect(parse(readRepoFile(file)).querySelector('a[href="rooftop-solar-guide.html"]')).not.toBeNull();
+    }
+  });
 });
 
 describe('Structured data (index.html)', () => {
   const doc = parse(readRepoFile('index.html'));
   const blocks = [...doc.querySelectorAll('script[type="application/ld+json"]')];
+
+  it('connects the homepage to the website and business entity', () => {
+    const graph = blocks.flatMap((block) => JSON.parse(block.textContent)['@graph'] ?? []);
+    const page = graph.find((node) => node['@type'] === 'WebPage');
+    expect(page.url).toBe(`${DOMAIN}/`);
+    expect(page.isPartOf['@id']).toBe(`${DOMAIN}/#website`);
+    expect(page.about['@id']).toBe(`${DOMAIN}/#organization`);
+  });
+
+  it.each(['mohali', 'hisar'])('keeps the %s office consistent with its service page', (city) => {
+    const graph = blocks.flatMap((block) => JSON.parse(block.textContent)['@graph'] ?? []);
+    const office = graph.find((node) => node['@id'] === `${DOMAIN}/#${city}`);
+    const localDoc = parse(readRepoFile(`solar-panel-installation-${city}.html`));
+    const localGraph = [...localDoc.querySelectorAll('script[type="application/ld+json"]')]
+      .flatMap((block) => {
+        const data = JSON.parse(block.textContent);
+        return data['@graph'] ?? [data];
+      });
+    const localOffice = localGraph.find((node) => node['@id'] === office['@id']);
+    expect(office.url).toBe(`${DOMAIN}/solar-panel-installation-${city}.html`);
+    expect(office.telephone).toBe(localOffice.telephone);
+    expect(office.name).toBe(localOffice.name);
+    expect(office.address).toEqual(localOffice.address);
+    const telephone = office.telephone.replace(/[^+\d]/g, '');
+    expect(doc.querySelector(`a[href="tel:${telephone}"]`)).not.toBeNull();
+    expect(localDoc.querySelector(`a[href="tel:${telephone}"]`)).not.toBeNull();
+  });
 
   it('includes at least one JSON-LD block', () => {
     expect(blocks.length).toBeGreaterThan(0);
@@ -178,6 +351,12 @@ describe('FAQ structured data (faq.html)', () => {
   it('matches the number of on-page accordion questions', () => {
     const visible = doc.querySelectorAll('.faq-toggle').length;
     expect(visible).toBe(faqBlock.mainEntity.length);
+  });
+
+  it.each(['faq-1', 'faq-2', 'faq-4'])('matches the qualified visible answer in %s', (answerId) => {
+    const question = doc.querySelector(`[aria-controls="${answerId}"]`).textContent.trim();
+    const answer = faqBlock.mainEntity.find((entry) => entry.name === question);
+    expect(answer.acceptedAnswer.text).toBe(doc.getElementById(answerId).textContent.trim());
   });
 });
 

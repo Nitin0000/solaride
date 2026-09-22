@@ -3,7 +3,7 @@
 Marketing website for **SOLARIDE** — premium **rooftop solar panel installation across North India** (Punjab, Haryana, Chandigarh & Rajasthan; offices in Mohali and Hisar). The site markets residential, commercial, and agricultural solar solutions, provides an interactive savings/impact calculator, and captures leads.
 
 - **Live site:** https://solaride.in
-- **Stack:** Static HTML + Tailwind (CDN) + Alpine.js + vanilla JS
+- **Stack:** Static HTML + compiled Tailwind + responsive WebP + Alpine.js + vanilla JS
 - **Hosting:** GitHub Pages (custom domain via `CNAME`)
 
 ---
@@ -26,7 +26,8 @@ Marketing website for **SOLARIDE** — premium **rooftop solar panel installatio
 - **Responsive marketing pages** — Home, Solutions, Benefits, Team, About (`faq.html`), plus Privacy and Data Deletion legal pages.
 - **Tree-to-Energy calculator** (`benefits.html`) — estimates annual CO₂ offset, tree equivalent, and energy produced from system size and sunlight hours.
 - **Solar Savings Calculator** (`benefits.html`) — sizes a system from the user's bill and roof area, shows investment, monthly/annual/lifetime savings, payback, ROI and CO₂; opens a detailed report modal and generates a downloadable `.txt` estimate.
-- **FAQ** (`faq.html`) — a 10-question accordion with `FAQPage` structured data for rich results.
+- **FAQ** (`faq.html`) — a 10-question accordion with matching structured data; Google FAQ rich results are restricted and not expected for this business.
+- **Buying guide** (`rooftop-solar-guide.html`) — cost, subsidy, sizing, net metering and backup guidance with official sources and Article markup.
 - **Service-area pages** (`solar-panel-installation-mohali.html`, `-hisar.html`) — locally-written landing pages for the two offices with `LocalBusiness` + `FAQPage` schema.
 - **Lead capture** — contact form wired to [EmailJS](https://www.emailjs.com/); WhatsApp/call CTAs throughout.
 - **Accessible UI** — skip link, focus-trapped modals, `aria-expanded` mobile menu, keyboard (Escape) modal dismissal.
@@ -38,15 +39,16 @@ Marketing website for **SOLARIDE** — premium **rooftop solar panel installatio
 | Concern        | Choice                                              |
 | -------------- | --------------------------------------------------- |
 | Markup         | Hand-authored semantic HTML                         |
-| Styling        | [Tailwind CSS](https://tailwindcss.com/) via CDN + `assets/css/styles.css` |
+| Styling        | Compiled [Tailwind CSS](https://tailwindcss.com/) + `assets/css/styles.css` |
 | Interactivity  | Vanilla JS modules under `assets/js/` + Alpine.js   |
-| Charts         | Chart.js / ApexCharts (CDN)                         |
+| Image build    | Sharp generates responsive WebP variants           |
 | Email          | EmailJS browser SDK                                  |
 | Tests          | [Vitest](https://vitest.dev/) + jsdom               |
 | CI / Hosting   | GitHub Actions → GitHub Pages                        |
 
-There is **no build step** — scripts are plain `<script src>` includes, so the
-repo deploys exactly as-is.
+`npm run build` compiles CSS, creates responsive images, and stages public files
+in `_site/`. Browser scripts remain plain `<script src>` includes. Generated
+assets are ignored by Git and must be rebuilt after cloning or changing markup.
 
 ## Project structure
 
@@ -96,20 +98,35 @@ solaride/
 
 ## Local development
 
-No toolchain is required to view the site — open any HTML file, or serve the
-folder to exercise relative paths and scripts:
+Use Node.js 22+ for the build. Install dependencies and generate assets first:
 
 ```bash
-# Python (built-in)
-python3 -m http.server 8000
-# then visit http://localhost:8000
+npm ci
+npm run build
 ```
 
-To run the tests you need Node.js 20+:
+Then open `_site/index.html` in your browser. An optional local HTTP server can
+serve `_site/` when testing network-dependent features. Rebuild after edits.
 
-```bash
-npm install
-```
+### Editorial imagery
+
+Two AI-generated rooftop concepts in `assets/images/editorial/` were generated
+with FLUX.1-schnell through Black Forest Labs' public Hugging Face demo. Prompts,
+seeds, source links and the Apache-2.0 model licence are recorded in
+`scripts/media-prompts.json`. Visible captions distinguish concepts from completed
+installations. Real team and journey photos retain their original placements;
+additional existing installation photos now support the other content pages.
+
+`npm run generate:media -- solar-horizon` generates a missing named source image.
+Existing files are kept. The anonymous demo is quota-limited, has no availability
+guarantee and is never called during builds or deployment. Only `solar-horizon`
+and `rooftop-life` were generated; other manifest entries are ungenerated briefs.
+Further generation was blocked by the provider's anonymous ZeroGPU quota.
+
+Run `npm run build` to create responsive WebP variants. Original photographs are
+never modified. Former stock images and procedural renders remain archived and
+are not referenced by content pages. The legacy `render:media` workflow is retained
+for archival purposes, not used for current website imagery.
 
 ## Testing
 
@@ -118,7 +135,7 @@ loaded into jsdom via a small `tests/helpers/dom.mjs` loader so the *actual*
 shipped files are exercised (no separate build).
 
 ```bash
-npm test          # run once
+npm test          # build, then run once
 npm run test:watch
 npm run coverage
 ```
@@ -164,13 +181,14 @@ These are enforced by `tests/seo.test.mjs`, so regressions fail CI. See
 
 ## Deployment
 
-Pushing to **`devVanz`** triggers `.github/workflows/static.yml`, which uploads
-the repository and deploys it to GitHub Pages. The custom domain is pinned by
-the `CNAME` file so it survives redeploys.
+Pushing to **`devVanz`** triggers `.github/workflows/static.yml`, which installs
+dependencies, builds and tests, then uploads only `_site/` to GitHub Pages.
+Tests, internal docs and node_modules are not deployed. The custom domain is
+pinned by `CNAME`. Configure Pages to use GitHub Actions, not raw branch files.
 
 ## Conventions
 
-- **No build step.** Keep scripts as plain browser files; expose testable logic
+- **Static asset build only.** Keep scripts as plain browser files; expose testable logic
   on `window` (and `module.exports` when useful) so it can be unit-tested.
 - **Pure logic in `calc.js`.** Add new calculations there and wire the DOM
   separately, then cover them in `tests/calc.test.mjs`.

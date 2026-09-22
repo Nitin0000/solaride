@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Preconnect / DNS-prefetch to CDN origins for faster first render -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
  
@@ -30,13 +30,13 @@
   <link rel="alternate" hreflang="x-default" href="https://solaride.in/benefits.html">
  
   <!-- Performance optimization: Preload critical resources -->
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
  
   <!-- Core CSS and Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
  
@@ -56,8 +56,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Solar Savings Calculator & Benefits in North India | SOLARIDE">
   <meta property="og:description" content="Calculate your solar savings, subsidy, environmental impact, and energy output with our interactive Tree-to-Energy Calculator.">
-  <meta property="og:image" content="https://solaride.in/assets/images/solarInstall.png">
-  <meta property="og:image:alt" content="SOLARIDE solar savings calculator for North India">
+  <meta property="og:image" content="https://solaride.in/assets/images/optimized/editorial/rooftop-life-1440.webp">
+  <meta property="og:image:alt" content="Original architectural illustration of a solar energy system">
   <meta property="og:url" content="https://solaride.in/benefits.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
@@ -67,7 +67,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Solar Savings Calculator & Benefits in North India | SOLARIDE">
   <meta name="twitter:description" content="Calculate your solar savings, subsidy, environmental impact, and energy output with our interactive calculator.">
-  <meta name="twitter:image" content="https://solaride.in/assets/images/solarInstall.png">
+  <meta name="twitter:image" content="https://solaride.in/assets/images/optimized/editorial/rooftop-life-1440.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/Solaride Colored Icon.png">
@@ -106,13 +106,23 @@
   <!-- Structured Data: Breadcrumbs -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://solaride.in/" },
-      { "@type": "ListItem", "position": 2, "name": "Solar Savings Calculator", "item": "https://solaride.in/benefits.html" }
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://solaride.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solar Savings Calculator",
+      "item": "https://solaride.in/benefits.html"
+    }
+  ]
+}
   </script>
 </head>
 
@@ -146,7 +156,7 @@
       <nav class="flex items-center justify-between py-4">
         <!-- Logo -->
         <a href="index.html" class="flex items-center">
-          <img src="assets/images/iconLogo.png" width="200" alt="SOLARIDE logo" />
+          <img src="assets/images/optimized/iconLogo-240.webp" width="200" alt="SOLARIDE logo" srcset="assets/images/optimized/iconLogo-240.webp 240w, assets/images/optimized/iconLogo-480.webp 480w" sizes="200px" height="48" decoding="async" loading="eager">
         </a>
 
         <!-- Desktop Navigation -->
@@ -194,15 +204,13 @@
     <section id="solar-benefits" class="py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-          <h1 class="text-4xl lg:text-5xl font-bold text-neutral-800 mb-4">Solar Benefits</h1>
-          <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Discover how solar energy can transform your life while helping protect our planet for future generations.</p>
+          <h1 class="text-4xl lg:text-5xl font-bold text-neutral-800 mb-4">Solar Savings Calculator &amp; Benefits</h1>
+          <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Estimate rooftop solar savings for your home in North India, then compare system size, installation cost and payback with a site-specific quote.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
           <div>
-            <img src="assets/images/greenEnergy.png" alt="Professional discussing solar benefits" loading="lazy" decoding="async"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Benefits'"
-              width="5066" height="3377" class="w-full h-auto object-cover rounded-xl shadow-md">
+            <figure class="editorial-media"><img src="assets/images/optimized/editorial/rooftop-life-960.webp" alt="AI-generated rooftop living concept with solar panels, a courtyard tree and a green door" loading="eager" decoding="async" width="1344" height="896" class="solar-art" srcset="assets/images/optimized/editorial/rooftop-life-480.webp 480w, assets/images/optimized/editorial/rooftop-life-960.webp 960w, assets/images/optimized/editorial/rooftop-life-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" fetchpriority="high"><figcaption>AI-generated concept. Not a completed Solaride installation.</figcaption></figure>
           </div>
 
           <div class="space-y-8">
@@ -243,7 +251,7 @@
 
             <div class="bg-green-50 p-6 rounded-lg border border-green-100">
               <h3 class="text-2xl font-bold text-neutral-800 mb-3">Financial Benefits</h3>
-              <p class="text-neutral-700 mb-4">Investing in solar power provides significant long-term savings while increasing your property value.</p>
+              <p class="text-neutral-700 mb-4">Rooftop solar can reduce purchased electricity. Your financial return depends on installation cost, generation, electricity use and local tariff rules.</p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
@@ -255,7 +263,7 @@
                     </div>
                     <div>
                       <p class="font-semibold text-neutral-800">Energy Savings</p>
-                      <p class="text-sm text-neutral-600">Up to 98% reduction in electric bills</p>
+                      <p class="text-sm text-neutral-600">Savings vary; fixed utility charges may remain</p>
                     </div>
                   </div>
                 </div>
@@ -268,8 +276,8 @@
                       </svg>
                     </div>
                     <div>
-                      <p class="font-semibold text-neutral-800">Property Value</p>
-                      <p class="text-sm text-neutral-600">Increases home value by ~4%</p>
+                      <p class="font-semibold text-neutral-800">Long-Term Value</p>
+                      <p class="text-sm text-neutral-600">Compare lifetime savings with maintenance and replacement costs</p>
                     </div>
                   </div>
                 </div>
@@ -283,6 +291,7 @@
           <div class="text-center mb-8">
             <h3 class="text-2xl font-bold text-neutral-800 mb-2">Solar Savings Calculator</h3>
             <p class="text-neutral-600">Estimate your ideal system size, savings and payback from your electricity bill and rooftop area.</p>
+            <p class="text-sm text-neutral-600 mt-3">Planning estimate only, not a quotation or savings guarantee. Tariffs, shading, financing, maintenance and subsidy eligibility can change the result. Read our <a href="rooftop-solar-guide.html" class="text-[#065f46] underline">solar cost, subsidy and sizing guide</a> before deciding.</p>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -527,9 +536,7 @@
 
           <div class="order-1 lg:order-2">
             <div class="relative rounded-xl overflow-hidden shadow-sm border border-neutral-200 mb-8">
-              <img src="assets/images/solarInstall.png" alt="Professional SOLARIDE team member ready to assist you" loading="lazy" decoding="async"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Contact'"
-                width="5066" height="3377" class="w-full h-64 md:h-80 object-cover">
+              <figure class="editorial-media"><img src="assets/images/optimized/installations/installation-canopy-960.webp" alt="Existing rooftop solar canopy with steel supports and usable terrace space beneath" loading="lazy" decoding="async" width="960" height="1280" class="solar-art solar-art--photo" srcset="assets/images/optimized/installations/installation-canopy-480.webp 480w, assets/images/optimized/installations/installation-canopy-960.webp 960w, assets/images/optimized/installations/installation-canopy-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px"><figcaption>From the Solaride photo archive.</figcaption></figure>
             </div>
 
             <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-200 mb-8">

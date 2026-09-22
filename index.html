@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Preconnect / DNS-prefetch to CDN origins for faster first render -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
  
@@ -30,13 +30,13 @@
   <link rel="alternate" hreflang="x-default" href="https://solaride.in/">
  
   <!-- Performance optimization: Preload critical resources -->
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
  
   <!-- Core CSS and Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
  
@@ -56,8 +56,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Rooftop Solar Panel Installation in North India | SOLARIDE">
   <meta property="og:description" content="Premium rooftop solar installation across North India (Punjab, Haryana, Mohali & Hisar). Free site survey, full PM Surya Ghar subsidy help, and net metering support.">
-  <meta property="og:image" content="https://solaride.in/assets/images/solarInstall.png">
-  <meta property="og:image:alt" content="Rooftop solar panel installation by SOLARIDE in North India">
+  <meta property="og:image" content="https://solaride.in/assets/images/optimized/editorial/solar-horizon-1440.webp">
+  <meta property="og:image:alt" content="Original architectural illustration of a solar energy system">
   <meta property="og:url" content="https://solaride.in/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
@@ -67,7 +67,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rooftop Solar Panel Installation in North India | SOLARIDE">
   <meta name="twitter:description" content="Premium rooftop solar installation across North India. Free site survey, PM Surya Ghar subsidy help, and net metering support.">
-  <meta name="twitter:image" content="https://solaride.in/assets/images/solarInstall.png">
+  <meta name="twitter:image" content="https://solaride.in/assets/images/optimized/editorial/solar-horizon-1440.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/Solaride Colored Icon.png">
@@ -106,103 +106,184 @@
   <!-- Structured Data: Organization + LocalBusiness -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://solaride.in/#organization",
-        "name": "SOLARIDE",
-        "url": "https://solaride.in/",
-        "logo": "https://solaride.in/assets/images/iconLogo.png",
-        "image": "https://solaride.in/assets/images/solarInstall.png",
-        "email": "solarideenergy@gmail.com",
-        "description": "SOLARIDE provides premium rooftop solar panel installation across North India, serving residential, commercial, and agricultural customers in Punjab, Haryana, Chandigarh, Rajasthan and beyond.",
-        "areaServed": [
-          { "@type": "Place", "name": "North India" },
-          { "@type": "State", "name": "Punjab" },
-          { "@type": "State", "name": "Haryana" },
-          { "@type": "State", "name": "Rajasthan" },
-          { "@type": "City", "name": "Chandigarh" }
-        ],
-        "sameAs": [
-          "https://www.instagram.com/pankajmahla_/",
-          "https://www.linkedin.com/company/solaride1/"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+91-73802-80874",
-          "contactType": "sales",
-          "areaServed": "IN",
-          "availableLanguage": ["en", "hi"]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://solaride.in/#organization",
+      "name": "SOLARIDE",
+      "url": "https://solaride.in/",
+      "logo": "https://solaride.in/assets/images/iconLogo.png",
+      "image": "https://solaride.in/assets/images/optimized/editorial/solar-horizon-1440.webp",
+      "email": "solarideenergy@gmail.com",
+      "description": "SOLARIDE provides premium rooftop solar panel installation across North India, serving residential, commercial, and agricultural customers in Punjab, Haryana, Chandigarh, Rajasthan and beyond.",
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "North India"
         },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Rooftop Solar Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Rooftop Solar Installation" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial & Industrial Solar Installation" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agricultural Solar Pump Installation" } }
-          ]
+        {
+          "@type": "State",
+          "name": "Punjab"
+        },
+        {
+          "@type": "State",
+          "name": "Haryana"
+        },
+        {
+          "@type": "State",
+          "name": "Rajasthan"
+        },
+        {
+          "@type": "City",
+          "name": "Chandigarh"
         }
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://solaride.in/#mohali",
-        "name": "SOLARIDE — Mohali Office",
-        "parentOrganization": { "@id": "https://solaride.in/#organization" },
-        "url": "https://solaride.in/",
-        "image": "https://solaride.in/assets/images/solarInstall.png",
-        "telephone": "+91-62844-59603",
-        "email": "solarideenergy@gmail.com",
-        "priceRange": "₹₹",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "#501, Sector 82",
-          "addressLocality": "Mohali",
-          "addressRegion": "Punjab",
-          "addressCountry": "IN"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": 30.7046, "longitude": 76.7179 },
-        "areaServed": [
-          { "@type": "Place", "name": "North India" },
-          { "@type": "State", "name": "Punjab" },
-          { "@type": "City", "name": "Chandigarh" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/pankajmahla_/",
+        "https://www.linkedin.com/company/solaride1/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-73802-80874",
+        "contactType": "sales",
+        "areaServed": "IN",
+        "availableLanguage": [
+          "en",
+          "hi"
         ]
       },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://solaride.in/#hisar",
-        "name": "SOLARIDE — Hisar Office",
-        "parentOrganization": { "@id": "https://solaride.in/#organization" },
-        "url": "https://solaride.in/",
-        "image": "https://solaride.in/assets/images/solarInstall.png",
-        "telephone": "+91-70090-57445",
-        "email": "solarideenergy@gmail.com",
-        "priceRange": "₹₹",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "#76, Sector 15, Defence Colony",
-          "addressLocality": "Hisar",
-          "addressRegion": "Haryana",
-          "addressCountry": "IN"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": 29.1492, "longitude": 75.7217 },
-        "areaServed": [
-          { "@type": "Place", "name": "North India" },
-          { "@type": "State", "name": "Haryana" },
-          { "@type": "State", "name": "Rajasthan" }
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Rooftop Solar Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential Rooftop Solar Installation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial & Industrial Solar Installation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agricultural Solar Pump Installation"
+            }
+          }
         ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://solaride.in/#website",
-        "url": "https://solaride.in/",
-        "name": "SOLARIDE",
-        "publisher": { "@id": "https://solaride.in/#organization" },
-        "inLanguage": "en-IN"
       }
-    ]
-  }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://solaride.in/#mohali",
+      "name": "SOLARIDE — Mohali Office",
+      "parentOrganization": {
+        "@id": "https://solaride.in/#organization"
+      },
+      "url": "https://solaride.in/solar-panel-installation-mohali.html",
+      "image": "https://solaride.in/assets/images/optimized/installations/installation-canopy-1440.webp",
+      "telephone": "+91-62844-59603",
+      "email": "solarideenergy@gmail.com",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#501, Sector 82",
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.7046,
+        "longitude": 76.7179
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "North India"
+        },
+        {
+          "@type": "State",
+          "name": "Punjab"
+        },
+        {
+          "@type": "City",
+          "name": "Chandigarh"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://solaride.in/#hisar",
+      "name": "SOLARIDE — Hisar Office",
+      "parentOrganization": {
+        "@id": "https://solaride.in/#organization"
+      },
+      "url": "https://solaride.in/solar-panel-installation-hisar.html",
+      "image": "https://solaride.in/assets/images/optimized/installations/installation-canopy-1440.webp",
+      "telephone": "+91-70090-57445",
+      "email": "solarideenergy@gmail.com",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#76, Sector 15, Defence Colony",
+        "addressLocality": "Hisar",
+        "addressRegion": "Haryana",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.1492,
+        "longitude": 75.7217
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "North India"
+        },
+        {
+          "@type": "State",
+          "name": "Haryana"
+        },
+        {
+          "@type": "State",
+          "name": "Rajasthan"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://solaride.in/#webpage",
+      "url": "https://solaride.in/",
+      "name": "Rooftop Solar Panel Installation in North India | SOLARIDE",
+      "isPartOf": {
+        "@id": "https://solaride.in/#website"
+      },
+      "about": {
+        "@id": "https://solaride.in/#organization"
+      },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://solaride.in/#website",
+      "url": "https://solaride.in/",
+      "name": "SOLARIDE",
+      "publisher": {
+        "@id": "https://solaride.in/#organization"
+      },
+      "inLanguage": "en-IN"
+    }
+  ]
+}
   </script>
 </head>
 
@@ -236,7 +317,7 @@
       <nav class="flex items-center justify-between py-4">
         <!-- Logo -->
         <a href="index.html" class="flex items-center">
-          <img src="assets/images/iconLogo.png" width="200" alt="SOLARIDE logo" />
+          <img src="assets/images/optimized/iconLogo-240.webp" width="200" alt="SOLARIDE logo" srcset="assets/images/optimized/iconLogo-240.webp 240w, assets/images/optimized/iconLogo-480.webp 480w" sizes="200px" height="48" decoding="async" loading="eager">
         </a>
 
         <!-- Desktop Navigation -->
@@ -281,17 +362,20 @@
   <!-- Main Content Area -->
   <main id="main-content" class="flex-1">
     <!-- Hero Section -->
-    <section id="hero" class="pt-32 lg:pt-36 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-r from-blue-50 to-green-50">
+    <section id="hero" class="solar-hero">
       <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
           <!-- Left content (text) -->
-          <div class="lg:w-1/2 space-y-6">
-            <h1 class="text-4xl md:text-5xl lg:text-6.5xl font-bold leading-tight text-neutral-800">
-              Rooftop Solar Panel Installation in North India | <span class="text-[#065f46]">SOLARIDE</span>
+          <div class="solar-hero__copy space-y-6">
+            <h1>
+              SOLARIDE
             </h1>
 
-            <p class="text-lg md:text-xl text-neutral-600 max-w-xl">
-              Get customized solar rooftop installations for homes, businesses, and agriculture across North India — including Mohali, Chandigarh, Hisar, Punjab, Haryana & Rajasthan. Cut your electricity bills by up to 98%.
+            <p class="solar-hero__lead">
+              Rooftop solar. A brighter everyday.
+            </p>
+            <p class="solar-hero__description">
+              Solar panel installation for homes, businesses and farms across North India. From Mohali to Hisar, get a system designed around your roof, your electricity use and your future.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
@@ -304,37 +388,18 @@
                 Calculate Savings
               </a>
             </div>
-            <p class="text-sm text-neutral-600 mt-3 flex items-center gap-2 justify-center sm:justify-start">
+            <p class="solar-hero__phone text-sm mt-3 flex items-center gap-2">
               <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#065f46] text-white text-xs"><i class="fas fa-phone-alt"></i></span>
-              Or Call directly: <a href="tel:+917380280874" class="font-bold text-[#065f46] hover:underline">+91 73802 80874</a>
+              Call us: <a href="tel:+917380280874" class="font-bold hover:underline">+91 73802 80874</a>
             </p>
           </div>
 
           <!-- Right content (image) -->
-          <div class="lg:w-1/2 relative">
-            <div class="bg-[#4D9DE0] absolute -top-6 -left-6 w-full h-full rounded-2xl"></div>
-            <div class="relative z-10 rounded-2xl overflow-hidden border border-neutral-200 bg-white p-2">
-              <img src="assets/images/solarInstall.png" alt="Rooftop solar panel installation in Mohali, Punjab by SOLARIDE"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE'"
-                class="w-full h-full object-cover rounded-xl" width="5066" height="3377">
+          <div class="solar-hero__visual">
+            <div class="relative z-10 overflow-hidden">
+              <figure class="editorial-media"><img src="assets/images/optimized/editorial/solar-horizon-1440.webp" alt="AI-generated concept of photovoltaic panels catching morning sunlight on a North Indian rooftop" class="solar-art" width="1536" height="864" srcset="assets/images/optimized/editorial/solar-horizon-480.webp 480w, assets/images/optimized/editorial/solar-horizon-960.webp 960w, assets/images/optimized/editorial/solar-horizon-1440.webp 1440w" sizes="(max-width: 767px) 1100px, 100vw" decoding="async" loading="eager" fetchpriority="high"><figcaption>AI-generated concept. Not a completed Solaride installation.</figcaption></figure>
             </div>
 
-            <!-- Floating stats card -->
-            <div
-              class="absolute bottom-8 -left-8 bg-white p-4 rounded-lg shadow-lg border border-neutral-200 z-20 hidden md:block">
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-neutral-600 text-sm">Solar Installed</p>
-                  <p class="text-neutral-900 font-bold text-xl">250+ KW</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -370,7 +435,7 @@
                 <i class="fas fa-chart-line"></i>
               </div>
               <h3 class="text-xl font-bold text-neutral-800 mb-3">Benefits & Savings</h3>
-              <p class="text-neutral-600 text-sm leading-relaxed mb-6">Save up to 98% on electricity bills and check your environmental impact with our interactive calculator.</p>
+              <p class="text-neutral-600 text-sm leading-relaxed mb-6">Estimate electricity savings, payback and environmental impact with our solar calculator. Actual results depend on your site and tariff.</p>
             </div>
             <a href="benefits.html" class="inline-flex items-center text-[#4D9DE0] font-semibold hover:underline text-sm mt-4">
               Calculate Savings <i class="fas fa-arrow-right ml-1.5 text-xs"></i>
@@ -396,9 +461,7 @@
         <div class="bg-neutral-50 rounded-2xl border border-neutral-200 shadow-sm overflow-hidden p-8 lg:p-12 max-w-4xl mx-auto">
           <div class="flex flex-col md:flex-row gap-8 items-center">
             <div class="md:w-1/3">
-              <img src="assets/images/crowdWork.jpg" alt="Pankaj cycling roots" loading="lazy" decoding="async"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Roots'"
-                class="rounded-xl object-cover w-full h-48 md:h-64">
+              <img src="assets/images/optimized/crowdWork-960.webp" alt="Pankaj cycling roots" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Roots'" class="rounded-xl object-cover w-full h-48 md:h-64" srcset="assets/images/optimized/crowdWork-480.webp 480w, assets/images/optimized/crowdWork-960.webp 960w, assets/images/optimized/crowdWork-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="1600" height="1066">
             </div>
             <div class="md:w-2/3 space-y-4">
               <span class="text-xs font-bold text-[#065f46] uppercase bg-green-50 px-2.5 py-1 rounded">Our Origin Story</span>
@@ -445,9 +508,7 @@
               <p class="text-neutral-600">Traveling 100–250 km daily, I battled heatwaves, thunderstorms, and the challenges of solo travel to ignite conversations on solar power as a viable and essential solution for a greener India.</p>
 
               <div class="my-6">
-                <img src="assets/images/inspirationPic.jpg" alt="Planning the journey with maps and notes" loading="lazy" decoding="async"
-                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Planning+Journey'"
-                  class="w-full h-64 object-cover rounded-lg">
+                <img src="assets/images/optimized/inspirationPic-960.webp" alt="Planning the journey with maps and notes" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Planning+Journey'" class="w-full h-64 object-cover rounded-lg" srcset="assets/images/optimized/inspirationPic-480.webp 480w, assets/images/optimized/inspirationPic-960.webp 960w, assets/images/optimized/inspirationPic-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="1600" height="1066">
               </div>
 
               <h4 class="text-xl font-bold text-neutral-800">The Challenges</h4>
@@ -460,9 +521,7 @@
               <p class="text-neutral-600">Over 60 days, I visited 33 cities and conducted sessions in schools, universities, and army camps. Every interaction—from professors in classrooms to soldiers at army bases—was a milestone.</p>
 
               <div class="my-6">
-                <img src="assets/images/impactPic.jpg" alt="Impact of the journey" loading="lazy" decoding="async"
-                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Impact+of+Journey'"
-                  class="w-full h-80 object-cover rounded-lg">
+                <img src="assets/images/optimized/impactPic-960.webp" alt="Impact of the journey" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Impact+of+Journey'" class="w-full h-80 object-cover rounded-lg" srcset="assets/images/optimized/impactPic-480.webp 480w, assets/images/optimized/impactPic-960.webp 960w, assets/images/optimized/impactPic-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="1600" height="902">
               </div>
 
               <h4 class="text-xl font-bold text-neutral-800">The Impact</h4>
@@ -496,6 +555,14 @@
             <p class="text-sm text-neutral-600">Rooftop &amp; agricultural solar with DHBVN net metering across the Hisar belt.</p>
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-neutral-50">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-2xl font-bold text-neutral-800 mb-4">Planning rooftop solar for your home?</h2>
+        <p class="text-neutral-600 mb-4">Compare installation quotes, understand residential subsidy eligibility and decide whether a 3 kW or 5 kW system fits your electricity use. Savings depend on your roof, tariff and utility rules.</p>
+        <a href="rooftop-solar-guide.html" class="text-[#065f46] font-semibold underline">Read the rooftop solar cost, subsidy and sizing guide</a>
       </div>
     </section>
 
@@ -569,9 +636,7 @@
 
           <div class="order-1 lg:order-2">
             <div class="relative rounded-xl overflow-hidden shadow-sm border border-neutral-200 mb-8">
-              <img src="assets/images/solarInstall.png" alt="Professional SOLARIDE team member ready to assist you" loading="lazy" decoding="async"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Contact'"
-                width="5066" height="3377" class="w-full h-64 md:h-80 object-cover">
+              <figure class="editorial-media"><img src="assets/images/optimized/installations/installation-team-960.webp" alt="Solaride crew member beneath installed rooftop solar panels" loading="lazy" decoding="async" width="960" height="1280" class="solar-art solar-art--photo" srcset="assets/images/optimized/installations/installation-team-480.webp 480w, assets/images/optimized/installations/installation-team-960.webp 960w, assets/images/optimized/installations/installation-team-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px"><figcaption>From the Solaride photo archive.</figcaption></figure>
             </div>
 
             <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-200 mb-8">

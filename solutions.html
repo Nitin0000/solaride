@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Preconnect / DNS-prefetch to CDN origins for faster first render -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
  
@@ -30,13 +30,13 @@
   <link rel="alternate" hreflang="x-default" href="https://solaride.in/solutions.html">
  
   <!-- Performance optimization: Preload critical resources -->
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
  
   <!-- Core CSS and Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
  
@@ -56,8 +56,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Solar Solutions for Homes, Business & Farms in North India | SOLARIDE">
   <meta property="og:description" content="Customized high-efficiency rooftop solar systems for residential, commercial, and agricultural needs across North India.">
-  <meta property="og:image" content="https://solaride.in/assets/images/solarInstall.png">
-  <meta property="og:image:alt" content="SOLARIDE rooftop solar solutions in North India">
+  <meta property="og:image" content="https://solaride.in/assets/images/optimized/editorial/rooftop-life-1440.webp">
+  <meta property="og:image:alt" content="Original architectural illustration of a solar energy system">
   <meta property="og:url" content="https://solaride.in/solutions.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
@@ -67,7 +67,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Solar Solutions for Homes, Business & Farms in North India | SOLARIDE">
   <meta name="twitter:description" content="Customized high-efficiency rooftop solar systems for residential, commercial, and agricultural needs across North India.">
-  <meta name="twitter:image" content="https://solaride.in/assets/images/solarInstall.png">
+  <meta name="twitter:image" content="https://solaride.in/assets/images/optimized/editorial/rooftop-life-1440.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/Solaride Colored Icon.png">
@@ -106,13 +106,23 @@
   <!-- Structured Data: Breadcrumbs -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://solaride.in/" },
-      { "@type": "ListItem", "position": 2, "name": "Solar Solutions", "item": "https://solaride.in/solutions.html" }
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://solaride.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solar Solutions",
+      "item": "https://solaride.in/solutions.html"
+    }
+  ]
+}
   </script>
 </head>
 
@@ -146,7 +156,7 @@
       <nav class="flex items-center justify-between py-4">
         <!-- Logo -->
         <a href="index.html" class="flex items-center">
-          <img src="assets/images/iconLogo.png" width="200" alt="SOLARIDE logo" />
+          <img src="assets/images/optimized/iconLogo-240.webp" width="200" alt="SOLARIDE logo" srcset="assets/images/optimized/iconLogo-240.webp 240w, assets/images/optimized/iconLogo-480.webp 480w" sizes="200px" height="48" decoding="async" loading="eager">
         </a>
 
         <!-- Desktop Navigation -->
@@ -194,7 +204,7 @@
     <section id="solutions" class="py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h1 class="text-4xl lg:text-5xl font-bold text-neutral-800 mb-4">Our Solar Solutions</h1>
+          <h1 class="text-4xl lg:text-5xl font-bold text-neutral-800 mb-4">Solar Installation for Homes, Businesses &amp; Farms</h1>
           <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Get customized high-efficiency solar panel systems designed for your specific energy needs.</p>
         </div>
 
@@ -203,17 +213,15 @@
           <!-- Solution 1 -->
           <div class="bg-white p-8 rounded-xl border border-neutral-200 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
             <div>
-              <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-[#065f46] text-2xl mb-6">
-                <i class="fas fa-home"></i>
-              </div>
+              <figure class="editorial-media"><img class="solar-art solar-art--service" src="assets/images/optimized/editorial/rooftop-life-960.webp" srcset="assets/images/optimized/editorial/rooftop-life-480.webp 480w, assets/images/optimized/editorial/rooftop-life-960.webp 960w, assets/images/optimized/editorial/rooftop-life-1440.webp 1440w" sizes="(max-width: 767px) 100vw, 33vw" width="1344" height="896" alt="AI-generated rooftop living concept with solar panels, a courtyard tree and a green door" loading="eager" decoding="async" fetchpriority="high"><figcaption>AI-generated concept. Not a completed Solaride installation.</figcaption></figure>
               <h3 class="text-2xl font-bold text-neutral-800 mb-3">Residential Solar</h3>
               <p class="text-neutral-600 text-sm leading-relaxed mb-6">
-                Install rooftop solar panels at your home to reduce monthly electricity bills by up to 98%. Take advantage of government subsidies (PM-Surya Ghar) and seamless net-metering integration.
+                Install rooftop solar panels to reduce purchased electricity. We assess your roof and consumption, help eligible households with PM Surya Ghar paperwork, and coordinate net-metering applications. Savings and subsidy approval depend on your site and applicable rules.
               </p>
               <ul class="space-y-2.5 text-sm text-neutral-700 mb-6 font-semibold">
-                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Bill Cut up to 98%</li>
-                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Govt. Subsidies Enabled</li>
-                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 30+ Years Panel Lifespan</li>
+                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Site-Specific Savings Estimate</li>
+                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Subsidy Application Support</li>
+                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Model-Specific Warranty Terms</li>
               </ul>
             </div>
             <a target="_blank" rel="noopener noreferrer" href="https://wa.me/917380280874?text=Hi%20Solaride%2C%20I%20am%20interested%20in%20Residential%20Solar%20solutions."
@@ -225,17 +233,15 @@
           <!-- Solution 2 -->
           <div class="bg-white p-8 rounded-xl border border-neutral-200 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
             <div>
-              <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-[#4D9DE0] text-2xl mb-6">
-                <i class="fas fa-building"></i>
-              </div>
+              <figure class="editorial-media"><img class="solar-art solar-art--service solar-art--photo" src="assets/images/optimized/installations/installation-frame-960.webp" srcset="assets/images/optimized/installations/installation-frame-480.webp 480w, assets/images/optimized/installations/installation-frame-960.webp 960w, assets/images/optimized/installations/installation-frame-1440.webp 1440w" sizes="(max-width: 767px) 100vw, 33vw" width="739" height="1600" alt="Rooftop solar mounting structure and panels during installation" loading="lazy" decoding="async"><figcaption>From the Solaride photo archive.</figcaption></figure>
               <h3 class="text-2xl font-bold text-neutral-800 mb-3">Commercial & Industrial</h3>
               <p class="text-neutral-600 text-sm leading-relaxed mb-6">
-                Reduce your corporate operational expenses with custom solar designs for offices, factories, and warehouses. Benefit from accelerated depreciation benefits and stable energy rates.
+                Assess rooftop solar for offices, factories and warehouses using your daytime load, tariff and available roof. Compare projected savings with financing and maintenance costs. Any depreciation benefit depends on current tax rules and your business eligibility; confirm it with your tax adviser.
               </p>
               <ul class="space-y-2.5 text-sm text-neutral-700 mb-6 font-semibold">
-                <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Accelerated Depreciation</li>
-                <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> High ROI (3-4 Year Payback)</li>
-                <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Zero-Carbon Business ESG</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Daytime Load Assessment</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Project-Specific Payback Estimate</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Renewable Electricity Generation</li>
               </ul>
             </div>
             <a target="_blank" rel="noopener noreferrer" href="https://wa.me/917380280874?text=Hi%20Solaride%2C%20I%20am%20interested%20in%20Commercial%20Solar%20solutions."
@@ -247,17 +253,15 @@
           <!-- Solution 3 -->
           <div class="bg-white p-8 rounded-xl border border-neutral-200 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
             <div>
-              <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center text-[#1E5631] text-2xl mb-6">
-                <i class="fas fa-seedling"></i>
-              </div>
+              <figure class="editorial-media"><img class="solar-art solar-art--service" src="assets/images/optimized/editorial/solar-horizon-960.webp" srcset="assets/images/optimized/editorial/solar-horizon-480.webp 480w, assets/images/optimized/editorial/solar-horizon-960.webp 960w, assets/images/optimized/editorial/solar-horizon-1440.webp 1440w" sizes="(max-width: 767px) 100vw, 33vw" width="1536" height="864" alt="AI-generated concept of photovoltaic panels catching morning sunlight on a North Indian rooftop" loading="lazy" decoding="async"><figcaption>AI-generated concept. Not a completed Solaride installation.</figcaption></figure>
               <h3 class="text-2xl font-bold text-neutral-800 mb-3">Agricultural Solar</h3>
               <p class="text-neutral-600 text-sm leading-relaxed mb-6">
-                Power your tube wells and irrigation pumps using state-of-the-art solar water pumping systems. Ensure uninterrupted crop irrigation during the day without grid outages.
+                Size a solar water-pumping system for your water requirement, borewell depth and available sunlight. Output varies with weather and pump design; storage or a backup source may be needed. Agricultural schemes have separate eligibility rules from residential rooftop subsidies.
               </p>
               <ul class="space-y-2.5 text-sm text-neutral-700 mb-6 font-semibold">
-                <li class="flex items-center"><i class="fas fa-check text-emerald-600 mr-2"></i> Continuous Day Irrigation</li>
+                <li class="flex items-center"><i class="fas fa-check text-emerald-600 mr-2"></i> Irrigation Load Assessment</li>
                 <li class="flex items-center"><i class="fas fa-check text-emerald-600 mr-2"></i> Solar Water Pump Sets</li>
-                <li class="flex items-center"><i class="fas fa-check text-emerald-600 mr-2"></i> Grid Independent Power</li>
+                <li class="flex items-center"><i class="fas fa-check text-emerald-600 mr-2"></i> Site-Specific Pump Sizing</li>
               </ul>
             </div>
             <a target="_blank" rel="noopener noreferrer" href="https://wa.me/917380280874?text=Hi%20Solaride%2C%20I%20am%20interested%20in%20Agricultural%20Solar%20solutions."
@@ -266,6 +270,13 @@
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="py-10 bg-neutral-50">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-2xl font-bold mb-4">Compare solar options before requesting a quote</h2>
+        <p class="text-neutral-600">Read our <a href="rooftop-solar-guide.html" class="text-[#065f46] underline">rooftop solar buying guide</a> for costs, residential subsidy eligibility and battery limitations, or use the <a href="benefits.html#savings-calculator" class="text-[#065f46] underline">solar savings calculator</a> for an initial estimate.</p>
       </div>
     </section>
 
@@ -339,9 +350,7 @@
 
           <div class="order-1 lg:order-2">
             <div class="relative rounded-xl overflow-hidden shadow-sm border border-neutral-200 mb-8">
-              <img src="assets/images/solarInstall.png" alt="Professional SOLARIDE team member ready to assist you" loading="lazy" decoding="async"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Contact'"
-                width="5066" height="3377" class="w-full h-64 md:h-80 object-cover">
+              <figure class="editorial-media"><img src="assets/images/optimized/installations/installation-team-960.webp" alt="Solaride crew member beneath installed rooftop solar panels" loading="lazy" decoding="async" width="960" height="1280" class="solar-art solar-art--photo" srcset="assets/images/optimized/installations/installation-team-480.webp 480w, assets/images/optimized/installations/installation-team-960.webp 960w, assets/images/optimized/installations/installation-team-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px"><figcaption>From the Solaride photo archive.</figcaption></figure>
             </div>
 
             <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-200 mb-8">

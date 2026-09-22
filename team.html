@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Preconnect / DNS-prefetch to CDN origins for faster first render -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
  
@@ -30,13 +30,13 @@
   <link rel="alternate" hreflang="x-default" href="https://solaride.in/team.html">
  
   <!-- Performance optimization: Preload critical resources -->
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
  
   <!-- Core CSS and Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
  
@@ -56,8 +56,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Our Team — Solar Experts Serving North India | SOLARIDE">
   <meta property="og:description" content="Meet the passionate experts, engineers, and visionaries behind SOLARIDE.">
-  <meta property="og:image" content="https://solaride.in/assets/images/solarInstall.png">
-  <meta property="og:image:alt" content="The SOLARIDE team">
+  <meta property="og:image" content="https://solaride.in/assets/images/optimized/installations/installation-team-1440.webp">
+  <meta property="og:image:alt" content="Original architectural illustration of a solar energy system">
   <meta property="og:url" content="https://solaride.in/team.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
@@ -67,7 +67,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Our Team — Solar Experts Serving North India | SOLARIDE">
   <meta name="twitter:description" content="Meet the passionate experts, engineers, and visionaries behind SOLARIDE.">
-  <meta name="twitter:image" content="https://solaride.in/assets/images/solarInstall.png">
+  <meta name="twitter:image" content="https://solaride.in/assets/images/optimized/installations/installation-team-1440.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/Solaride Colored Icon.png">
@@ -106,13 +106,23 @@
   <!-- Structured Data: Breadcrumbs -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://solaride.in/" },
-      { "@type": "ListItem", "position": 2, "name": "Our Team", "item": "https://solaride.in/team.html" }
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://solaride.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Team",
+      "item": "https://solaride.in/team.html"
+    }
+  ]
+}
   </script>
 </head>
 
@@ -146,7 +156,7 @@
       <nav class="flex items-center justify-between py-4">
         <!-- Logo -->
         <a href="index.html" class="flex items-center">
-          <img src="assets/images/iconLogo.png" width="200" alt="SOLARIDE logo" />
+          <img src="assets/images/optimized/iconLogo-240.webp" width="200" alt="SOLARIDE logo" srcset="assets/images/optimized/iconLogo-240.webp 240w, assets/images/optimized/iconLogo-480.webp 480w" sizes="200px" height="48" decoding="async" loading="eager">
         </a>
 
         <!-- Desktop Navigation -->
@@ -229,9 +239,7 @@
 
           <div class="order-1 lg:order-2">
             <div class="relative h-64 md:h-[500px] rounded-xl overflow-hidden border border-neutral-200">
-              <img src="assets/images/People/pankaj.jpeg" alt="Pankaj from SOLARIDE reading about renewable energy" loading="lazy" decoding="async"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Founder'"
-                class="w-full h-full object-cover">
+              <img src="assets/images/optimized/People/pankaj-960.webp" alt="Pankaj from SOLARIDE reading about renewable energy" loading="eager" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Founder'" class="w-full h-full object-cover" srcset="assets/images/optimized/People/pankaj-480.webp 480w, assets/images/optimized/People/pankaj-960.webp 960w, assets/images/optimized/People/pankaj-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="2773" height="2075" fetchpriority="high">
             </div>
           </div>
         </div>
@@ -243,10 +251,7 @@
           <div class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between">
             <div>
               <div class="h-66 overflow-hidden relative">
-                <img src="assets/images/People/vanshul.png" alt="Vanshul Goyal"
-                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
-                  width="5184" height="3888"
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <img src="assets/images/optimized/People/vanshul-960.webp" alt="Vanshul Goyal" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'" width="544" height="442" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" srcset="assets/images/optimized/People/vanshul-480.webp 480w, assets/images/optimized/People/vanshul-960.webp 960w, assets/images/optimized/People/vanshul-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" decoding="async" loading="lazy">
               </div>
               <div class="p-6">
                 <h4 class="text-xl font-bold text-neutral-800">Vanshul Goyal</h4>
@@ -266,10 +271,7 @@
           <div class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between">
             <div>
               <div class="h-66 overflow-hidden relative">
-                <img src="assets/images/People/priyanka.png" alt="Priyanka Singh"
-                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
-                  width="5000" height="3000"
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <img src="assets/images/optimized/People/priyanka-960.webp" alt="Priyanka Singh" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'" width="1262" height="1022" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" srcset="assets/images/optimized/People/priyanka-480.webp 480w, assets/images/optimized/People/priyanka-960.webp 960w, assets/images/optimized/People/priyanka-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" decoding="async" loading="lazy">
               </div>
               <div class="p-6">
                 <h4 class="text-xl font-bold text-neutral-800">Priyanka Singh</h4>
@@ -288,10 +290,7 @@
           <div class="bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between">
             <div>
               <div class="h-66 overflow-hidden relative">
-                <img src="assets/images/People/praveen.png" alt="Praveen Poonia"
-                  onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'"
-                  width="5184" height="3888"
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <img src="assets/images/optimized/People/praveen-960.webp" alt="Praveen Poonia" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=Team+Member'" width="840" height="684" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" srcset="assets/images/optimized/People/praveen-480.webp 480w, assets/images/optimized/People/praveen-960.webp 960w, assets/images/optimized/People/praveen-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" decoding="async" loading="lazy">
               </div>
               <div class="p-6">
                 <h4 class="text-xl font-bold text-neutral-800">Praveen Poonia</h4>
@@ -332,9 +331,7 @@
               <div class="flex flex-col md:flex-row gap-6">
                 <div class="md:w-1/3">
                   <div class="rounded-lg overflow-hidden">
-                    <img src="assets/images/People/vanshul.png" alt="Vanshul Goyal"
-                      onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Vanshul+Goyal'"
-                      class="w-full h-auto object-cover">
+                    <img src="assets/images/optimized/People/vanshul-960.webp" alt="Vanshul Goyal" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Vanshul+Goyal'" class="w-full h-auto object-cover" srcset="assets/images/optimized/People/vanshul-480.webp 480w, assets/images/optimized/People/vanshul-960.webp 960w, assets/images/optimized/People/vanshul-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="544" height="442" decoding="async" loading="lazy">
                   </div>
                   <div class="mt-4">
                     <h4 class="text-xl font-bold text-neutral-800">Vanshul Goyal</h4>
@@ -368,9 +365,7 @@
               <div class="flex flex-col md:flex-row gap-6">
                 <div class="md:w-1/3">
                   <div class="rounded-lg overflow-hidden">
-                    <img src="assets/images/People/priyanka.png" alt="Priyanka Singh"
-                      onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Priyanka+Singh'"
-                      class="w-full h-auto object-cover">
+                    <img src="assets/images/optimized/People/priyanka-960.webp" alt="Priyanka Singh" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Priyanka+Singh'" class="w-full h-auto object-cover" srcset="assets/images/optimized/People/priyanka-480.webp 480w, assets/images/optimized/People/priyanka-960.webp 960w, assets/images/optimized/People/priyanka-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="1262" height="1022" decoding="async" loading="lazy">
                   </div>
                   <div class="mt-4">
                     <h4 class="text-xl font-bold text-neutral-800">Priyanka Singh</h4>
@@ -405,9 +400,7 @@
               <div class="flex flex-col md:flex-row gap-6">
                 <div class="md:w-1/3">
                   <div class="rounded-lg overflow-hidden">
-                    <img src="assets/images/People/praveen.png" alt="Praveen Poonia"
-                      onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Praveen+Poonia'"
-                      class="w-full h-auto object-cover">
+                    <img src="assets/images/optimized/People/praveen-960.webp" alt="Praveen Poonia" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Praveen+Poonia'" class="w-full h-auto object-cover" srcset="assets/images/optimized/People/praveen-480.webp 480w, assets/images/optimized/People/praveen-960.webp 960w, assets/images/optimized/People/praveen-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="840" height="684" decoding="async" loading="lazy">
                   </div>
                   <div class="mt-4">
                     <h4 class="text-xl font-bold text-neutral-800">Praveen Poonia</h4>
@@ -442,9 +435,7 @@
               <div class="flex flex-col md:flex-row gap-6">
                 <div class="md:w-1/3">
                   <div class="rounded-lg overflow-hidden">
-                    <img src="assets/images/People/pankaj.jpeg" alt="Pankaj Mahla" loading="lazy" decoding="async"
-                      onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Pankaj+Mahla'"
-                      class="w-full h-auto object-cover">
+                    <img src="assets/images/optimized/People/pankaj-960.webp" alt="Pankaj Mahla" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E5631/FDB813?text=Pankaj+Mahla'" class="w-full h-auto object-cover" srcset="assets/images/optimized/People/pankaj-480.webp 480w, assets/images/optimized/People/pankaj-960.webp 960w, assets/images/optimized/People/pankaj-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" width="2773" height="2075">
                   </div>
                   <div class="mt-4">
                     <h4 class="text-xl font-bold text-neutral-800">Pankaj Mahla</h4>
@@ -568,9 +559,7 @@
 
           <div class="order-1 lg:order-2">
             <div class="relative rounded-xl overflow-hidden shadow-sm border border-neutral-200 mb-8">
-              <img src="assets/images/solarInstall.png" alt="Professional SOLARIDE team member ready to assist you"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E5631/FDB813?text=SOLARIDE+Contact'"
-                width="5066" height="3377" class="w-full h-64 md:h-80 object-cover">
+              <figure class="editorial-media"><img src="assets/images/optimized/installations/installation-team-960.webp" alt="Solaride crew member beneath installed rooftop solar panels" width="960" height="1280" class="solar-art solar-art--photo" srcset="assets/images/optimized/installations/installation-team-480.webp 480w, assets/images/optimized/installations/installation-team-960.webp 960w, assets/images/optimized/installations/installation-team-1440.webp 1440w" sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px" decoding="async" loading="lazy"><figcaption>From the Solaride photo archive.</figcaption></figure>
             </div>
 
             <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-200 mb-8">

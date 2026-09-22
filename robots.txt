@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Block noise
-Disallow: /*?*fbclid=
+# Public content is crawlable by search and AI search crawlers.
+# Canonical URLs consolidate tracking parameters without blocking recrawls.
 
 Sitemap: https://solaride.in/sitemap.xml

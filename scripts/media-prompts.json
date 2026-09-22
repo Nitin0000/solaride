@@ -1,0 +1,59 @@
+{
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "modelCard": "https://huggingface.co/black-forest-labs/FLUX.1-schnell",
+  "provider": "https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell",
+  "license": "Apache-2.0",
+  "generatedOn": "2026-09-22",
+  "notice": "AI-generated conceptual imagery, not photographs of Solaride installations. No real customer or team photographs were uploaded.",
+  "images": [
+    {
+      "name": "rooftop-life",
+      "seed": 822,
+      "width": 1344,
+      "height": 896,
+      "prompt": "Fine art architectural photograph, contemporary North Indian home with a flat concrete rooftop and a beautifully engineered dark photovoltaic canopy, intimate courtyard with a neem tree, dramatic long morning shadows, warm white lime plaster, subtle deep forest green door, blue-grey solar cells catching crisp sunlight, rich natural textures, restrained architectural editorial art direction, human eye-level rooftop perspective, 35mm lens, realistic panel geometry, a single carefully composed scene, no people, no text, no logos, not an isometric miniature, not a 3d illustration"
+    },
+    {
+      "name": "solar-horizon",
+      "seed": 926,
+      "width": 1536,
+      "height": 864,
+      "prompt": "A cinematic architectural editorial photograph of a contemporary Punjab rooftop at the first light of morning, beautifully detailed photovoltaic panels arranged in precise diagonal rows on the RIGHT TWO THIRDS of the panoramic composition, open terrace and deep forest green shaded plaster wall on the LEFT THIRD with generous quiet negative space, distant low-rise North Indian rooftops and a pale apricot sky, sunlight glancing across silver module edges, atmospheric but sharply legible solar panels, sophisticated teal and soft peach colour harmony, tactile architecture, analog medium format film texture, natural light, extremely considered framing, premium independent architecture magazine cover photograph without typography, no people, no text, no logos, no fantasy buildings, no miniature model"
+    },
+    {
+      "name": "light-study",
+      "seed": 1742,
+      "width": 1024,
+      "height": 1280,
+      "prompt": "An evocative fine art editorial still life about sunlight becoming electricity. A tall translucent emerald glass prism and a small real monocrystalline solar cell rest on a pale cool grey stone plinth, a sharp beam of natural sunlight refracts through glass casting an extraordinary luminous green caustic and a thin spectrum across the wall. One beautifully composed photograph, sculptural minimalism, asymmetric composition, tactile stone, deep ink black solar cell with delicate silver conductors, optical glass, high-end contemporary design magazine photography, thoughtful negative space, physically plausible materials, rich light and shadow, no text, no lettering, no coins, no currency, no bills, no icons, no CGI miniature, no glowing orbs"
+    },
+    {
+      "name": "industrial-rhythm",
+      "seed": 2351,
+      "width": 1344,
+      "height": 896,
+      "prompt": "A striking aerial architectural fine art photograph of a real-looking industrial rooftop covered in precisely engineered monocrystalline photovoltaic panels, deep petrol blue solar cells make a rhythmic geometric pattern, one clean white maintenance walkway cuts diagonally through the composition, small subtle safety yellow edge markings, low sunlight rakes across silver aluminium frames, the repeated modules become an abstract yet recognisable architectural composition, extraordinary attention to material texture and straight lines, contemporary editorial photography, large format camera clarity, energetic diagonal framing, no people, no written text, no logos, no 3d illustration, no toy factory, no floating objects"
+    },
+    {
+      "name": "water-and-sun",
+      "seed": 3184,
+      "width": 1344,
+      "height": 896,
+      "prompt": "Lyrical documentary-style landscape photograph of solar-powered irrigation in Haryana India, lush rows of crops make long graphic lines from the foreground to the horizon, a carefully engineered small photovoltaic array beside a working irrigation pipe on the RIGHT, a narrow ribbon of water reflects a pale clear blue sky through the field, mature trees at the edge of the farm, quiet rural character, bright fresh morning light, deep green and silver blue colour palette, grounded realistic agriculture with beautiful composition, medium format film, crisp photovoltaic modules clearly visible, no people, no text, no logos, not a miniature, not an infographic"
+    },
+    {
+      "name": "cell-study",
+      "seed": 4409,
+      "width": 1344,
+      "height": 896,
+      "prompt": "Extreme close-up fine art product photograph of photovoltaic silicon cells beneath pristine textured solar glass, elegant silver busbars make an intricate precise geometric rhythm across midnight blue and petrol green silicon, a narrow clean reflection of daylight traces one diagonal edge, stunning material detail and restrained iridescence, a beautiful abstract composition that remains unmistakably a real solar panel surface, scientific beauty, large format macro lens, editorial technology magazine photography, crisp focus across most of the frame, no glowing magical elements, no typography, no letters, no logos, no illustration"
+    },
+    {
+      "name": "open-terrace",
+      "seed": 5901,
+      "width": 1344,
+      "height": 896,
+      "prompt": "A soulful architectural editorial photograph of a lived-in North Indian rooftop terrace beneath a carefully engineered photovoltaic shade canopy, dappled late-afternoon sunlight through the structure, one simple woven chair beside a healthy potted bougainvillea, tactile cool white plaster walls and a deep green wooden door, clean visible aluminium support structure and recognizable dark solar panels above, distant modest urban rooftops beyond the parapet, intimate quiet human atmosphere without any people, contemporary sustainable living, rich natural textures and refined film colour, architectural magazine photography, no luxury villa stereotype, no bills, no text, no logos, no miniature model"
+    }
+  ]
+}

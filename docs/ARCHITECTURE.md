@@ -5,8 +5,8 @@ A reference for how the site is built so decisions live in docs, not memory.
 ## Overview
 
 SOLARIDE is a **static, multi-page website** — hand-authored HTML styled with
-Tailwind (via CDN) and progressively enhanced with small vanilla-JS modules.
-There is **no build step, no server, and no database**. The only "backend" is
+compiled Tailwind and progressively enhanced with small vanilla-JS modules.
+A build generates CSS and responsive images; there is **no application server or database**. The only "backend" is
 third-party [EmailJS](https://www.emailjs.com/), which delivers the contact form
 straight to the company inbox from the browser.
 
@@ -23,7 +23,7 @@ Browser ──> GitHub Pages (static files, https://solaride.in)
 - The content is marketing + lead capture; it does not need server state.
 - Static hosting on GitHub Pages is free, fast, and trivially cacheable (good
   for Core Web Vitals and SEO).
-- Zero build keeps the repo deployable exactly as committed.
+- A reproducible asset build keeps browser-side work low; only public files ship.
 
 ## Pages
 
@@ -34,6 +34,7 @@ Browser ──> GitHub Pages (static files, https://solaride.in)
 | `benefits.html`      | Savings calculator + Tree-to-Energy calculator       | ✅      |
 | `faq.html`           | About/origin story **and** the FAQ accordion         | ✅      |
 | `team.html`          | Team profiles + modals                               | ✅      |
+| `rooftop-solar-guide.html` | Sourced solar buying guide + Article schema    | ✅      |
 | `solar-panel-installation-mohali.html` | Mohali service-area landing page   | ✅      |
 | `solar-panel-installation-hisar.html`  | Hisar service-area landing page    | ✅      |
 | `privacy.html`       | Privacy policy (legal)                               | ✅      |
@@ -112,7 +113,7 @@ attribute, not the `name` input, so field access must go through `FormData`.
 ## Testing architecture
 
 - **Runner:** Vitest with the `jsdom` environment (`vitest.config.mjs`).
-- **No build:** tests load the *actual shipped* scripts through
+- **No JS bundling:** tests load the *actual shipped* scripts through
   `tests/helpers/dom.mjs`, which reads a file and evaluates it in the jsdom
   global scope (indirect `eval`). This means tests exercise exactly what ships.
 - **Pure logic** (`calc.js`) is imported directly; **DOM behaviors** are driven
@@ -123,8 +124,12 @@ attribute, not the `name` input, so field access must go through `FormData`.
 ## Deployment
 
 - **Trigger:** push to `devVanz`.
-- **Workflow:** `.github/workflows/static.yml` uploads the repo and deploys to
-  GitHub Pages. `.github/workflows/test.yml` runs `npm ci && npm test`.
+- **Workflow:** `.github/workflows/static.yml` runs `npm ci` and `npm test`
+  (including the asset build), then deploys only `_site/` to GitHub Pages.
+  `.github/workflows/test.yml` also runs `npm ci && npm test`.
+- **Build:** `scripts/build.mjs` compiles Tailwind using HTML and JS class names,
+  generates WebP sizes with Sharp, and stages root HTML, crawl files and assets.
+  `_site/`, `assets/css/utilities.css` and `assets/images/optimized/` are generated.
 - **Domain:** `CNAME` pins `solaride.in` so redeploys keep the custom domain.
 
 ## Constraints & conventions
