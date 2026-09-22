@@ -216,10 +216,14 @@ describe('Search quality and deployment', () => {
     expect(offering.querySelector('.fa-seedling')).toBeNull();
     expect(offering.querySelectorAll('img')).toHaveLength(1);
     expect(offering.querySelector('img').getAttribute('src')).toBe('assets/images/optimized/licensed/agrivoltaic-canopy-960.webp');
-    expect(offering.querySelector('figcaption').textContent).toContain('Tobi Kellner');
-    expect(offering.querySelector('figcaption').textContent).toContain('Germany');
+    expect(offering.querySelector('figcaption')).toBeNull();
     expect(offering.querySelector('img').alt).toContain('crop rows');
-    expect(offering.querySelector('a[href="https://creativecommons.org/licenses/by-sa/4.0/"]')).not.toBeNull();
+    expect(doc.querySelector('footer a[href="image-credits.html"]')).not.toBeNull();
+    const credits = parse(readRepoFile('image-credits.html'));
+    expect(credits.querySelector('main').textContent).toContain('Tobi Kellner');
+    expect(credits.querySelector('a[href="https://creativecommons.org/licenses/by-sa/4.0/"]')).not.toBeNull();
+    expect(credits.querySelector('main').textContent).toContain('Centre-cropped to 3:2');
+    expect(credits.querySelector('a[href="https://commons.wikimedia.org/wiki/File:Agrivoltaics_pilot_plant_at_Heggelbach_Farm_in_Germany_1.jpg"]')).not.toBeNull();
     expect(statSync(resolve(repoRoot, offering.querySelector('img').getAttribute('src'))).size).toBeLessThan(250000);
     for (const image of offering.querySelectorAll('img')) {
       expect(image.getAttribute('src')).not.toMatch(/solar-horizon|rooftop-life|installation-canopy|installation-frame|commercial-rooftop/);

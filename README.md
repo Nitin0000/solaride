@@ -137,7 +137,7 @@ in Germany 1** by **Tobi Kellner**, sourced from
 under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 The aerial photo was centre-cropped to 3:2, resized and converted to WebP; the adapted
 source and responsive variants remain under CC BY-SA 4.0. Attribution and the
-licence link are visible on the card. This is an illustrative real installation,
+licence link are on `image-credits.html`, linked from the solutions footer. This is an illustrative real installation,
 not a photograph of a Solaride project or an AI-generated image.
 
 The former `assets/images/licensed/agricultural-solar-irrigation.webp` is archived,
