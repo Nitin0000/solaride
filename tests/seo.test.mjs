@@ -178,6 +178,18 @@ describe('Search quality and deployment', () => {
     expect(answer.acceptedAnswer.text).toContain('We serve all of North India.');
   });
 
+  it('uses the supplied rooftop photograph for the commercial offering', () => {
+    const doc = parse(readRepoFile('solutions.html'));
+    const heading = [...doc.querySelectorAll('h3')].find((node) => node.textContent.trim() === 'Commercial & Industrial');
+    const image = heading.parentElement.querySelector('img');
+    expect(image.getAttribute('src')).toBe('assets/images/optimized/installations/commercial-rooftop-960.webp');
+    expect(image.getAttribute('width')).toBe('1600');
+    expect(image.getAttribute('height')).toBe('1200');
+    expect(image.classList.contains('solar-art--commercial')).toBe(true);
+    expect(image.alt).toContain('blue metal roof');
+    expect(existsSync(resolve(repoRoot, 'assets/images/installations/commercial-rooftop.png'))).toBe(true);
+  });
+
   it('does not reuse rooftop imagery for the agricultural solar offering', () => {
     const doc = parse(readRepoFile('solutions.html'));
     const heading = [...doc.querySelectorAll('h3')].find((node) => node.textContent.trim() === 'Agricultural Solar');
@@ -190,7 +202,7 @@ describe('Search quality and deployment', () => {
     expect(offering.querySelector('a[href="https://creativecommons.org/licenses/by-sa/4.0/"]')).not.toBeNull();
     expect(statSync(resolve(repoRoot, offering.querySelector('img').getAttribute('src'))).size).toBeLessThan(250000);
     for (const image of offering.querySelectorAll('img')) {
-      expect(image.getAttribute('src')).not.toMatch(/solar-horizon|rooftop-life|installation-canopy|installation-frame/);
+      expect(image.getAttribute('src')).not.toMatch(/solar-horizon|rooftop-life|installation-canopy|installation-frame|commercial-rooftop/);
       expect(image.alt).toMatch(/irrigation|agricultur|farm|crop/i);
     }
   });
